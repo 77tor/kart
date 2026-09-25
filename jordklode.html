@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interaktiv 3D-Jordklode</title>
+<script>
+  // Hindrer krasj fra biblioteker som forventer Node.js sin process-variabel
+  window.process = { env: { NODE_ENV: 'production' } };
+</script>
+  <script src="land_navn.js"></script>
+  <!-- Globe.gl & Three.js -->
+  <script src="https://unpkg.com/three"></script>
+  <script src="https://unpkg.com/globe.gl"></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #020617;
+      background-image: url('https://unpkg.com/three-globe/example/img/night-sky.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+
+    #globeViz {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ui-overlay {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #f8fafc;
+      text-align: center;
+      pointer-events: none;
+      z-index: 10;
+      background: rgba(15, 23, 42, 0.6);
+      padding: 10px 20px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .ui-overlay h1 {
+      font-size: 16px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #38bdf8;
+      margin-bottom: 2px;
+    }
+
+    .ui-overlay p {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="globeViz"></div>
+
+  <div class="ui-overlay">
+    <h1 id="hoverLabel">Utforsk Kloden</h1>
+    <p>Klikk på et kontinent for å åpne kartet</p>
+  </div>
+
+<script>
+  const continentMapping = {
+    'North America': { key: 'north-america', name: 'Nord-Amerika', color: '#00c900' },
+    'South America': { key: 'south-america', name: 'Sør-Amerika', color: '#008a16' },
+    'Europe':        { key: 'europe',        name: 'Europa',       color: '#c90000' },
+    'Asia':          { key: 'asia',          name: 'Asia',         color: '#ff3b0a' },
+    'Africa':        { key: 'africa',        name: 'Afrika',       color: '#ffd42a' },
+    'Oceania':       { key: 'oceania',       name: 'Oseania',      color: '#c23d82' },
+    'Antarctica':    { key: 'antarctica',    name: 'Antarktis',    color: '#e0f2fe' }
+  };
+
+  const continentCenters = {
+    'north-america': { lat: 45, lng: -100 },
+    'south-america': { lat: -15, lng: -60 },
+    'europe':        { lat: 53, lng: 20 },
+    'asia':          { lat: 35, lng: 90 },
+    'africa':        { lat: 2, lng: 20 },
+    'oceania':       { lat: -25, lng: 135 },
+    'antarctica':    { lat: -80, lng: 0 }
+  };
+
+  const hoverLabel = document.getElementById('hoverLabel');
+  
+  if (hoverLabel) {
+    hoverLabel.style.pointerEvents = 'auto';
+  }
+
+  function getPolygonCenter(coordinates) {
+    let sumLng = 0, sumLat = 0, count = 0;
+    function extractCoords(arr) {
+      if (typeof arr[0] === 'number') {
+        sumLng += arr[0];
+        sumLat += arr[1];
+        count++;
+      } else {
+        arr.forEach(extractCoords);
+      }
+    }
+    extractCoords(coordinates);
+    return { lng: sumLng / count, lat: sumLat / count };
+  }
+
+  function getFeatureInfo(feat) {
+    const p = feat.properties || {};
+
+    if (p.CUSTOM_REGION === 'RUS_EUROPE') return continentMapping['Europe'];
+    if (p.CUSTOM_REGION === 'RUS_ASIA') return continentMapping['Asia'];
+
+    const name = (p.NAME || p.ADMIN || '').toLowerCase();
+    const center = getPolygonCenter(feat.geometry.coordinates);
+
+    if ((p.CONTINENT === 'Europe' || name === 'france') && (center.lng > -80 && center.lng < -30 && center.lat > -60 && center.lat < 15)) {
+      return continentMapping['South America'];
+    }
+
+    if (name.includes('turkey') || p.ISO_A3 === 'TUR') {
+      return center.lng < 27.5 ? continentMapping['Europe'] : continentMapping['Asia'];
+    }
+
+    return continentMapping[p.CONTINENT];
+  }
+
+  // Robust funksjon for å hente norsk landnavn
+function getNorwegianCountryName(polygon) {
+  const p = polygon.properties || {};
+  const iso3 = p.ISO_A3 || p.ISO_A3_EH || p.ADM0_A3 || p.ISO3;
+  const rawName = p.NAME || p.ADMIN || 'Ukjent land';
+
+  // 1. Sjekk den globale ordboken fra land_navn.js
+  if (window.norwegianNameOverrides) {
+    if (iso3 && window.norwegianNameOverrides[iso3]) return window.norwegianNameOverrides[iso3];
+    if (rawName && window.norwegianNameOverrides[rawName]) return window.norwegianNameOverrides[rawName];
+  }
+
+  // 2. Trygg sjekk mot parent utan at det krasjer skriptet ved file://
+  try {
+    if (window.parent && window.location.protocol !== 'file:') {
+      const parentData = window.parent.countriesData;
+      if (Array.isArray(parentData)) {
+        const found = parentData.find(c => 
+          (iso3 && c.iso3 === iso3) || 
+          (c.nameEng && c.nameEng.toLowerCase() === rawName.toLowerCase()) ||
+          (c.name && c.name.toLowerCase() === rawName.toLowerCase())
+        );
+        if (found && found.name) return found.name;
+      }
+    }
+  } catch (e) {
+    // Ignorer tilgangsfeil ved file-protokoll
+  }
+
+  return rawName;
+}
+
+  let selectedPolygonData = null;
+
+  window.cancelSelection = function() {
+    selectedPolygonData = null;
+    if (hoverLabel) {
+      hoverLabel.textContent = 'Utforsk Kloden';
+    }
+    world.controls().autoRotate = true;
+  };
+
+  window.selectOption = function(type, countryName, countryIso, continentKey, continentName, lng, lat) {
+    selectedPolygonData = null;
+    const center = { lng, lat };
+    
+    if (type === 'country') {
+      window.parent.postMessage({
+        type: 'COUNTRY_SELECTED',
+        countryName: countryName,
+        countryIso: countryIso,
+        continentKey: continentKey,
+        center: center
+      }, '*');
+    } else if (type === 'continent') {
+      window.parent.postMessage({
+        type: 'CONTINENT_SELECTED',
+        continentKey: continentKey,
+        continentName: continentName,
+        center: center
+      }, '*');
+    }
+  };
+
+  let mouseDownPos = { x: 0, y: 0 };
+  const container = document.getElementById('globeViz');
+
+  container.addEventListener('pointerdown', (e) => {
+    mouseDownPos = { x: e.clientX, y: e.clientY };
+  });
+
+  const world = Globe()
+    (container)
+    .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+    .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+    .polygonSideColor(() => 'rgba(0, 100, 200, 0.05)')
+    .polygonStrokeColor(() => '#38bdf8')
+    .polygonCapColor(feat => {
+      const p = feat.properties || {};
+      const name = (p.NAME || p.ADMIN || '').toLowerCase();
+      
+      if (name.includes('greenland') || p.CONTINENT === 'Antarctica') {
+        return 'rgba(240, 248, 255, 0.65)';
+      }
+
+      const info = getFeatureInfo(feat);
+      return info ? `${info.color}55` : 'rgba(255, 255, 255, 0.1)';
+    })
+    .polygonAltitude(feat => (feat === world.hoveredPolygon || feat === selectedPolygonData) ? 0.05 : 0.01)
+    .onPolygonHover(hoverD => {
+      world.hoveredPolygon = hoverD;
+
+      if (selectedPolygonData) return;
+
+      if (hoverD) {
+        const countryName = getNorwegianCountryName(hoverD);
+        const info = getFeatureInfo(hoverD);
+        const continentName = info ? info.name : hoverD.properties?.CONTINENT;
+
+        if (hoverLabel) {
+          hoverLabel.innerHTML = `
+            <div class="flex flex-col items-center gap-1 p-1">
+              <span class="text-xs text-sky-400 font-semibold">📍 ${countryName} (${continentName})</span>
+              <span class="text-[10px] text-gray-400">Klikk på landet for å velge visning</span>
+            </div>
+          `;
+        }
+        world.controls().autoRotate = false;
+      } else {
+        if (hoverLabel) {
+          hoverLabel.textContent = 'Utforsk Kloden';
+        }
+        world.controls().autoRotate = true;
+      }
+    })
+    .onPolygonClick((polygon, event) => {
+      const dist = Math.hypot(event.clientX - mouseDownPos.x, event.clientY - mouseDownPos.y);
+
+      if (dist < 6) {
+        selectedPolygonData = polygon;
+        world.controls().autoRotate = false;
+
+        const p = polygon.properties || {};
+        const countryName = getNorwegianCountryName(polygon);
+        let iso3 = p.ISO_A3 || p.ISO_A3_EH || p.ADM0_A3 || p.ISO3;
+        if (p.CUSTOM_REGION === 'RUS_ASIA') iso3 = 'RUS-ASIA';
+
+        const info = getFeatureInfo(polygon);
+        const continentName = info ? info.name : p.CONTINENT;
+        const continentKey = info ? info.key : '';
+        const center = getPolygonCenter(polygon.geometry.coordinates);
+
+        if (hoverLabel) {
+          hoverLabel.innerHTML = `
+            <div class="flex flex-col items-center gap-2.5 p-2 bg-slate-900/90 backdrop-blur-md rounded-xl border border-slate-700/60 shadow-2xl">
+              <div class="text-[11px] font-medium tracking-wide uppercase text-slate-400">
+                Velg visning for <span class="text-sky-400 font-bold">${countryName}</span>
+              </div>
+              
+              <div class="flex items-center gap-2">
+                <!-- Land-knapp -->
+                <button onclick="window.selectOption('country', '${countryName.replace(/'/g, "\\'")}', '${iso3}', '${continentKey}', '${continentName}', ${center.lng}, ${center.lat})" 
+                        class="px-3.5 py-1.5 bg-sky-500/10 hover:bg-sky-500/25 border border-sky-500/40 hover:border-sky-400 text-sky-200 hover:text-white font-medium text-xs rounded-lg shadow-sm backdrop-blur-sm transition-all duration-200 cursor-pointer flex items-center gap-1.5 active:scale-95">
+                  <span class="text-sky-400">📍</span> Åpne ${countryName}
+                </button>
+                
+                <!-- Verdensdel-knapp -->
+                <button onclick="window.selectOption('continent', '${countryName.replace(/'/g, "\\'")}', '${iso3}', '${continentKey}', '${continentName}', ${center.lng}, ${center.lat})" 
+                        class="px-3.5 py-1.5 bg-amber-500/10 hover:bg-amber-500/25 border border-amber-500/40 hover:border-amber-400 text-amber-200 hover:text-white font-medium text-xs rounded-lg shadow-sm backdrop-blur-sm transition-all duration-200 cursor-pointer flex items-center gap-1.5 active:scale-95">
+                  <span class="text-amber-400">🌍</span> Åpne ${continentName}
+                </button>
+                
+                <!-- Lukk-knapp -->
+                <button onclick="window.cancelSelection()" 
+                        title="Lukk meny"
+                        class="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-600/50 text-slate-400 hover:text-white text-xs rounded-lg transition-all duration-150 cursor-pointer flex items-center justify-center active:scale-95">
+                  ✕
+                </button>
+              </div>
+            </div>
+          `;
+        }
+      }
+    });
+
+  world.controls().autoRotate = true;
+  world.controls().autoRotateSpeed = 2.0;
+  world.pointOfView({ lat: 25, lng: 110, altitude: 2.2 });
+
+  window.addEventListener('message', (event) => {
+    if (!event.data) return;
+
+    if (event.data.type === 'ANIMATE_AND_CLOSE') {
+      const { continentKey, center } = event.data;
+
+      world.controls().autoRotate = false;
+
+      let targetCenter = center;
+      if (!targetCenter && continentKey && continentCenters[continentKey]) {
+        targetCenter = continentCenters[continentKey];
+      }
+
+      if (targetCenter) {
+        world.pointOfView({
+          lat: targetCenter.lat,
+          lng: targetCenter.lng,
+          altitude: 0.5
+        }, 1200);
+
+        setTimeout(() => {
+          window.parent.postMessage({ type: 'GLOBE_ZOOM_COMPLETE' }, '*');
+        }, 1250);
+      } else {
+        window.parent.postMessage({ type: 'GLOBE_ZOOM_COMPLETE' }, '*');
+      }
+    }
+if (event.data.type === 'RESET_GLOBE') {
+      world.pointOfView({ lat: 25, lng: 110, altitude: 2.2 }, 0);
+      world.controls().autoRotate = true;
+      world.controls().autoRotateSpeed = 2.0;
+
+      // 1. Nullstill valgt polygon og fjern markering
+      selectedPolygonData = null;
+      world.hoveredPolygon = null;
+
+      // 2. Tilbakestill teksten og skjermvisningen i ui-overlay
+      const hoverLabel = document.getElementById('hoverLabel');
+      if (hoverLabel) {
+        hoverLabel.innerHTML = 'Utforsk Kloden';
+      }
+    }
+    
+    if (event.data.type === 'TOGGLE_BORDERS') {
+      const show = event.data.showBorders;
+      world.polygonStrokeColor(() => show ? '#38bdf8' : 'transparent');
+    }
+  });
+
+  function splitRingByLongitude(ring, lngSplit) {
+    const westRing = [];
+    const eastRing = [];
+
+    for (let i = 0; i < ring.length; i++) {
+      const curr = ring[i];
+      const next = ring[(i + 1) % ring.length];
+
+      const currIsWest = curr[0] < lngSplit;
+      const nextIsWest = next[0] < lngSplit;
+
+      if (currIsWest) westRing.push(curr);
+      else eastRing.push(curr);
+
+      if (currIsWest !== nextIsWest) {
+        const ratio = (lngSplit - curr[0]) / (next[0] - curr[0]);
+        const latIntersect = curr[1] + ratio * (next[1] - curr[1]);
+        const splitPt = [lngSplit, latIntersect];
+        
+        westRing.push(splitPt);
+        eastRing.push(splitPt);
+      }
+    }
+
+    if (westRing.length > 0 && (westRing[0][0] !== westRing[westRing.length - 1][0] || westRing[0][1] !== westRing[westRing.length - 1][1])) {
+      westRing.push(westRing[0]);
+    }
+    if (eastRing.length > 0 && (eastRing[0][0] !== eastRing[eastRing.length - 1][0] || eastRing[0][1] !== eastRing[eastRing.length - 1][1])) {
+      eastRing.push(eastRing[0]);
+    }
+
+    return { westRing, eastRing };
+  }
+
+  fetch('https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson')
+    .then(res => res.json())
+    .then(countries => {
+      const processedFeatures = [];
+
+      countries.features.forEach(feat => {
+        const p = feat.properties || {};
+        const name = (p.NAME || p.ADMIN || '').toLowerCase();
+
+        if (name.includes('russia') || p.ISO_A3 === 'RUS') {
+          const rawPolygons = feat.geometry.type === 'MultiPolygon' 
+            ? feat.geometry.coordinates 
+            : [feat.geometry.coordinates];
+
+          rawPolygons.forEach(polyCoords => {
+            const ring = polyCoords[0];
+            const { westRing, eastRing } = splitRingByLongitude(ring, 60.0);
+
+            if (westRing.length >= 4) {
+              processedFeatures.push({
+                type: 'Feature',
+                properties: { ...p, CUSTOM_REGION: 'RUS_EUROPE' },
+                geometry: { type: 'Polygon', coordinates: [westRing] }
+              });
+            }
+
+            if (eastRing.length >= 4) {
+              processedFeatures.push({
+                type: 'Feature',
+                properties: { ...p, CUSTOM_REGION: 'RUS_ASIA' },
+                geometry: { type: 'Polygon', coordinates: [eastRing] }
+              });
+            }
+          });
+        } 
+        else if (feat.geometry && feat.geometry.type === 'MultiPolygon') {
+          feat.geometry.coordinates.forEach(polyCoords => {
+            processedFeatures.push({
+              type: 'Feature',
+              properties: { ...p },
+              geometry: { type: 'Polygon', coordinates: polyCoords }
+            });
+          });
+        } 
+        else {
+          processedFeatures.push(feat);
+        }
+      });
+
+      world.polygonsData(processedFeatures);
+    });
+
+  window.addEventListener('resize', () => {
+    world.width(window.innerWidth).height(window.innerHeight);
+  });
+</script>
+
+</body>
+</html>
