@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sverige - Alt om nabolandet vårt! 🇸🇪</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Fredoka for friendly headers, Inter for readable text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0fdf4;
+        }
+        h1, h2, h3, .font-fun {
+            font-family: 'Fredoka', cursive, sans-serif;
+        }
+        .card-bounce {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-bounce:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-amber-50/50 text-slate-800 min-h-screen pb-12">
+
+    <!-- HEADER (Blå header tilpasset det svenske flagget) -->
+    <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
+            <div class="flex items-center gap-3">
+                <img src="https://flagcdn.com/w40/se.png" alt="Sveriges flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
+                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Sverige - Alt om nabolandet vårt!</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 mt-6 space-y-10">
+
+        <!-- KORTE FAKTA -->
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-yellow-400">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-6 flex items-center gap-2">
+                ⚡ Korte fakta om Sverige
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="bg-blue-100 p-4 rounded-2xl text-center border-2 border-blue-300 card-bounce">
+                    <div class="text-3xl mb-1">🏰</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Hovedstad</div>
+                    <div class="font-bold text-blue-700 text-lg">Stockholm</div>
+                </div>
+                <div class="bg-yellow-100 p-4 rounded-2xl text-center border-2 border-yellow-300 card-bounce">
+                    <div class="text-3xl mb-1">👨‍👩‍👧‍👦</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Mennesker</div>
+                    <div class="font-bold text-yellow-800 text-lg" id="sverige-befolkning">Laster...</div>
+                </div>
+                <div class="bg-green-100 p-4 rounded-2xl text-center border-2 border-green-300 card-bounce">
+                    <div class="text-3xl mb-1">🗣️</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Språk</div>
+                    <div class="font-bold text-green-700 text-base">Svensk</div>
+                </div>
+                <div class="bg-amber-100 p-4 rounded-2xl text-center border-2 border-amber-300 card-bounce">
+                    <div class="text-3xl mb-1">👑</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Statsoverhode</div>
+                    <div class="font-bold text-amber-800 text-base" id="sverige-konge">Laster...</div>
+                </div>
+                <div class="bg-purple-100 p-4 rounded-2xl text-center border-2 border-purple-300 card-bounce">
+                    <div class="text-3xl mb-1">🎉</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Nasjonaldag</div>
+                    <div class="font-bold text-purple-700 text-lg">6. juni</div>
+                </div>
+                <div class="bg-emerald-100 p-4 rounded-2xl text-center border-2 border-emerald-300 card-bounce">
+                    <div class="text-3xl mb-1">💰</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Valuta</div>
+                    <div class="font-bold text-emerald-700 text-base">Svenske kroner</div>
+                </div>
+            </div>
+        </section>
+
+<!-- MAP SECTION (To kart side om side) -->
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-emerald-400">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-emerald-600 flex items-center gap-2">
+                        🗺️ Kart over Sverige
+                    </h2>
+                    <p class="text-gray-600 text-sm">Klikk på et av kartene for å åpne og zoome i fullskjerm!</p>
+                </div>
+            </div>
+
+            <!-- Bildebeholder -->
+            <div class="bg-emerald-50/50 rounded-2xl p-4 border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
+                <!-- Vanlig kart (Venstre) -->
+                <div class="text-center w-full">
+                    <img 
+                        src="Bilder/kart_sverige.png" 
+                        alt="Illustrasjonskart over Sverige" 
+                        onclick="openSingleModal('Bilder/kart_sverige.png', 'Illustrasjonskart over Sverige')"
+                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
+                    >
+                    <button 
+                        onclick="openSingleModal('Bilder/kart_sverige.png', 'Illustrasjonskart over Sverige')"
+                        class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
+                    >
+                        🔍 Åpne Illustrasjonskart
+                    </button>
+                </div>
+
+                <!-- Ekte kart (Høyre) -->
+                <div class="text-center w-full">
+                    <img 
+                        src="Bilder/kart_sverige_ekte.png" 
+                        alt="Ekte kart over Sverige" 
+                        onclick="openSingleModal('Bilder/kart_sverige_ekte.png', 'Geografisk kart over Sverige')"
+                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
+                    >
+                    <button 
+                        onclick="openSingleModal('Bilder/kart_sverige_ekte.png', 'Geografisk kart over Sverige')"
+                        class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
+                    >
+                        🔍 Åpne Geografisk kart
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 1: NATUR OG KLIMA -->
+        <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🌲</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">1. Natur og klima</h2>
+            </div>
+            
+            <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
+                Sverige er det største landet i Norden! Landet har enorme dype skoger, tusenvis av kystøyer og vakre store innsjøer.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">🏔️</div>
+                    <h3 class="font-bold text-lg text-emerald-800 mb-1">Høyeste fjell</h3>
+                    <p class="text-sm text-gray-700"><strong>Kebnekaise</strong> er Sveriges høyeste fjell, med en topp på 2 096 meter over havet.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">🌊</div>
+                    <h3 class="font-bold text-lg text-emerald-800 mb-1">Massevis av innsjøer</h3>
+                    <p class="text-sm text-gray-700">Sverige har over <strong>100 000 innsjøer</strong>! De største heter Vänern og Vättern.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">☀️</div>
+                    <h3 class="font-bold text-lg text-emerald-800 mb-1">Klima og årstider</h3>
+                    <p class="text-sm text-gray-700">Somrene er ofte varme og fine i sør, mens nord har kalde og snørike vintrer.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
+                <div class="text-4xl">🫎</div>
+                <p class="text-sm text-gray-700">
+                    <strong>Dyreliv:</strong> Svenske skoger er kjent for mangeslige elger, rådyr, bjørn, ulv og gaupe. Langs kysten fins det også masse sel!
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 2: FOLK OG SAMFUNN -->
+        <section class="bg-sky-50 rounded-3xl p-6 md:p-8 border-4 border-sky-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-sky-500 text-white text-2xl p-3 rounded-2xl">👨‍👩‍👧‍👦</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-sky-800">2. Folk og samfunn</h2>
+            </div>
+
+            <p class="text-lg text-sky-950 mb-6 leading-relaxed">
+                I Sverige bor det over <strong>10,5 millioner mennesker</strong>. Det gjør Sverige til det mest folkerike landet i Skandinavia!
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
+                    <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
+                        🏢 Største byer i Sverige
+                    </h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">🔹 <strong>Stockholm:</strong> Sveriges hovedstad, bygd på 14 øyer!</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Göteborg:</strong> Kjent for Liseberg og stor havn.</li>
+                        <li class="flex items-center gap-2">🔹 Andre store byer: Malmö, Uppsala, Västerås og Örebro.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
+                    <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
+                        🪅 Samer og minoriteter
+                    </h3>
+                    <p class="text-sm text-gray-700">
+                        Akkurat som i Norge bor det <strong>samer</strong> i den nordlige delen av Sverige. De har sin egen stolt historie og kultur.
+                    </p>
+                    <p class="text-sm text-gray-700">
+                        Sverige har fem nasjonale minoriteter: samer, sverigefinner, tornedalinger, rom og jøder.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-sky-100 p-4 rounded-2xl border-2 border-sky-300">
+                <h4 class="font-bold text-sky-900 mb-1">🗣️ Hvilke språk snakker de?</h4>
+                <p class="text-sm text-sky-800">
+                    Det offisielle språket er <strong>svensk</strong>, som ligner veldig mye på norsk! I tillegg snakkes samisk, meänkieli (tornedalsfinsk) og romani chib.
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 3: STAT OG POLITIKK -->
+        <section class="bg-purple-50 rounded-3xl p-6 md:p-8 border-4 border-purple-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-purple-500 text-white text-2xl p-3 rounded-2xl">👑</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-purple-800">3. Stat og politikk</h2>
+            </div>
+
+            <p class="text-lg text-purple-950 mb-6 leading-relaxed">
+                Akkurat som Norge er Sverige et <strong>monarki</strong> og et <strong>demokrati</strong>. De har en konge som statsoverhode og et valgt parlament.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🤴</div>
+                    <h3 class="font-bold text-purple-900" id="stat-konge-navn">Laster...</h3>
+                    <p class="text-xs text-gray-600 mt-1">Sveriges konge og statsoverhode.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">👔</div>
+                    <h3 class="font-bold text-purple-900" id="stat-pm-navn">Laster...</h3>
+                    <p class="text-xs text-gray-600 mt-1">Statsministeren som leder regjeringen.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🏛️</div>
+                    <h3 class="font-bold text-purple-900">Riksdagen</h3>
+                    <p class="text-xs text-gray-600 mt-1">Sveriges parlament der de lager nye lover.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-purple-200 text-center">
+                <p class="text-sm font-semibold text-purple-900">
+                    📍 Sverige er delt inn i <strong>21 len (län)</strong> og <strong>290 kommuner</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 4: HISTORIE -->
+        <section class="bg-amber-50 rounded-3xl p-6 md:p-8 border-4 border-amber-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-amber-500 text-white text-2xl p-3 rounded-2xl">📜</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Sveriges historie</h2>
+            </div>
+
+            <div class="relative border-l-4 border-amber-400 ml-4 pl-6 space-y-6">
+                <!-- Timeline item 1 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">1</span>
+                    <h3 class="font-bold text-lg text-amber-900">⚔️ Vikingtiden (800–1050)</h3>
+                    <p class="text-sm text-gray-700">De svenske vikingene reiste ofte østover mot Russland og helt til Konstantinopel for å handle.</p>
+                </div>
+
+                <!-- Timeline item 2 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">2</span>
+                    <h3 class="font-bold text-lg text-amber-900">👑 Kalmarunionen (1397)</h3>
+                    <p class="text-sm text-gray-700">Norge, Sverige og Danmark var samlet under én felles konge og dronning (Margrete 1.).</p>
+                </div>
+
+                <!-- Timeline item 3 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">3</span>
+                    <h3 class="font-bold text-lg text-amber-900">🇸🇪 Gustav Vasa (1523)</h3>
+                    <p class="text-sm text-gray-700">Gustav Vasa gjorde Sverige helt selvstendig den 6. juni 1523. Det er derfor nasjonaldagen er 6. juni!</p>
+                </div>
+
+                <!-- Timeline item 4 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
+                    <h3 class="font-bold text-lg text-amber-900">🤝 Unionen med Norge (1814–1905)</h3>
+                    <p class="text-sm text-gray-700">I 91 år var Sverige og Norge i union sammen, og delte samme konge frem til 1905.</p>
+                </div>
+
+                <!-- Timeline item 5 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">5</span>
+                    <h3 class="font-bold text-lg text-amber-900">🕊️ Fred og oppfinnelser</h3>
+                    <p class="text-sm text-gray-700">Sverige har ikke vært i krig på over 200 år, og har i stedet blitt kjent for oppfinnelser og industri.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 5: ØKONOMI OG NÆRINGSLIV -->
+        <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-emerald-600 text-white text-2xl p-3 rounded-2xl">💰</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">5. Økonomi og næringsliv</h2>
+            </div>
+
+            <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
+                Hva er det Sverige lager og selger til resten av verden? De er superkjente for store verdensberømte merker!
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🚗</div>
+                    <h3 class="font-bold text-emerald-900">Biler & Lastebiler</h3>
+                    <p class="text-xs text-gray-600 mt-1">Sverige lager kjente biler som Volvo og Scania.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🛋️</div>
+                    <h3 class="font-bold text-emerald-900">Møbler (IKEA)</h3>
+                    <p class="text-xs text-gray-600 mt-1">Verdens største møbelbutikk IKEA kommer fra Sverige!</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">📱</div>
+                    <h3 class="font-bold text-emerald-900">Teknologi & Musikk</h3>
+                    <p class="text-xs text-gray-600 mt-1">Musikkappen Spotify ble funnet opp i Sverige!</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🌲</div>
+                    <h3 class="font-bold text-emerald-900">Skog & Stål</h3>
+                    <p class="text-xs text-gray-600 mt-1">Massevis av trevirke, papir og jernmalm.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 6: KULTUR OG UTDANNING -->
+        <section class="bg-rose-50 rounded-3xl p-6 md:p-8 border-4 border-rose-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-rose-500 text-white text-2xl p-3 rounded-2xl">🎨</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-rose-800">6. Kultur og utdanning</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Skole og Idrett -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
+                    <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
+                        🏫 Skole og sport
+                    </h3>
+                    <p class="text-sm text-gray-700">
+                        Det er gratis å gå på skole i Sverige for barn. Svenskene elsker også konseptet "fika" (kaffe-/bolle-pause)!
+                    </p>
+                    <div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
+                        <p class="text-sm text-rose-900 font-semibold">🏒 Sveriges mest populære sporter:</p>
+                        <p class="text-xs text-gray-600">Ishockey, fotball og Innebandy!</p>
+                    </div>
+                </div>
+
+                <!-- Kjente personer -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
+                    <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
+                        🌟 Kjente svensker
+                    </h3>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>📚 <strong>Astrid Lindgren:</strong> Skrev bøkene om Pippi Langstrømpe!</li>
+                        <li>🎤 <strong>ABBA:</strong> En av verdens mest kjente popgrupper noensinne.</li>
+                        <li>⚽ <strong>Zlatan Ibrahimović:</strong> Superkjent fotballstjerne.</li>
+                        <li>🔬 <strong>Alfred Nobel:</strong> Fant opp dynamitten og skapte Nobelprisen.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- MORO QUIZ -->
+        <section class="bg-yellow-100 rounded-3xl p-6 md:p-8 border-4 border-yellow-400 shadow-md">
+            <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-4 text-center">
+                🧠 Test deg selv: Sverige-Quiz!
+            </h2>
+            <div id="quiz-container" class="bg-white p-6 rounded-2xl border-2 border-yellow-300 max-w-2xl mx-auto space-y-4">
+                <p id="quiz-question" class="text-lg font-bold text-gray-800 text-center">Spørsmål laster...</p>
+                <div id="quiz-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+                <div id="quiz-result" class="text-center font-bold text-lg mt-4 hidden"></div>
+            </div>
+        </section>
+
+    </main>
+
+<!-- FULLSKJERM MODAL FOR ENKELTBILDE MED ZOOM -->
+    <div 
+        id="mapModal" 
+        class="fixed inset-0 bg-black/90 z-50 hidden flex-col transition-opacity"
+        onclick="closeModal()"
+    >
+        <!-- TOPPBAR (Låst på toppen) -->
+        <div class="w-full bg-slate-900/90 border-b border-white/10 px-4 py-3 flex flex-wrap items-center justify-between text-white shrink-0 z-20 gap-2" onclick="event.stopPropagation()">
+            <div class="flex items-center gap-3">
+                <span id="modalTitle" class="text-sm md:text-base font-bold text-emerald-400">
+                    Kart over Sverige
+                </span>
+                <span class="text-xs text-white/60 hidden sm:inline">
+                    | Klikk på bildet for å veksle zoom
+                </span>
+            </div>
+
+            <!-- Zoome-kontroller og Bytte av kart -->
+            <div class="flex items-center gap-2">
+                <!-- Bytte-knapper -->
+                <button onclick="switchMap('Bilder/kart_sverige.png', 'Illustrasjonskart over Sverige')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                    Illustrasjon
+                </button>
+                <button onclick="switchMap('Bilder/kart_sverige_ekte.png', 'Geografisk kart over Sverige')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                    Ekte kart
+                </button>
+
+                <div class="h-4 w-[1px] bg-white/20 mx-1"></div>
+
+                <!-- Zoom-knapper -->
+                <button onclick="zoomMap(30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom inn">
+                    ➕
+                </button>
+                <button onclick="zoomMap(-30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom ut">
+                    ➖
+                </button>
+                <button onclick="resetZoom()" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Nullstill zoom">
+                    ↺
+                </button>
+                
+                <button 
+                    onclick="closeModal()" 
+                    class="bg-red-500 hover:bg-red-600 text-white w-8 h-8 rounded-full font-bold text-sm flex items-center justify-center transition ml-2 shadow"
+                    title="Lukk fullskjerm"
+                >
+                    ✕
+                </button>
+            </div>
+        </div>
+
+<!-- BILDER-OMRÅDE MED SENTRERT ZOOM -->
+        <div class="w-full h-full overflow-auto p-4 md:p-8 flex items-center justify-center" id="modalScrollArea" onclick="closeModal()">
+            <div class="m-auto flex items-center justify-center p-8" onclick="event.stopPropagation()">
+                <img 
+                    id="singleModalImg"
+                    src="" 
+                    alt="Kart i fullskjerm" 
+                    onclick="handleImageClick(event)"
+                    class="h-auto w-auto object-contain rounded-xl shadow-2xl border-2 border-white/20 cursor-zoom-in transition-transform duration-200"
+                    style="max-height: 75vh; max-width: 85vw;"
+                >
+            </div>
+        </div>
+
+        <!-- BUNNBAR -->
+        <div class="w-full bg-slate-900/80 text-center py-2 shrink-0 border-t border-white/10">
+            <p class="text-white/60 text-xs">
+                Klikk på kartet for å zoome inn/ut • Trykk på bakgrunnen eller ✕ for å lukke
+            </p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-800 text-white text-center py-6 mt-12">
+        <p class="text-sm">🇸🇪 SWE.html - Laget for læring og moro i skolen! 🇸🇪</p>
+    </footer>
+
+    <script>
+        // MODAL/FULLSKJERM-FUNKSJONER
+        function openModal() {
+            const modal = document.getElementById('mapModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('mapModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Lukk fullskjerm-visningen hvis man trykker på "Escape"
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // QUIZ DATA & LOGIC
+        const quizData = [
+            {
+                question: "Hva heter Sveriges hovedstad?",
+                options: ["Göteborg", "Stockholm", "Malmö", "Uppsala"],
+                answer: 1
+            },
+            {
+                question: "Hvilken oppdikter skapte bøkene om Pippi Langstrømpe?",
+                options: ["Astrid Lindgren", "H.C. Andersen", "Jo Nesbø", "Roald Dahl"],
+                answer: 0
+            },
+            {
+                question: "Når feirer Sverige sin nasjonaldag?",
+                options: ["17. mai", "4. juli", "6. juni", "24. desember"],
+                answer: 2
+            },
+            {
+                question: "Hvilket svensk merke er superkjent for sine flatpakkede møbler?",
+                options: ["Volvo", "IKEA", "Spotify", "HM"],
+                answer: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        function loadQuiz() {
+            const q = quizData[currentQuestion];
+            document.getElementById('quiz-question').textContent = q.question;
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+            document.getElementById('quiz-result').classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "bg-amber-100 hover:bg-amber-200 text-amber-900 font-semibold py-3 px-4 rounded-xl border-2 border-amber-300 transition text-sm";
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(idx);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIdx) {
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.classList.remove('hidden');
+            
+            if (selectedIdx === quizData[currentQuestion].answer) {
+                resultDiv.className = "text-center font-bold text-lg mt-4 text-emerald-600";
+                resultDiv.textContent = "🎉 Riktig svar! Så flink du er!";
+            } else {
+                resultDiv.className = "text-center font-bold text-lg mt-4 text-rose-600";
+                resultDiv.textContent = "❌ Nesten! Prøv en gang til.";
+                return;
+            }
+
+            setTimeout(() => {
+                currentQuestion = (currentQuestion + 1) % quizData.length;
+                loadQuiz();
+            }, 1800);
+        }
+
+        // Funksjon for å hente oppdatert data om Sverige
+        async function oppdaterSverigeFakta() {
+            // 1. Hent nyeste registrerte befolkningstall fra Wikidata (Sveriges ID = Q34)
+            try {
+                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q34.json');
+                const data = await response.json();
+                
+                const claims = data.entities.Q34.claims;
+                if (claims.P1082) {
+                    const folketallListe = claims.P1082;
+                    const nyesteTelling = folketallListe[folketallListe.length - 1];
+                    const antall = parseInt(nyesteTelling.mainsnak.datavalue.value.amount, 10);
+                    
+                    const formatertTall = new Intl.NumberFormat('no-NO').format(antall);
+                    const mill = (antall / 1000000).toFixed(1).replace('.', ',');
+                    
+                    const befolkningEl = document.getElementById('sverige-befolkning');
+                    if (befolkningEl) {
+                        befolkningEl.textContent = `Ca. ${mill} mill. (${formatertTall})`;
+                    }
+                }
+            } catch (feil) {
+                console.error('Kunne ikke hente live befolkningstall:', feil);
+                document.getElementById('sverige-befolkning').textContent = "Ca. 10,5 mill.";
+            }
+
+            // 2. Statsoverhode og Statsminister
+            settFaktaOmLeder('sverige-konge', 'stat-konge-navn', 'Carl XVI Gustaf');
+            settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Ulf Kristersson');
+        }
+
+        function settFaktaOmLeder(elementId1, elementId2, navn) {
+            const el1 = document.getElementById(elementId1);
+            const el2 = document.getElementById(elementId2);
+            if (el1) el1.textContent = navn;
+            if (el2) el2.textContent = navn;
+        }
+
+// MODAL OG SENTRERT ZOOM MOT KLIKKPUNKT
+        let zoomStep = 0; // 0 = 100%, 1 = 175%, 2 = 250%, 3 = 325%
+        const MAX_STEPS = 3;
+
+        // Skaleringsfaktorer (1.0, 1.75, 2.5, 3.25)
+        const ZOOM_LEVELS = [1, 1.75, 2.5, 3.25]; 
+
+        function openSingleModal(imgSrc, titleText) {
+            const modal = document.getElementById('mapModal');
+            const img = document.getElementById('singleModalImg');
+            const title = document.getElementById('modalTitle');
+
+            if (img && title && modal) {
+                img.src = imgSrc;
+                title.textContent = titleText;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                resetZoom();
+            }
+        }
+
+        function switchMap(imgSrc, titleText) {
+            const img = document.getElementById('singleModalImg');
+            const title = document.getElementById('modalTitle');
+            if (img && title) {
+                img.src = imgSrc;
+                title.textContent = titleText;
+                resetZoom();
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('mapModal');
+            if (modal) {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+                resetZoom();
+            }
+        }
+
+        function resetZoom() {
+            zoomStep = 0;
+            applyZoomStyles();
+            
+            const scrollArea = document.getElementById('modalScrollArea');
+            if (scrollArea) {
+                scrollArea.scrollLeft = 0;
+                scrollArea.scrollTop = 0;
+            }
+        }
+
+        function handleImageClick(event) {
+            event.stopPropagation(); // Unngå at modalen lukker seg
+
+            // Hvis vi er på maks zoom (Trinn 3 / 325%), nullstill tilbake til start
+            if (zoomStep >= MAX_STEPS) {
+                resetZoom();
+                return;
+            }
+
+            const img = document.getElementById('singleModalImg');
+            const scrollArea = document.getElementById('modalScrollArea');
+            if (!img || !scrollArea) return;
+
+            const imgRect = img.getBoundingClientRect();
+
+            // Klikkets posisjon som en uendret prosentandel (0.0 til 1.0) av bildet
+            const clickRatioX = (event.clientX - imgRect.left) / imgRect.width;
+            const clickRatioY = (event.clientY - imgRect.top) / imgRect.height;
+
+            executeZoomStep(zoomStep + 1, clickRatioX, clickRatioY);
+        }
+
+        function zoomMap(direction) {
+            // Brukes hvis brukeren trykker på + / - knappene
+            const targetStep = zoomStep + direction;
+            executeZoomStep(targetStep, 0.5, 0.5); // Sentrerer på midten av bildet
+        }
+
+        function executeZoomStep(nextStep, ratioX, ratioY) {
+            const scrollArea = document.getElementById('modalScrollArea');
+            const img = document.getElementById('singleModalImg');
+            const oldStep = zoomStep;
+
+            zoomStep = Math.min(Math.max(nextStep, 0), MAX_STEPS);
+
+            if (oldStep === zoomStep || !scrollArea || !img) return;
+
+            // Oppdater bildeskaleringen
+            applyZoomStyles();
+
+            // Vent til nettleseren har oppdatert bildestørrelsen i DOM
+            requestAnimationFrame(() => {
+                const imgRect = img.getBoundingClientRect();
+                const scrollRect = scrollArea.getBoundingClientRect();
+
+                // Finner hvor det valgte punktet på bildet befinner seg i forhold til scroll-innholdet
+                const targetXOnScroll = (imgRect.left - scrollRect.left + scrollArea.scrollLeft) + (imgRect.width * ratioX);
+                const targetYOnScroll = (imgRect.top - scrollRect.top + scrollArea.scrollTop) + (imgRect.height * ratioY);
+
+                // Beregn ny rulleposisjon for å plassere target-punktet midt i visningsområdet
+                const newScrollLeft = targetXOnScroll - (scrollArea.clientWidth / 2);
+                const newScrollTop = targetYOnScroll - (scrollArea.clientHeight / 2);
+
+                scrollArea.scrollTo({
+                    left: Math.max(0, newScrollLeft),
+                    top: Math.max(0, newScrollTop),
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        function applyZoomStyles() {
+            const img = document.getElementById('singleModalImg');
+            if (!img) return;
+
+            const scale = ZOOM_LEVELS[zoomStep];
+
+            // Skaler bildet fra midten
+            img.style.transform = `scale(${scale})`;
+            img.style.transformOrigin = 'center center';
+
+            // Oppdater musepekeren
+            if (zoomStep >= MAX_STEPS) {
+                img.classList.remove('cursor-zoom-in');
+                img.classList.add('cursor-zoom-out');
+            } else {
+                img.classList.remove('cursor-zoom-out');
+                img.classList.add('cursor-zoom-in');
+            }
+        }
+
+        // Lukk på Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+
+        // Kjør når siden laster
+        window.addEventListener('DOMContentLoaded', () => {
+            oppdaterSverigeFakta();
+            loadQuiz();
+        });
+    </script>
+</body>
+</html>

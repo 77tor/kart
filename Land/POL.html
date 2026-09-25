@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polen - Alt om landet i hjertet av Europa! 🇵🇱</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Fredoka for friendly headers, Inter for readable text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0fdf4;
+        }
+        h1, h2, h3, .font-fun {
+            font-family: 'Fredoka', cursive, sans-serif;
+        }
+        .card-bounce {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-bounce:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-amber-50/50 text-slate-800 min-h-screen pb-12">
+
+    <!-- HEADER -->
+    <header class="bg-red-600 text-white shadow-lg sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
+            <div class="flex items-center gap-3">
+                <img src="https://flagcdn.com/w40/pl.png" alt="Polens flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
+                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Polen - Alt om landet i hjertet av Europa!</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 mt-6 space-y-10">
+
+        <!-- KORTE FAKTA -->
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-blue-400">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-6 flex items-center gap-2">
+                ⚡ Korte fakta om Polen
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="bg-red-100 p-4 rounded-2xl text-center border-2 border-red-300 card-bounce">
+                    <div class="text-3xl mb-1">🏰</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Hovedstad</div>
+                    <div class="font-bold text-red-700 text-lg">Warszawa</div>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-2xl text-center border-2 border-blue-300 card-bounce">
+                    <div class="text-3xl mb-1">👨‍👩‍👧‍👦</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Mennesker</div>
+                    <div class="font-bold text-blue-700 text-lg" id="polen-befolkning">Laster...</div>
+                </div>
+                <div class="bg-green-100 p-4 rounded-2xl text-center border-2 border-green-300 card-bounce">
+                    <div class="text-3xl mb-1">🗣️</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Språk</div>
+                    <div class="font-bold text-green-700 text-base">Polsk</div>
+                </div>
+                <div class="bg-amber-100 p-4 rounded-2xl text-center border-2 border-amber-300 card-bounce">
+                    <div class="text-3xl mb-1">🏛️</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Statsoverhode</div>
+                    <div class="font-bold text-amber-800 text-base" id="polen-president">Laster...</div>
+                </div>
+                <div class="bg-purple-100 p-4 rounded-2xl text-center border-2 border-purple-300 card-bounce">
+                    <div class="text-3xl mb-1">🎉</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Nationaldag</div>
+                    <div class="font-bold text-purple-700 text-lg">3. mai</div>
+                </div>
+                <div class="bg-emerald-100 p-4 rounded-2xl text-center border-2 border-emerald-300 card-bounce">
+                    <div class="text-3xl mb-1">💰</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Valuta</div>
+                    <div class="font-bold text-emerald-700 text-base">Złoty (PLN)</div>
+                </div>
+            </div>
+        </section>
+
+<!-- MAP SECTION (To kart side om side) -->
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-emerald-400">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-emerald-600 flex items-center gap-2">
+                        🗺️ Kart over Polen
+                    </h2>
+                    <p class="text-gray-600 text-sm">Klikk på et av kartene for å åpne og zoome i fullskjerm!</p>
+                </div>
+            </div>
+
+            <!-- Bildebeholder -->
+            <div class="bg-emerald-50/50 rounded-2xl p-4 border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
+                <!-- Vanlig kart (Venstre) -->
+                <div class="text-center w-full">
+                    <img 
+                        src="Bilder/kart_polen.png" 
+                        alt="Illustrasjonskart over Polen" 
+                        onclick="openSingleModal('Bilder/kart_polen.png', 'Illustrasjonskart over Polen')"
+                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
+                    >
+                    <button 
+                        onclick="openSingleModal('Bilder/kart_polen.png', 'Illustrasjonskart over Polen')"
+                        class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
+                    >
+                        🔍 Åpne Illustrasjonskart
+                    </button>
+                </div>
+
+                <!-- Ekte kart (Høyre) -->
+                <div class="text-center w-full">
+                    <img 
+                        src="Bilder/kart_polen_ekte.png" 
+                        alt="Ekte kart over Polen" 
+                        onclick="openSingleModal('Bilder/kart_polen_ekte.png', 'Geografisk kart over Polen')"
+                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
+                    >
+                    <button 
+                        onclick="openSingleModal('Bilder/kart_polen_ekte.png', 'Geografisk kart over Polen')"
+                        class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
+                    >
+                        🔍 Åpne Geografisk kart
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 1: NATUR OG KLIMA -->
+        <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🌲</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">1. Natur og klima</h2>
+            </div>
+            
+            <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
+                Polen er et stort og variert land i Sentral-Europa med alt fra lange sandstrender i nord til høye, spektakulære fjell i sør!
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">⛰️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Høyeste punkt</div>
+                    <p class="text-sm text-gray-700"><strong>Rysy</strong> i Tatrafjellene er Polens høyeste topp, hele 2 499 meter over havet!</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">🏖️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Østersjøkysten</div>
+                    <p class="text-sm text-gray-700">I nord har Polen lange <strong>sandstrender</strong> langs Østersjøen og flotte kystbyer som Gdańsk.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">⛵</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Masuria-innsjøene</div>
+                    <p class="text-sm text-gray-700">Området kalles «De tusen sjøers land» og har over 2 000 vakre innsjøer knyttet sammen av elver.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
+                <div class="text-4xl">🦬</div>
+                <p class="text-sm text-gray-700">
+                    <strong>Dyreliv:</strong> I den berømte Białowieża-skogen bor europas største pattedyrsart, <strong>visenten</strong> (européisk bison). Her finnes også ulv, gaupe og bjørn!
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 2: FOLK OG SAMFUNN -->
+        <section class="bg-sky-50 rounded-3xl p-6 md:p-8 border-4 border-sky-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-sky-500 text-white text-2xl p-3 rounded-2xl">👨‍👩‍👧‍👦</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-sky-800">2. Folk og samfunn</h2>
+            </div>
+
+            <p class="text-lg text-sky-950 mb-6 leading-relaxed">
+                I Polen bor det ca. <strong>37,5 millioner mennesker</strong>. Polakker er kjente for sin store gjestfrihet og rike kultur!
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
+                    <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
+                        🏢 Største byer i Polen
+                    </h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">🔹 <strong>Warszawa:</strong> Hovedstaden som ble bygget opp igjen etter 2. verdenskrig!</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Kraków:</strong> Den historiske vakre byen med det berømte slottet Wawel.</li>
+                        <li class="flex items-center gap-2">🔹 Andre store byer: Wrocław, Łódź, Poznań og Gdańsk.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
+                    <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
+                        🥟 Tradisjoner & Mat
+                    </h3>
+                    <p class="text-sm text-gray-700">
+                        Et av de mest kjente ordene og matrettene i Polen er <strong>«Pierogi»</strong> – fylte deigputer med ost, poteter eller kjøtt!
+                    </p>
+                    <p class="text-sm text-gray-700">
+                        Polen har også en sterk tradisjon for feiring av navnedsdager, jul og påske med masse god mat.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-sky-100 p-4 rounded-2xl border-2 border-sky-300">
+                <h4 class="font-bold text-sky-900 mb-1">🗣️ Språk og kultur</h4>
+                <p class="text-sm text-sky-800">
+                    I Polen snakker de <strong>polsk</strong>. Det er et slavisk språk som bruker det latinske alfabetet, men har noen ekstra bokstaver som Ą, Ę, Ć, Ł og Ż!
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 3: STAT OG POLITIKK -->
+        <section class="bg-purple-50 rounded-3xl p-6 md:p-8 border-4 border-purple-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-purple-500 text-white text-2xl p-3 rounded-2xl">🏛️</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-purple-800">3. Stat og politikk</h2>
+            </div>
+
+            <p class="text-lg text-purple-950 mb-6 leading-relaxed">
+                Polen er en <strong>republikk</strong> og et parlamentarisk demokrati, styrt av en valgt president og statsminister.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">👔</div>
+                    <h3 class="font-bold text-purple-900" id="stat-president-navn">Laster...</h3>
+                    <p class="text-xs text-gray-600 mt-1">Polens president og statsoverhode.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">💼</div>
+                    <h3 class="font-bold text-purple-900" id="stat-pm-navn">Laster...</h3>
+                    <p class="text-xs text-gray-600 mt-1">Statsministeren som leder regjeringen.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🏛️</div>
+                    <h3 class="font-bold text-purple-900">Sejm og Senatet</h3>
+                    <p class="text-xs text-gray-600 mt-1">Det polske parlamentet i Warszawa.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-purple-200 text-center">
+                <p class="text-sm font-semibold text-purple-900">
+                    📍 Polen er delt inn i <strong>16 fylker</strong> (kalt <em>województwo</em>).
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 4: HISTORIE -->
+        <section class="bg-amber-50 rounded-3xl p-6 md:p-8 border-4 border-amber-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-amber-500 text-white text-2xl p-3 rounded-2xl">📜</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Polens historie</h2>
+            </div>
+
+            <div class="relative border-l-4 border-amber-400 ml-4 pl-6 space-y-6">
+                <!-- Timeline item 1 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">1</span>
+                    <h3 class="font-bold text-lg text-amber-900">👑 Grunnleggelsen (966)</h3>
+                    <p class="text-sm text-gray-700">Hertug Mieszko I lot seg døpe og samlet de polske stammene. Dette regnes som Polens fødsel!</p>
+                </div>
+
+                <!-- Timeline item 2 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">2</span>
+                    <h3 class="font-bold text-lg text-amber-900">⚔️ Stormaktstiden (1569)</h3>
+                    <p class="text-sm text-gray-700">Polen gikk sammen med Litauen og skapte en av Europas største og mektigste stater på den tiden.</p>
+                </div>
+
+                <!-- Timeline item 3 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">3</span>
+                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+                        <img src="https://flagcdn.com/w40/pl.png" alt="Polens flagg" class="w-6 h-auto rounded border border-gray-200 shadow-sm inline-block">
+                        Grunnloven av 3. mai (1791)
+                    </h3>
+                    <p class="text-sm text-gray-700">Polen vedtok den første moderne grunnloven i Europa! Dagen feires som nasjonaldag i dag.</p>
+                </div>
+
+                <!-- Timeline item 4 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
+                    <h3 class="font-bold text-lg text-amber-900">🕊️ Frigjøringen og Solidarność (1980–1989)</h3>
+                    <p class="text-sm text-gray-700">Fagforeningen Solidarność, ledet av Lech Wałęsa, kjempet for frihet og bidro til at kommunismen falt i Europa.</p>
+                </div>
+
+                <!-- Timeline item 5 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">5</span>
+                    <h3 class="font-bold text-lg text-amber-900">🇪🇺 Medlem av EU og NATO (2004)</h3>
+                    <p class="text-sm text-gray-700">Polen ble fullverdig medlem av den Europeiske Union (EU) og har hatt stor økonomisk vekst siden.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 5: ØKONOMI OG NÆRINGSLIV -->
+        <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-emerald-600 text-white text-2xl p-3 rounded-2xl">💰</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">5. Økonomi og næringsliv</h2>
+            </div>
+
+            <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
+                Hva lever de av i Polen? Polen har en stor og moderne økonomi kjent for alt fra teknologi og spillutvikling til landbruk!
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🎮</div>
+                    <h3 class="font-bold text-emerald-900">Spillutvikling</h3>
+                    <p class="text-xs text-gray-600 mt-1">Verdensberømte spill som «The Witcher» lages i Polen.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🍎</div>
+                    <h3 class="font-bold text-emerald-900">Landbruk</h3>
+                    <p class="text-xs text-gray-600 mt-1">Polen er en av Europas største produsenter av epler og grønnsaker.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🚗</div>
+                    <h3 class="font-bold text-emerald-900">Industri</h3>
+                    <p class="text-xs text-gray-600 mt-1">Stor produksjon av biler, maskiner, møbler og elektronikk.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">💎</div>
+                    <h3 class="font-bold text-emerald-900">Rav (Amber)</h3>
+                    <p class="text-xs text-gray-600 mt-1">Østersjøkysten er verdensberømt for rav smykkestein.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 6: KULTUR OG UTDANNING -->
+        <section class="bg-rose-50 rounded-3xl p-6 md:p-8 border-4 border-rose-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-rose-500 text-white text-2xl p-3 rounded-2xl">🎨</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-rose-800">6. Kultur og underholdning</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Skole og Idrett -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
+                    <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
+                        🏫 Skole og sport
+                    </h3>
+                    <p class="text-sm text-gray-700">
+                        Barn i Polen starter på skolen når de er 7 år gamle. Polen har noen av de eldste universitetene i Europa!
+                    </p>
+                    <div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
+                        <p class="text-sm text-rose-900 font-semibold">⚽ Polens mest populære sporter:</p>
+                        <p class="text-xs text-gray-600">Fotball, volleyball og skihopping!</p>
+                    </div>
+                </div>
+
+                <!-- Kjente personer -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
+                    <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
+                        🌟 Kjente polakker
+                    </h3>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>🔭 <strong>Nikolaus Kopernikus:</strong> Astronom som oppdaget at jorden går rundt solen.</li>
+                        <li>🧪 <strong>Marie Curie:</strong> Berømt forsker som vant to Nobelpriser i fysikk og kjemi.</li>
+                        <li>🎹 <strong>Frédéric Chopin:</strong> En av verdens mest berømte pianister og komponister.</li>
+                        <li>⚽ <strong>Robert Lewandowski:</strong> En av verdens aller beste fotballspillere!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- MORO QUIZ -->
+        <section class="bg-yellow-100 rounded-3xl p-6 md:p-8 border-4 border-yellow-400 shadow-md">
+            <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-4 text-center">
+                🧠 Test deg selv: Polen-Quiz!
+            </h2>
+            <div id="quiz-container" class="bg-white p-6 rounded-2xl border-2 border-yellow-300 max-w-2xl mx-auto space-y-4">
+                <p id="quiz-question" class="text-lg font-bold text-gray-800 text-center">Spørsmål laster...</p>
+                <div id="quiz-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+                <div id="quiz-result" class="text-center font-bold text-lg mt-4 hidden"></div>
+            </div>
+        </section>
+
+    </main>
+
+<!-- FULLSKJERM MODAL FOR ENKELTBILDE MED ZOOM -->
+    <div 
+        id="mapModal" 
+        class="fixed inset-0 bg-black/90 z-50 hidden flex-col transition-opacity"
+        onclick="closeModal()"
+    >
+        <!-- TOPPBAR (Låst på toppen) -->
+        <div class="w-full bg-slate-900/90 border-b border-white/10 px-4 py-3 flex flex-wrap items-center justify-between text-white shrink-0 z-20 gap-2" onclick="event.stopPropagation()">
+            <div class="flex items-center gap-3">
+                <span id="modalTitle" class="text-sm md:text-base font-bold text-emerald-400">
+                    Kart over Polen
+                </span>
+                <span class="text-xs text-white/60 hidden sm:inline">
+                    | Klikk på bildet for å veksle zoom
+                </span>
+            </div>
+
+            <!-- Zoome-kontroller og Bytte av kart -->
+            <div class="flex items-center gap-2">
+                <!-- Bytte-knapper -->
+                <button onclick="switchMap('Bilder/kart_polen.png', 'Illustrasjonskart over Polen')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                    Illustrasjon
+                </button>
+                <button onclick="switchMap('Bilder/kart_polen_ekte.png', 'Geografisk kart over Polen')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                    Ekte kart
+                </button>
+
+                <div class="h-4 w-[1px] bg-white/20 mx-1"></div>
+
+                <!-- Zoom-knapper -->
+                <button onclick="zoomMap(30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom inn">
+                    ➕
+                </button>
+                <button onclick="zoomMap(-30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom ut">
+                    ➖
+                </button>
+                <button onclick="resetZoom()" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Nullstill zoom">
+                    ↺
+                </button>
+                
+                <button 
+                    onclick="closeModal()" 
+                    class="bg-red-500 hover:bg-red-600 text-white w-8 h-8 rounded-full font-bold text-sm flex items-center justify-center transition ml-2 shadow"
+                    title="Lukk fullskjerm"
+                >
+                    ✕
+                </button>
+            </div>
+        </div>
+
+<!-- BILDER-OMRÅDE MED SENTRERT ZOOM -->
+        <div class="w-full h-full overflow-auto p-4 md:p-8 flex items-center justify-center" id="modalScrollArea" onclick="closeModal()">
+            <div class="m-auto flex items-center justify-center p-8" onclick="event.stopPropagation()">
+                <img 
+                    id="singleModalImg"
+                    src="" 
+                    alt="Kart i fullskjerm" 
+                    onclick="handleImageClick(event)"
+                    class="h-auto w-auto object-contain rounded-xl shadow-2xl border-2 border-white/20 cursor-zoom-in transition-transform duration-200"
+                    style="max-height: 75vh; max-width: 85vw;"
+                >
+            </div>
+        </div>
+
+        <!-- BUNNBAR -->
+        <div class="w-full bg-slate-900/80 text-center py-2 shrink-0 border-t border-white/10">
+            <p class="text-white/60 text-xs">
+                Klikk på kartet for å zoome inn/ut • Trykk på bakgrunnen eller ✕ for å lukke
+            </p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-800 text-white text-center py-6 mt-12">
+        <p class="text-sm">🇵🇱 POL.html - Laget for læring og moro i skolen! 🇵🇱</p>
+    </footer>
+
+    <script>
+        // MODAL/FULLSKJERM-FUNKSJONER
+        function openModal() {
+            const modal = document.getElementById('mapModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('mapModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Lukk fullskjerm-visningen hvis man trykker på "Escape"
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // OPPSTART AV PAGE / QUIZ
+        window.onload = function() {
+            loadQuiz();
+        };
+
+        // QUIZ DATA & LOGIC
+        const quizData = [
+            {
+                question: "Hva heter Polens hovedstad?",
+                options: ["Kraków", "Warszawa", "Gdańsk", "Wrocław"],
+                answer: 1
+            },
+            {
+                question: "Hva heter den tradisjonelle polske deigputen fylt med mat?",
+                options: ["Tapas", "Pierogi", "Sushi", "Gulasj"],
+                answer: 1
+            },
+            {
+                question: "Hvilket enormt pattedyr lever vilt i Polens Białowieża-skog?",
+                options: ["Isbjørn", "Elg", "Visent (Bison)", "Kenguru"],
+                answer: 2
+            },
+            {
+                question: "Hva heter Polens største fotballstjerne?",
+                options: ["Robert Lewandowski", "Cristiano Ronaldo", "Erling Braut Haaland", "Luka Modrić"],
+                answer: 0
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        function loadQuiz() {
+            const q = quizData[currentQuestion];
+            document.getElementById('quiz-question').textContent = q.question;
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+            document.getElementById('quiz-result').classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "bg-amber-100 hover:bg-amber-200 text-amber-900 font-semibold py-3 px-4 rounded-xl border-2 border-amber-300 transition text-sm";
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(idx);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIdx) {
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.classList.remove('hidden');
+            
+            if (selectedIdx === quizData[currentQuestion].answer) {
+                resultDiv.className = "text-center font-bold text-lg mt-4 text-emerald-600";
+                resultDiv.textContent = "🎉 Riktig svar! Bardzo dobrze (veldig bra)!";
+            } else {
+                resultDiv.className = "text-center font-bold text-lg mt-4 text-rose-600";
+                resultDiv.textContent = "❌ Nesten! Prøv en gang til.";
+                return;
+            }
+
+            setTimeout(() => {
+                currentQuestion = (currentQuestion + 1) % quizData.length;
+                loadQuiz();
+            }, 1800);
+        }
+
+        // Funksjon for å hente oppdatert data om Polen
+        async function oppdaterPolenFakta() {
+            // 1. Hent nyeste registrerte befolkningstall fra Wikidata (Polens ID = Q36)
+            try {
+                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q36.json');
+                const data = await response.json();
+                
+                const claims = data.entities.Q36.claims;
+                if (claims.P1082) {
+                    const folketallListe = claims.P1082;
+                    const nyesteTelling = folketallListe[folketallListe.length - 1];
+                    const antall = parseInt(nyesteTelling.mainsnak.datavalue.value.amount, 10);
+                    
+                    const formatertTall = new Intl.NumberFormat('no-NO').format(antall);
+                    const mill = (antall / 1000000).toFixed(1).replace('.', ',');
+                    
+                    const befolkningEl = document.getElementById('polen-befolkning');
+                    if (befolkningEl) {
+                        befolkningEl.textContent = `Ca. ${mill} mill. (${formatertTall})`;
+                    }
+                }
+            } catch (feil) {
+                console.error('Kunne ikke hente live befolkningstall:', feil);
+                document.getElementById('polen-befolkning').textContent = "Ca. 37,5 mill.";
+            }
+
+            // 2. Statsoverhode og Statsminister
+            settFaktaOmLeder('polen-president', 'stat-president-navn', 'Andrzej Duda');
+            settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Donald Tusk');
+        }
+
+        function settFaktaOmLeder(elementId1, elementId2, navn) {
+            const el1 = document.getElementById(elementId1);
+            const el2 = document.getElementById(elementId2);
+            if (el1) el1.textContent = navn;
+            if (el2) el2.textContent = navn;
+        }
+
+// MODAL OG SENTRERT ZOOM MOT KLIKKPUNKT
+        let zoomStep = 0; // 0 = 100%, 1 = 175%, 2 = 250%, 3 = 325%
+        const MAX_STEPS = 3;
+
+        // Skaleringsfaktorer (1.0, 1.75, 2.5, 3.25)
+        const ZOOM_LEVELS = [1, 1.75, 2.5, 3.25]; 
+
+        function openSingleModal(imgSrc, titleText) {
+            const modal = document.getElementById('mapModal');
+            const img = document.getElementById('singleModalImg');
+            const title = document.getElementById('modalTitle');
+
+            if (img && title && modal) {
+                img.src = imgSrc;
+                title.textContent = titleText;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                resetZoom();
+            }
+        }
+
+        function switchMap(imgSrc, titleText) {
+            const img = document.getElementById('singleModalImg');
+            const title = document.getElementById('modalTitle');
+            if (img && title) {
+                img.src = imgSrc;
+                title.textContent = titleText;
+                resetZoom();
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('mapModal');
+            if (modal) {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+                resetZoom();
+            }
+        }
+
+        function resetZoom() {
+            zoomStep = 0;
+            applyZoomStyles();
+            
+            const scrollArea = document.getElementById('modalScrollArea');
+            if (scrollArea) {
+                scrollArea.scrollLeft = 0;
+                scrollArea.scrollTop = 0;
+            }
+        }
+
+        function handleImageClick(event) {
+            event.stopPropagation(); // Unngå at modalen lukker seg
+
+            // Hvis vi er på maks zoom (Trinn 3 / 325%), nullstill tilbake til start
+            if (zoomStep >= MAX_STEPS) {
+                resetZoom();
+                return;
+            }
+
+            const img = document.getElementById('singleModalImg');
+            const scrollArea = document.getElementById('modalScrollArea');
+            if (!img || !scrollArea) return;
+
+            const imgRect = img.getBoundingClientRect();
+
+            // Klikkets posisjon som en uendret prosentandel (0.0 til 1.0) av bildet
+            const clickRatioX = (event.clientX - imgRect.left) / imgRect.width;
+            const clickRatioY = (event.clientY - imgRect.top) / imgRect.height;
+
+            executeZoomStep(zoomStep + 1, clickRatioX, clickRatioY);
+        }
+
+        function zoomMap(direction) {
+            // Brukes hvis brukeren trykker på + / - knappene
+            const targetStep = zoomStep + direction;
+            executeZoomStep(targetStep, 0.5, 0.5); // Sentrerer på midten av bildet
+        }
+
+        function executeZoomStep(nextStep, ratioX, ratioY) {
+            const scrollArea = document.getElementById('modalScrollArea');
+            const img = document.getElementById('singleModalImg');
+            const oldStep = zoomStep;
+
+            zoomStep = Math.min(Math.max(nextStep, 0), MAX_STEPS);
+
+            if (oldStep === zoomStep || !scrollArea || !img) return;
+
+            // Oppdater bildeskaleringen
+            applyZoomStyles();
+
+            // Vent til nettleseren har oppdatert bildestørrelsen i DOM
+            requestAnimationFrame(() => {
+                const imgRect = img.getBoundingClientRect();
+                const scrollRect = scrollArea.getBoundingClientRect();
+
+                // Finner hvor det valgte punktet på bildet befinner seg i forhold til scroll-innholdet
+                const targetXOnScroll = (imgRect.left - scrollRect.left + scrollArea.scrollLeft) + (imgRect.width * ratioX);
+                const targetYOnScroll = (imgRect.top - scrollRect.top + scrollArea.scrollTop) + (imgRect.height * ratioY);
+
+                // Beregn ny rulleposisjon for å plassere target-punktet midt i visningsområdet
+                const newScrollLeft = targetXOnScroll - (scrollArea.clientWidth / 2);
+                const newScrollTop = targetYOnScroll - (scrollArea.clientHeight / 2);
+
+                scrollArea.scrollTo({
+                    left: Math.max(0, newScrollLeft),
+                    top: Math.max(0, newScrollTop),
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        function applyZoomStyles() {
+            const img = document.getElementById('singleModalImg');
+            if (!img) return;
+
+            const scale = ZOOM_LEVELS[zoomStep];
+
+            // Skaler bildet fra midten
+            img.style.transform = `scale(${scale})`;
+            img.style.transformOrigin = 'center center';
+
+            // Oppdater musepekeren
+            if (zoomStep >= MAX_STEPS) {
+                img.classList.remove('cursor-zoom-in');
+                img.classList.add('cursor-zoom-out');
+            } else {
+                img.classList.remove('cursor-zoom-out');
+                img.classList.add('cursor-zoom-in');
+            }
+        }
+
+        // Lukk på Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+
+        // Kjør når siden laster
+        window.addEventListener('DOMContentLoaded', oppdaterPolenFakta);
+    </script>
+</body>
+</html>
