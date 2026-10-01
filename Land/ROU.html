@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Island - Alt om landet til naboene våre!</title>
-    
-    <!-- Tailwind CSS -->
+    <title>Romania - Alt om det vakre landet i Øst-Europa! 🇷🇴</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts (Fredoka for friendly headers, Inter for readable text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -36,8 +32,8 @@
     <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-40">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
             <div class="flex items-center gap-3">
-                <img src="https://flagcdn.com/w40/is.png" alt="Islands flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
-                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Island - Alt om landet til naboene våre!</h1>
+                <img src="https://flagcdn.com/w40/ro.png" alt="Romanias flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
+                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Romania - Alt om det vakre landet i Øst-Europa!</h1>
             </div>
         </div>
     </header>
@@ -47,81 +43,79 @@
         <!-- KORTE FAKTA -->
         <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-blue-400">
             <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-6 flex items-center gap-2">
-                ⚡ Korte fakta om Island
+                ⚡ Korte fakta om Romania
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 <div class="bg-red-100 p-4 rounded-2xl text-center border-2 border-red-300 card-bounce">
                     <div class="text-3xl mb-1">🏰</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Hovedstad</div>
-                    <div class="font-bold text-red-700 text-lg">Reykjavík</div>
+                    <div class="font-bold text-red-700 text-lg">București</div>
                 </div>
                 <div class="bg-blue-100 p-4 rounded-2xl text-center border-2 border-blue-300 card-bounce">
                     <div class="text-3xl mb-1">👨‍👩‍👧‍👦</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Mennesker</div>
-                    <div class="font-bold text-blue-700 text-lg" id="island-befolkning">Laster...</div>
+                    <div class="font-bold text-blue-700 text-lg" id="romania-befolkning">Laster...</div>
                 </div>
                 <div class="bg-green-100 p-4 rounded-2xl text-center border-2 border-green-300 card-bounce">
                     <div class="text-3xl mb-1">🗣️</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Språk</div>
-                    <div class="font-bold text-green-700 text-base">Islandsk</div>
+                    <div class="font-bold text-green-700 text-base">Rumensk</div>
                 </div>
                 <div class="bg-amber-100 p-4 rounded-2xl text-center border-2 border-amber-300 card-bounce">
                     <div class="text-3xl mb-1">🏛️</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Statsoverhode</div>
-                    <div class="font-bold text-amber-800 text-base" id="island-president">Laster...</div>
+                    <div class="font-bold text-amber-800 text-base" id="romania-leder">Laster...</div>
                 </div>
                 <div class="bg-purple-100 p-4 rounded-2xl text-center border-2 border-purple-300 card-bounce">
                     <div class="text-3xl mb-1">🎉</div>
-                    <div class="text-xs text-gray-500 font-semibold uppercase">Nasjonalfeiring</div>
-                    <div class="font-bold text-purple-700 text-lg">17. juni</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Nasjonaldag</div>
+                    <div class="font-bold text-purple-700 text-lg">1. desember</div>
                 </div>
                 <div class="bg-emerald-100 p-4 rounded-2xl text-center border-2 border-emerald-300 card-bounce">
                     <div class="text-3xl mb-1">💰</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Valuta</div>
-                    <div class="font-bold text-emerald-700 text-base">Islandske krónur</div>
+                    <div class="font-bold text-emerald-700 text-base">Rumensk leu (RON)</div>
                 </div>
             </div>
         </section>
 
-<!-- MAP SECTION (To kart side om side) -->
+        <!-- MAP SECTION (To kart side om side) -->
         <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-emerald-400">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-bold text-emerald-600 flex items-center gap-2">
-                        🗺️ Kart over Island
+                        🗺️ Kart over Romania
                     </h2>
                     <p class="text-gray-600 text-sm">Klikk på et av kartene for å åpne og zoome i fullskjerm!</p>
                 </div>
             </div>
 
-            <!-- Bildebeholder -->
             <div class="bg-emerald-50/50 rounded-2xl p-4 border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
                 <!-- Vanlig kart (Venstre) -->
                 <div class="text-center w-full">
                     <img 
-                        src="Bilder/kart_island.png" 
-                        alt="Illustrasjonskart over Island" 
-                        onclick="openSingleModal('Bilder/kart_island.png', 'Illustrasjonskart over Island')"
+                        src="Bilder/kart_romania.png" 
+                        alt="Illustrasjonskart over Romania" 
+                        onclick="openSingleModal('Bilder/kart_romania.png', 'Illustrasjonskart over Romania')"
                         class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
                     >
                     <button 
-                        onclick="openSingleModal('Bilder/kart_island.png', 'Illustrasjonskart over Island')"
+                        onclick="openSingleModal('Bilder/kart_romania.png', 'Illustrasjonskart over Romania')"
                         class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
                     >
                         🔍 Åpne Illustrasjonskart
                     </button>
                 </div>
 
-                <!-- Ekte kart (Høyre) -->
                 <div class="text-center w-full">
                     <img 
-                        src="Bilder/kart_island_ekte.png" 
-                        alt="Ekte kart over Island" 
-                        onclick="openSingleModal('Bilder/kart_island_ekte.png', 'Geografisk kart over Island')"
+                        src="Bilder/kart_romania_ekte.png" 
+                        alt="Ekte kart over Romania" 
+                        onclick="openSingleModal('Bilder/kart_romania_ekte.png', 'Geografisk kart over Romania')"
                         class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
                     >
                     <button 
-                        onclick="openSingleModal('Bilder/kart_island_ekte.png', 'Geografisk kart over Island')"
+                        onclick="openSingleModal('Bilder/kart_romania_ekte.png', 'Geografisk kart over Romania')"
                         class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
                     >
                         🔍 Åpne Geografisk kart
@@ -133,39 +127,38 @@
         <!-- SEKSJON 1: NATUR OG KLIMA -->
         <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
-                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🌋</span>
+                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🏔️</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">1. Natur og klima</h2>
             </div>
             
             <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
-                Island kalles ofte for <strong>«Sagaøya»</strong> eller <strong>«Ilden og isens land»</strong>! Øya er full av spennende vulkaner, geysirer, varme kilder og digre isbreer.
+                Romania har en utrolig variert natur! Landet er delt inn i høye fjell, grønne åser og store sletter som strekker seg mot Svartehavet.
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">🌋</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Ekte vulkaner</div>
-                    <p class="text-sm text-gray-700">Island har over <strong>30 aktive vulkaner</strong>! Av og til spruter det rykende varm lava opp fra bakken.</p>
+                    <div class="text-3xl mb-2">⛰️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Karpatene</div>
+                    <p class="text-sm text-gray-700">Fjellkjeden <strong>Karpatene</strong> går tvers gjennom landet. Høyeste topp er Moldoveanu på 2 544 meter!</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">♨️</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Sprutende geysirer</div>
-                    <p class="text-sm text-gray-700">En <strong>geysir</strong> er en varm kilde som spruter kokende vann og damp skyhøyt opp i luften!</p>
+                    <div class="text-3xl mb-2">🌊</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Donaudeltaet</div>
+                    <p class="text-sm text-gray-700">Elva Donau munning ut i Svartehavet danner et enormt våtmarksområde fullt av sjeldne fugler og dyr.</p>
                 </div>
-<div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce flex flex-col items-start">
-    <div class="w-12 h-12 mb-3 rounded-xl overflow-hidden shadow-inner bg-emerald-50 p-1">
-        <img src="Bilder/isbre.png" alt="Isbre på Island" class="w-full h-full object-cover rounded-lg" />
-    </div>
-    <div class="font-bold text-lg text-emerald-800 mb-1">Kjempestore isbreer</div>
-    <p class="text-sm text-gray-700">Nesten 11 % av Island dekkes av isbreer. <strong>Vatnajökull</strong> er Europas største isbre!</p>
-</div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">☀️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Inlandsklima</div>
+                    <p class="text-sm text-gray-700">Romania har varme, solrike somre og kalde vintre med mye snø oppe i fjellene!</p>
+                </div>
             </div>
 
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
-                <div class="text-4xl">🐴</div>
+                <div class="text-4xl">🐻</div>
                 <p class="text-sm text-gray-700">
-                    <strong>Dyreliv:</strong> Den sterke <strong>islandshesten</strong> er berømt for sine fem gangarter! På kysten finner du søte lundefugler, fjellrev og hvaler i havet.
+                    <strong>Dyreliv:</strong> Romania har en av Europas største bestander av brunbjørn, ulv og gaupe i sine ville barskoger!
                 </p>
             </div>
         </section>
@@ -173,43 +166,43 @@
         <!-- SEKSJON 2: FOLK OG SAMFUNN -->
         <section class="bg-sky-50 rounded-3xl p-6 md:p-8 border-4 border-sky-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
-                <span class="bg-sky-500 text-white text-2xl p-3 rounded-2xl">👨‍👩‍👧‍👦</span>
+                <span class="bg-sky-500 text-white text-2xl p-3 rounded-2xl">👨‍👩‍‍👧‍👦</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-sky-800">2. Folk og samfunn</h2>
             </div>
 
             <p class="text-lg text-sky-950 mb-6 leading-relaxed">
-                Island er et lite land i befolkning, med rundt <strong>390 000 mennesker</strong>. De fleste bor i eller i nærheten av hovedstaden Reykjavík.
+                I Romania bor det omtrent <strong>19 millioner mennesker</strong>. Rumenerne er kjent for sin gjestfrihet, rike tradisjoner og fargerike folkeliv!
             </p>
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
                     <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
-                        🏢 Byer og steder
+                        🏢 Største byer i Romania
                     </h3>
                     <ul class="space-y-2 text-sm text-gray-700">
-                        <li class="flex items-center gap-2">🔹 <strong>Reykjavík:</strong> Verdens nordligste hovedstad!</li>
-                        <li class="flex items-center gap-2">🔹 <strong>Kópavogur & Hafnarfjörður:</strong> Store nabobyer like ved Reykjavík.</li>
-                        <li class="flex items-center gap-2">🔹 <strong>Akureyri:</strong> Den største byen i den nordlige delen av Island.</li>
+                        <li class="flex items-center gap-2">🔹 <strong>București:</strong> Hovedstaden, ofte kalt «Lille Paris» for sin vakre arkitektur!</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Cluj-Napoca:</strong> Universitetsbyen i hjertet av Transilvania.</li>
+                        <li class="flex items-center gap-2">🔹 Andre store byer: Timișoara, Iași, Constanța (kystby) og Brașov.</li>
                     </ul>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
                     <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
-                        🏊 Varme utendørsbad
+                        🏰 Transilvania og Slott
                     </h3>
                     <p class="text-sm text-gray-700">
-                        Siden jorden varmer opp vannet under bakken, elsker islendinger å bader ute i varme bassenger hele året!
+                        Den mest kjente regionen er <strong>Transilvania</strong>, omringet av fjell og fylt med mektige middelalderslott.
                     </p>
                     <p class="text-sm text-gray-700">
-                        Det mest berømte badet kalles <strong>«Den blå lagune»</strong>, der vannet er varmt og lyseblått.
+                        Her ligger blant annet det berømte <strong>Bran-slottet</strong>, som er kjent fra historiene om Dracula!
                     </p>
                 </div>
             </div>
 
             <div class="mt-6 bg-sky-100 p-4 rounded-2xl border-2 border-sky-300">
-                <h4 class="font-bold text-sky-900 mb-1">🗣️ Et gammelt og spennende språk!</h4>
+                <h4 class="font-bold text-sky-900 mb-1">🗣️ Et romansk språk</h4>
                 <p class="text-sm text-sky-800">
-                    Norsk og islandsk var nesten helt likt i vikingtiden! Islandsk har forandret seg så lite at islendingene i dag kan lese 1000 år gamle vikingsagaer uten problemer.
+                    Det offisielle språket er <strong>rumensk</strong>. Selv om landet ligger i Øst-Europa, er rumensk et romansk språk beslektet med italiensk, fransk og spansk!
                 </p>
             </div>
         </section>
@@ -222,14 +215,14 @@
             </div>
 
             <p class="text-lg text-purple-950 mb-6 leading-relaxed">
-                Island er en <strong>republikk</strong> og et <strong>demokrati</strong>. Landet har sin egen valgte president og et av verdens eldste parlamenter!
+                Romania er en <strong>republikk</strong> og et <strong>demokrati</strong> der folket velger sine ledere. Landet er medlem av både EU og NATO.
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
-                    <div class="text-4xl mb-2"><img src="https://flagcdn.com/w40/is.png" alt="Bulgarias flagg" class="w-12 h-auto inline-block" /></div>
-                    <h3 class="font-bold text-purple-900" id="stat-president-navn">Laster...</h3>
-                    <p class="text-xs text-gray-600 mt-1">Islands president og statsoverhode.</p>
+                    <div class="text-4xl mb-2"><img src="https://flagcdn.com/w40/ro.png" alt="Romanias flagg" class="w-12 h-auto inline-block" /></div>
+                    <h3 class="font-bold text-purple-900" id="stat-leder-navn">Laster...</h3>
+                    <p class="text-xs text-gray-600 mt-1">Romanias president og statsoverhode.</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
@@ -240,14 +233,14 @@
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
                     <div class="text-4xl mb-2">🏛️</div>
-                    <h3 class="font-bold text-purple-900">Altinget (Alþingi)</h3>
-                    <p class="text-xs text-gray-600 mt-1">Islands parlament, stiftet så tidlig som i år 930!</p>
+                    <h3 class="font-bold text-purple-900">Parlamentet</h3>
+                    <p class="text-xs text-gray-600 mt-1">Holder til i det enorme Parlamentspalasset i București.</p>
                 </div>
             </div>
 
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-purple-200 text-center">
                 <p class="text-sm font-semibold text-purple-900">
-                    📍 Island er delt inn i <strong>8 regioner</strong> og <strong>64 kommuner</strong>.
+                    📍 Romania er delt inn i <strong>41 fylker (județe)</strong> og hovedstadsområdet București.
                 </p>
             </div>
         </section>
@@ -256,46 +249,48 @@
         <section class="bg-amber-50 rounded-3xl p-6 md:p-8 border-4 border-amber-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
                 <span class="bg-amber-500 text-white text-2xl p-3 rounded-2xl">📜</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Islands historie</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Romanias historie</h2>
             </div>
 
             <div class="relative border-l-4 border-amber-400 ml-4 pl-6 space-y-6">
                 <!-- Timeline item 1 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">1</span>
-                    <h3 class="font-bold text-lg text-amber-900"><img src="Bilder/viking.png" alt="Viking" class="w-6 h-auto inline-block align-middle mr-1" /> Norske vikinger bosetter seg (ca. 874)</h3>
-                    <p class="text-sm text-gray-700">Vikingen Ingolv Arnarsson seilte fra Norge og slo seg ned der Reykjavík ligger i dag.</p>
+                    <h3 class="font-bold text-lg text-amber-900">🛡️ Dakia og Romerriket (106 e.Kr.)</h3>
+                    <p class="text-sm text-gray-700">Romerne erobret riket Dakia. Blandingen av romere og dakere la grunnlaget for det rumenske folket og språket!</p>
                 </div>
 
                 <!-- Timeline item 2 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">2</span>
-                    <h3 class="font-bold text-lg text-amber-900">🏛️ Altinget stiftes på Tingvellir (930)</h3>
-                    <p class="text-sm text-gray-700">Vikingene møttes på sletten Tingvellir for å lage lover og løse konflikter. Dette var starten på Altinget!</p>
+                    <h3 class="font-bold text-lg text-amber-900">🏰 Vlad Spidderen (1400-tallet)</h3>
+                    <p class="text-sm text-gray-700">Fyrsten Vlad III kjempet for å beskytte landet sitt. Han ble senere inspirasjonen til den kjente romanfiguren Dracula.</p>
                 </div>
 
                 <!-- Timeline item 3 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">3</span>
-                    <h3 class="font-bold text-lg text-amber-900">👑 Under Norge og Danmark (1262–1944)</h3>
-                    <p class="text-sm text-gray-700">Island var først under den norske kongen, og kom senere under Danmark i mange hundre år.</p>
+                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+                        <img src="https://flagcdn.com/w40/ro.png" alt="Romanias flagg" class="w-6 h-auto rounded border border-gray-200 shadow-sm inline-block">
+                        Det store Romania samles (1918)
+                    </h3>
+                    <p class="text-sm text-gray-700">Etter første verdenskrig ble Transilvania og andre områder slått sammen med Romania den 1. desember 1918 (nasjonaldagen).</p>
                 </div>
 
                 <!-- Timeline item 4 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
                     <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
-                        <img src="https://flagcdn.com/w40/is.png" alt="Islands flagg" class="w-6 h-auto rounded border border-gray-200 shadow-sm inline-block">
-                        Republikken Island blir født (17. juni 1944)
+                        🧱 Kommunisttiden og revolusjonen (1989)
                     </h3>
-                    <p class="text-sm text-gray-700">Den 17. juni 1944 ble Island erklært som en helt selvstendig republikk. Dagen feires som nasjonaldag!</p>
+                    <p class="text-sm text-gray-700">Etter mange tiår under strengt diktatur gjorde folket opprør i desember 1989, og Romania ble igjen et fritt demokrati.</p>
                 </div>
 
                 <!-- Timeline item 5 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">5</span>
-                    <h3 class="font-bold text-lg text-amber-900">🌋 Eyjafjallajökull sitt utbrudd (2010)</h3>
-                    <p class="text-sm text-gray-700">Den kjente vulkanen hadde et enormt utbrudd som sendte så mye askeskyer ut i luften at flytrafikken i hele Europa stoppet opp!</p>
+                    <h3 class="font-bold text-lg text-amber-900"><img src="https://flagcdn.com/eu.svg" alt="EU-flagg" class="w-6 h-auto inline-block" /> Medlem av EU (2007)</h3>
+                    <p class="text-sm text-gray-700">Romania ble offisielt en del av Den europeiske union (EU), noe som styrket økonomien og samarbeidet i Europa.</p>
                 </div>
             </div>
         </section>
@@ -308,37 +303,37 @@
             </div>
 
             <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
-                Hva lever de av på Island? Island bruker sine fantastiske naturressurser i havet og fra jorden!
+                Hva lever de av i Romania? Landet har en raskt voksende økonomi med fokus på teknologi, bilindustri og jordbruk!
             </p>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🐟</div>
-                    <h3 class="font-bold text-emerald-900">Fiske & Havbruk</h3>
-                    <p class="text-xs text-gray-600 mt-1">Fiske har alltid vært den viktigste næringen på Island.</p>
+                    <div class="text-4xl mb-2">🚗</div>
+                    <h3 class="font-bold text-emerald-900">Dacia</h3>
+                    <p class="text-xs text-gray-600 mt-1">Romanias eget bilmerke som er populært over hele Europa.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">♨️</div>
-                    <h3 class="font-bold text-emerald-900">Geotermisk energi</h3>
-                    <p class="text-xs text-gray-600 mt-1">Varmen fra jorden brukes til å varme opp hus og lage ren strøm!</p>
+                    <div class="text-4xl mb-2">💻</div>
+                    <h3 class="font-bold text-emerald-900">IT & Teknologi</h3>
+                    <p class="text-xs text-gray-600 mt-1">Romania er kjent for noen av Europas raskeste internettforbindelser og flinke IT-utviklere.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🧳</div>
+                    <div class="text-4xl mb-2">🌾</div>
+                    <h3 class="font-bold text-emerald-900">Jordbruk</h3>
+                    <p class="text-xs text-gray-600 mt-1">Store avlinger med hvete, mais, solsikker og god frukt.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🏔️</div>
                     <h3 class="font-bold text-emerald-900">Turisme</h3>
-                    <p class="text-xs text-gray-600 mt-1">Millioner av turister reiser til Island for å se vulkaner og geysirer.</p>
-                </div>
-
-                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🥣</div>
-                    <h3 class="font-bold text-emerald-900">Skyr</h3>
-                    <p class="text-xs text-gray-600 mt-1">Det tradisjonelle islandske meieriproduktet selges nå over hele verden.</p>
+                    <p class="text-xs text-gray-600 mt-1">Mange turister besøker slott, historiske byer og går på tur i fjellene.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SEKSJON 6: KULTUR OG UTDANNING -->
+        <!-- SEKSJON 6: KULTUR OG UNDERHOLDNING -->
         <section class="bg-rose-50 rounded-3xl p-6 md:p-8 border-4 border-rose-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
                 <span class="bg-rose-500 text-white text-2xl p-3 rounded-2xl">🎨</span>
@@ -352,33 +347,33 @@
                         🏫 Skole og sport
                     </h3>
                     <p class="text-sm text-gray-700">
-                        I Island går alle barn på skole fra de er 6 år gamle.
+                        Barn i Romania starter på skolen når de er 6 år. Gymnastikk, fotball og tennis er veldig store sporter!
                     </p>
                     <div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
-                        <p class="text-sm text-rose-900 font-semibold">⚽ Populære sporter på Island:</p>
-                        <p class="text-xs text-gray-600">Fotball, håndball, svømming og klatring!</p>
+                        <p class="text-sm text-rose-900 font-semibold">⚽ Romanias mest populære sporter:</p>
+                        <p class="text-xs text-gray-600">Fotball, turn (gymnastikk), tennis og håndball!</p>
                     </div>
                 </div>
 
                 <!-- Kjente personer -->
                 <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
                     <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
-                        🌟 Kjente islendinger
+                        🌟 Kjente rumenere
                     </h3>
                     <ul class="text-sm text-gray-700 space-y-2">
-                        <li>🎤 <strong>Björk:</strong> Verdensberømt og unikal artist og sangerinne.</li>
-                        <li>📚 <strong>Halldór Laxness:</strong> Vant Nobelprisen i litteratur i 1955.</li>
-                        <li>⚽ <strong>Gylfi Sigurðsson:</strong> Berømt islandsk fotballspiller.</li>
-                        <li>🛡️ <strong>Leiv Eiriksson:</strong> Oppdaget Amerika for over 1000 år siden!</li>
+                        <li>🤸‍♀️ <strong>Nadia Comăneci:</strong> Legendarisk turner som fikk den aller første perfekt 10-eren i OL-historien!</li>
+                        <li>🎾 <strong>Simona Halep:</strong> Verdensberømt tennisspiller som har vunnet flere Grand Slam-titler.</li>
+                        <li>🎨 <strong>Constantin Brâncuși:</strong> En av de mest berømte skulptørene i moderne kunsthistorie.</li>
+                        <li>📜 <strong>Mihai Eminescu:</strong> Romanias mest kjente og kjære nasjonaldikter.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- MORO QUIZ -->
+        <!-- QUIZ SEKSJON -->
         <section class="bg-yellow-100 rounded-3xl p-6 md:p-8 border-4 border-yellow-400 shadow-md">
             <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-4 text-center">
-                🧠 Test deg selv: Island-Quiz!
+                🧠 Test deg selv: Romania-Quiz!
             </h2>
             <div id="quiz-container" class="bg-white p-6 rounded-2xl border-2 border-yellow-300 max-w-2xl mx-auto space-y-4">
                 <p id="quiz-question" class="text-lg font-bold text-gray-800 text-center">Spørsmål laster...</p>
@@ -389,36 +384,32 @@
 
     </main>
 
-<!-- FULLSKJERM MODAL FOR ENKELTBILDE MED ZOOM -->
+    <!-- MODAL FOR KART -->
     <div 
         id="mapModal" 
         class="fixed inset-0 bg-black/90 z-50 hidden flex-col transition-opacity"
         onclick="closeModal()"
     >
-        <!-- TOPPBAR (Låst på toppen) -->
         <div class="w-full bg-slate-900/90 border-b border-white/10 px-4 py-3 flex flex-wrap items-center justify-between text-white shrink-0 z-20 gap-2" onclick="event.stopPropagation()">
             <div class="flex items-center gap-3">
                 <span id="modalTitle" class="text-sm md:text-base font-bold text-emerald-400">
-                    Kart over Island
+                    Kart over Romania
                 </span>
                 <span class="text-xs text-white/60 hidden sm:inline">
                     | Klikk på bildet for å veksle zoom
                 </span>
             </div>
 
-            <!-- Zoome-kontroller og Bytte av kart -->
             <div class="flex items-center gap-2">
-                <!-- Bytte-knapper -->
-                <button onclick="switchMap('Bilder/kart_island.png', 'Illustrasjonskart over Island')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                <button onclick="switchMap('Bilder/kart_romania.png', 'Illustrasjonskart over Romania')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
                     Illustrasjon
                 </button>
-                <button onclick="switchMap('Bilder/kart_island_ekte.png', 'Geografisk kart over Island')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                <button onclick="switchMap('Bilder/kart_romania_ekte.png', 'Geografisk kart over Romania')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
                     Ekte kart
                 </button>
 
                 <div class="h-4 w-[1px] bg-white/20 mx-1"></div>
 
-                <!-- Zoom-knapper -->
                 <button onclick="zoomMap(30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom inn">
                     ➕
                 </button>
@@ -439,7 +430,6 @@
             </div>
         </div>
 
-<!-- BILDER-OMRÅDE MED SENTRERT ZOOM -->
         <div class="w-full h-full overflow-auto p-4 md:p-8 flex items-center justify-center" id="modalScrollArea" onclick="closeModal()">
             <div class="m-auto flex items-center justify-center p-8" onclick="event.stopPropagation()">
                 <img 
@@ -453,7 +443,6 @@
             </div>
         </div>
 
-        <!-- BUNNBAR -->
         <div class="w-full bg-slate-900/80 text-center py-2 shrink-0 border-t border-white/10">
             <p class="text-white/60 text-xs">
                 Klikk på kartet for å zoome inn/ut • Trykk på bakgrunnen eller ✕ for å lukke
@@ -461,13 +450,11 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer class="bg-slate-800 text-white text-center py-6 mt-12">
-        <p class="text-sm">ISL.html - Laget for læring og moro i skolen!</p>
+        <p class="text-sm">🇷🇴 ROU.html - Laget for læring og moro i skolen! 🇷🇴</p>
     </footer>
 
     <script>
-        // MODAL/FULLSKJERM-FUNKSJONER
         function openModal() {
             const modal = document.getElementById('mapModal');
             modal.classList.remove('hidden');
@@ -480,38 +467,35 @@
             modal.classList.add('hidden');
         }
 
-        // Lukk fullskjerm-visningen hvis man trykker på "Escape"
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal();
             }
         });
 
-        // OPPSTART AV PAGE / QUIZ
         window.onload = function() {
             loadQuiz();
         };
 
-        // QUIZ DATA & LOGIC
         const quizData = [
             {
-                question: "Hva heter Islands hovedstad?",
-                options: ["Akureyri", "Reykjavík", "Keflavík", "Vík"],
+                question: "Hva heter Romanias hovedstad?",
+                options: ["Cluj-Napoca", "București", "Brașov", "Timișoara"],
                 answer: 1
             },
             {
-                question: "Hva kalles en varm kilde som spruter vann og damp høyt opp i luften?",
-                options: ["Foss", "Geysir", "Isbre", "Fjord"],
-                answer: 1
+                question: "Hvilken berømt fjellkjede går gjennom Romania?",
+                options: ["Alpene", "Pyreneene", "Karpatene", "Skandene"],
+                answer: 2
             },
             {
-                question: "Hvilken berømt isbre på Island er Europas største?",
-                options: ["Galdhøpiggen", "Vatnajökull", "Eyjafjallajökull", "Snæfellsjökull"],
-                answer: 1
+                question: "Hvilket romansk bilmerke lages i Romania?",
+                options: ["Dacia", "Fiat", "Volvo", "Peugeot"],
+                answer: 0
             },
             {
-                question: "Hvilket tradisjonelt islandsk meieriprodukt spises over hele verden?",
-                options: ["Rømme", "Skyr", "Yoghurt", "Kefir"],
+                question: "Hvilken idrettsutøver fikk den første perfekte 10-eren i OL-turn?",
+                options: ["Simona Halep", "Nadia Comăneci", "Mihai Eminescu", "Constantin Brâncuși"],
                 answer: 1
             }
         ];
@@ -540,7 +524,7 @@
             
             if (selectedIdx === quizData[currentQuestion].answer) {
                 resultDiv.className = "text-center font-bold text-lg mt-4 text-emerald-600";
-                resultDiv.textContent = "🎉 Riktig svar! Frábært! (Kjempebra!)";
+                resultDiv.textContent = "🎉 Riktig svar! Fantastisk jobbet!";
             } else {
                 resultDiv.className = "text-center font-bold text-lg mt-4 text-rose-600";
                 resultDiv.textContent = "❌ Nesten! Prøv en gang til.";
@@ -553,34 +537,33 @@
             }, 1800);
         }
 
-        // Funksjon for å hente oppdatert data om Island
-        async function oppdaterIslandFakta() {
-            // 1. Hent nyeste registrerte befolkningstall fra Wikidata (Islands ID = Q189)
+        async function oppdaterRomaniaFakta() {
+            // 1. Hent nyeste registrerte befolkningstall fra Wikidata (Romanias ID = Q218)
             try {
-                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q189.json');
+                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q218.json');
                 const data = await response.json();
                 
-                const claims = data.entities.Q189.claims;
+                const claims = data.entities.Q218.claims;
                 if (claims.P1082) {
                     const folketallListe = claims.P1082;
                     const nyesteTelling = folketallListe[folketallListe.length - 1];
                     const antall = parseInt(nyesteTelling.mainsnak.datavalue.value.amount, 10);
                     
                     const formatertTall = new Intl.NumberFormat('no-NO').format(antall);
+                    const mill = (antall / 1000000).toFixed(1).replace('.', ',');
                     
-                    const befolkningEl = document.getElementById('island-befolkning');
+                    const befolkningEl = document.getElementById('romania-befolkning');
                     if (befolkningEl) {
-                        befolkningEl.textContent = `Ca. ${formatertTall}`;
+                        befolkningEl.textContent = `Ca. ${mill} mill. (${formatertTall})`;
                     }
                 }
             } catch (feil) {
                 console.error('Kunne ikke hente live befolkningstall:', feil);
-                document.getElementById('island-befolkning').textContent = "Ca. 390 000";
+                document.getElementById('romania-befolkning').textContent = "Ca. 19 mill.";
             }
 
-            // 2. Statsoverhode (President) og Statsminister
-            settFaktaOmLeder('island-president', 'stat-president-navn', 'Halla Tómasdóttir');
-            settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Bjarni Benediktsson');
+            settFaktaOmLeder('romania-leder', 'stat-leder-navn', 'Klaus Iohannis');
+            settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Marcel Ciolacu');
         }
 
         function settFaktaOmLeder(elementId1, elementId2, navn) {
@@ -589,6 +572,7 @@
             if (el1) el1.textContent = navn;
             if (el2) el2.textContent = navn;
         }
+
 
 // MODAL OG SENTRERT ZOOM MOT KLIKKPUNKT
         let zoomStep = 0; // 0 = 100%, 1 = 175%, 2 = 250%, 3 = 325%
@@ -730,8 +714,7 @@
         });
 
 
-        // Kjør når siden laster
-        window.addEventListener('DOMContentLoaded', oppdaterIslandFakta);
+        window.addEventListener('DOMContentLoaded', oppdaterRomaniaFakta);
     </script>
 </body>
 </html>

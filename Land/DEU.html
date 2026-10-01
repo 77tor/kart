@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Island - Alt om landet til naboene våre!</title>
-    
-    <!-- Tailwind CSS -->
+    <title>Tyskland - Alt om landet til naboene våre! 🇩🇪</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts (Fredoka for friendly headers, Inter for readable text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,95 +29,94 @@
 <body class="bg-amber-50/50 text-slate-800 min-h-screen pb-12">
 
     <!-- HEADER -->
-    <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-40">
+    <header class="bg-slate-900 text-white shadow-lg sticky top-0 z-40">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
-            <div class="flex items-center gap-3">
-                <img src="https://flagcdn.com/w40/is.png" alt="Islands flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
-                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Island - Alt om landet til naboene våre!</h1>
-            </div>
-        </div>
+<div class="flex items-center gap-3">
+    <button onclick="openFlagModal()" class="focus:outline-none focus:ring-2 focus:ring-white/50 rounded" aria-label="Åpne flaggbilde">
+        <img src="https://flagcdn.com/w40/de.png" alt="Tysklands flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm" hover:scale-105 transition-transform cursor-pointer">
+    </button>
+    <h1 class="text-xl md:text-3xl font-bold tracking-wide">Tyskland - Alt om landet i hjertet av Europa!</h1>
+</div>
     </header>
 
     <main class="max-w-6xl mx-auto px-4 mt-6 space-y-10">
 
         <!-- KORTE FAKTA -->
-        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-blue-400">
-            <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-6 flex items-center gap-2">
-                ⚡ Korte fakta om Island
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-amber-400">
+            <h2 class="text-2xl md:text-3xl font-bold text-amber-600 mb-6 flex items-center gap-2">
+                ⚡ Korte fakta om Tyskland
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 <div class="bg-red-100 p-4 rounded-2xl text-center border-2 border-red-300 card-bounce">
-                    <div class="text-3xl mb-1">🏰</div>
+                    <div class="text-3xl mb-1">🏛️</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Hovedstad</div>
-                    <div class="font-bold text-red-700 text-lg">Reykjavík</div>
+                    <div class="font-bold text-red-700 text-lg">Berlin</div>
                 </div>
                 <div class="bg-blue-100 p-4 rounded-2xl text-center border-2 border-blue-300 card-bounce">
                     <div class="text-3xl mb-1">👨‍👩‍👧‍👦</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Mennesker</div>
-                    <div class="font-bold text-blue-700 text-lg" id="island-befolkning">Laster...</div>
+                    <div class="font-bold text-blue-700 text-lg" id="tyskland-befolkning">Laster...</div>
                 </div>
                 <div class="bg-green-100 p-4 rounded-2xl text-center border-2 border-green-300 card-bounce">
                     <div class="text-3xl mb-1">🗣️</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Språk</div>
-                    <div class="font-bold text-green-700 text-base">Islandsk</div>
+                    <div class="font-bold text-green-700 text-base">Tysk</div>
                 </div>
                 <div class="bg-amber-100 p-4 rounded-2xl text-center border-2 border-amber-300 card-bounce">
-                    <div class="text-3xl mb-1">🏛️</div>
+                    <div class="text-3xl mb-1">👔</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Statsoverhode</div>
-                    <div class="font-bold text-amber-800 text-base" id="island-president">Laster...</div>
+                    <div class="font-bold text-amber-800 text-base" id="tyskland-president">Laster...</div>
                 </div>
                 <div class="bg-purple-100 p-4 rounded-2xl text-center border-2 border-purple-300 card-bounce">
                     <div class="text-3xl mb-1">🎉</div>
-                    <div class="text-xs text-gray-500 font-semibold uppercase">Nasjonalfeiring</div>
-                    <div class="font-bold text-purple-700 text-lg">17. juni</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Nasjonaldag</div>
+                    <div class="font-bold text-purple-700 text-lg">3. oktober</div>
                 </div>
                 <div class="bg-emerald-100 p-4 rounded-2xl text-center border-2 border-emerald-300 card-bounce">
-                    <div class="text-3xl mb-1">💰</div>
+                    <div class="text-3xl mb-1">💶</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Valuta</div>
-                    <div class="font-bold text-emerald-700 text-base">Islandske krónur</div>
+                    <div class="font-bold text-emerald-700 text-base">Euro (EUR)</div>
                 </div>
             </div>
         </section>
 
-<!-- MAP SECTION (To kart side om side) -->
+        <!-- MAP SECTION (To kart side om side) -->
         <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-emerald-400">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-bold text-emerald-600 flex items-center gap-2">
-                        🗺️ Kart over Island
+                        🗺️ Kart over Tyskland
                     </h2>
                     <p class="text-gray-600 text-sm">Klikk på et av kartene for å åpne og zoome i fullskjerm!</p>
                 </div>
             </div>
 
-            <!-- Bildebeholder -->
             <div class="bg-emerald-50/50 rounded-2xl p-4 border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
                 <!-- Vanlig kart (Venstre) -->
                 <div class="text-center w-full">
                     <img 
-                        src="Bilder/kart_island.png" 
-                        alt="Illustrasjonskart over Island" 
-                        onclick="openSingleModal('Bilder/kart_island.png', 'Illustrasjonskart over Island')"
+                        src="Bilder/kart_tyskland.png" 
+                        alt="Illustrasjonskart over Tyskland" 
+                        onclick="openSingleModal('Bilder/kart_tyskland.png', 'Illustrasjonskart over Tyskland')"
                         class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
                     >
                     <button 
-                        onclick="openSingleModal('Bilder/kart_island.png', 'Illustrasjonskart over Island')"
+                        onclick="openSingleModal('Bilder/kart_tyskland.png', 'Illustrasjonskart over Tyskland')"
                         class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
                     >
                         🔍 Åpne Illustrasjonskart
                     </button>
                 </div>
 
-                <!-- Ekte kart (Høyre) -->
                 <div class="text-center w-full">
                     <img 
-                        src="Bilder/kart_island_ekte.png" 
-                        alt="Ekte kart over Island" 
-                        onclick="openSingleModal('Bilder/kart_island_ekte.png', 'Geografisk kart over Island')"
+                        src="Bilder/kart_tyskland_ekte.png" 
+                        alt="Ekte kart over Tyskland" 
+                        onclick="openSingleModal('Bilder/kart_tyskland_ekte.png', 'Geografisk kart over Tyskland')"
                         class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
                     >
                     <button 
-                        onclick="openSingleModal('Bilder/kart_island_ekte.png', 'Geografisk kart over Island')"
+                        onclick="openSingleModal('Bilder/kart_tyskland_ekte.png', 'Geografisk kart over Tyskland')"
                         class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
                     >
                         🔍 Åpne Geografisk kart
@@ -133,39 +128,66 @@
         <!-- SEKSJON 1: NATUR OG KLIMA -->
         <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
-                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🌋</span>
+                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🌲</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">1. Natur og klima</h2>
             </div>
             
             <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
-                Island kalles ofte for <strong>«Sagaøya»</strong> eller <strong>«Ilden og isens land»</strong>! Øya er full av spennende vulkaner, geysirer, varme kilder og digre isbreer.
+                Tyskland har en utrolig variert natur! Det strekker seg fra sandstrendene og kysten ved Nordsjøen i nord, til de mektige Alpefjellene helt i sør.
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">🌋</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Ekte vulkaner</div>
-                    <p class="text-sm text-gray-700">Island har over <strong>30 aktive vulkaner</strong>! Av og til spruter det rykende varm lava opp fra bakken.</p>
+                    <div class="text-3xl mb-2">🏔️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Høyeste punkt</div>
+                    <p class="text-sm text-gray-700"><strong>Zugspitze</strong> er Tysklands høyeste fjell i Alpene, hele 2 962 meter over havet!</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">♨️</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Sprutende geysirer</div>
-                    <p class="text-sm text-gray-700">En <strong>geysir</strong> er en varm kilde som spruter kokende vann og damp skyhøyt opp i luften!</p>
+                    <div class="text-3xl mb-2">🌲</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Mektige skoger</div>
+                    <p class="text-sm text-gray-700">Nesten en tredjedel av Tyskland er dekket av skog, slik som den kjente <strong>Schwarzwald</strong> (Svartskogen).</p>
                 </div>
-<div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce flex flex-col items-start">
-    <div class="w-12 h-12 mb-3 rounded-xl overflow-hidden shadow-inner bg-emerald-50 p-1">
-        <img src="Bilder/isbre.png" alt="Isbre på Island" class="w-full h-full object-cover rounded-lg" />
-    </div>
-    <div class="font-bold text-lg text-emerald-800 mb-1">Kjempestore isbreer</div>
-    <p class="text-sm text-gray-700">Nesten 11 % av Island dekkes av isbreer. <strong>Vatnajökull</strong> er Europas største isbre!</p>
-</div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">🚢</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Store elver</div>
+                    <p class="text-sm text-gray-700">Lange elver som <strong>Rhinen</strong>, <strong>Elbe</strong> og <strong>Donau</strong> snirkler seg gjennom landet og brukes til båttrafikk.</p>
+                </div>
             </div>
 
+<!-- Geografiske fakta som tre kolonner -->
+<div class="mt-6 bg-white p-5 rounded-2xl border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-3 gap-6">
+    
+    <!-- Høyeste fjell -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Høyeste fjell</h4>
+        <ul id="fakta-topper" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+
+    <!-- Lengste elver -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Lengste elver</h4>
+        <ul id="fakta-elver" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+
+    <!-- Største innsjøer -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Største innsjøer</h4>
+        <ul id="fakta-innsjoer" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+</div>
+
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
-                <div class="text-4xl">🐴</div>
+                <div class="text-4xl">🦊</div>
                 <p class="text-sm text-gray-700">
-                    <strong>Dyreliv:</strong> Den sterke <strong>islandshesten</strong> er berømt for sine fem gangarter! På kysten finner du søte lundefugler, fjellrev og hvaler i havet.
+                    <strong>Dyreliv:</strong> I de tyske skogene bor det rådyr, villsvin, rev og grevling. Helt sør i fjellene kan du til og med møte på steinbukk og gaupe!
                 </p>
             </div>
         </section>
@@ -178,38 +200,39 @@
             </div>
 
             <p class="text-lg text-sky-950 mb-6 leading-relaxed">
-                Island er et lite land i befolkning, med rundt <strong>390 000 mennesker</strong>. De fleste bor i eller i nærheten av hovedstaden Reykjavík.
+                Tyskland er det mest folkerike landet i EU med over <strong>84 millioner innbyggere</strong>. Tyskerne er godt kjent for orden, resirkulering og punktlighet!
             </p>
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
                     <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
-                        🏢 Byer og steder
+                        🏢 Største byer i Tyskland
                     </h3>
                     <ul class="space-y-2 text-sm text-gray-700">
-                        <li class="flex items-center gap-2">🔹 <strong>Reykjavík:</strong> Verdens nordligste hovedstad!</li>
-                        <li class="flex items-center gap-2">🔹 <strong>Kópavogur & Hafnarfjörður:</strong> Store nabobyer like ved Reykjavík.</li>
-                        <li class="flex items-center gap-2">🔹 <strong>Akureyri:</strong> Den største byen i den nordlige delen av Island.</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Berlin:</strong> Hovedstaden, full av historie, kunst og kultur!</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Hamburg:</strong> Stor havneby ved elven Elbe helt i nord.</li>
+                        <li class="flex items-center gap-2">🔹 <strong>München:</strong> Hovedstaden i Bayern, kjent for Oktoberfest og teknologibedrifter.</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Frankfurt:</strong> Landets finanshovedstad med skyskrapere og kjempeflyplass.</li>
                     </ul>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
                     <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
-                        🏊 Varme utendørsbad
+                        🥨 Kultur, Mat & Miljø
                     </h3>
                     <p class="text-sm text-gray-700">
-                        Siden jorden varmer opp vannet under bakken, elsker islendinger å bader ute i varme bassenger hele året!
+                        Tyskere elsker brød! Det finnes over 3 000 ulike brødtyper der. De spiser også mye bretsler (pretzels) og pølser (Wurst).
                     </p>
                     <p class="text-sm text-gray-700">
-                        Det mest berømte badet kalles <strong>«Den blå lagune»</strong>, der vannet er varmt og lyseblått.
+                        Tyskland er også kjent for superraske motorveier (<strong>Autobahn</strong>) hvor det på enkelte strekninger ikke er noen fartsgrense!
                     </p>
                 </div>
             </div>
 
             <div class="mt-6 bg-sky-100 p-4 rounded-2xl border-2 border-sky-300">
-                <h4 class="font-bold text-sky-900 mb-1">🗣️ Et gammelt og spennende språk!</h4>
+                <h4 class="font-bold text-sky-900 mb-1">🗣️ Språk og Naboland</h4>
                 <p class="text-sm text-sky-800">
-                    Norsk og islandsk var nesten helt likt i vikingtiden! Islandsk har forandret seg så lite at islendingene i dag kan lese 1000 år gamle vikingsagaer uten problemer.
+                    Offisielt språk er <strong>tysk</strong>. Tyskland grenser til hele 9 andre land – flere enn noe annet land i EU!
                 </p>
             </div>
         </section>
@@ -222,32 +245,32 @@
             </div>
 
             <p class="text-lg text-purple-950 mb-6 leading-relaxed">
-                Island er en <strong>republikk</strong> og et <strong>demokrati</strong>. Landet har sin egen valgte president og et av verdens eldste parlamenter!
+                Tyskland er en <strong>forbundsrepublikk</strong> bestående av 16 ulike delstater som styrer mye selv.
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
-                    <div class="text-4xl mb-2"><img src="https://flagcdn.com/w40/is.png" alt="Bulgarias flagg" class="w-12 h-auto inline-block" /></div>
+                    <div class="text-4xl mb-2"><img src="https://flagcdn.com/w40/de.png" alt="Tysklands flagg" class="w-12 h-auto inline-block" /></div>
                     <h3 class="font-bold text-purple-900" id="stat-president-navn">Laster...</h3>
-                    <p class="text-xs text-gray-600 mt-1">Islands president og statsoverhode.</p>
+                    <p class="text-xs text-gray-600 mt-1">Forbundspresident (statsoverhode).</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
                     <div class="text-4xl mb-2">👔</div>
-                    <h3 class="font-bold text-purple-900" id="stat-pm-navn">Laster...</h3>
-                    <p class="text-xs text-gray-600 mt-1">Statsministeren som leder regjeringen.</p>
+                    <h3 class="font-bold text-purple-900" id="stat-kansler-navn">Laster...</h3>
+                    <p class="text-xs text-gray-600 mt-1">Forbundskansler (regeringssjef).</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
                     <div class="text-4xl mb-2">🏛️</div>
-                    <h3 class="font-bold text-purple-900">Altinget (Alþingi)</h3>
-                    <p class="text-xs text-gray-600 mt-1">Islands parlament, stiftet så tidlig som i år 930!</p>
+                    <h3 class="font-bold text-purple-900">Bundestag</h3>
+                    <p class="text-xs text-gray-600 mt-1">Det tyske parlamentet i Reichstag-bygningen i Berlin.</p>
                 </div>
             </div>
 
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-purple-200 text-center">
                 <p class="text-sm font-semibold text-purple-900">
-                    📍 Island er delt inn i <strong>8 regioner</strong> og <strong>64 kommuner</strong>.
+                    📍 Tyskland består av <strong>16 delstater</strong> (Bundesländer), hvorav tre er rene bystater (Berlin, Hamburg og Bremen).
                 </p>
             </div>
         </section>
@@ -256,46 +279,45 @@
         <section class="bg-amber-50 rounded-3xl p-6 md:p-8 border-4 border-amber-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
                 <span class="bg-amber-500 text-white text-2xl p-3 rounded-2xl">📜</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Islands historie</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Tysklands historie</h2>
             </div>
 
             <div class="relative border-l-4 border-amber-400 ml-4 pl-6 space-y-6">
                 <!-- Timeline item 1 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">1</span>
-                    <h3 class="font-bold text-lg text-amber-900"><img src="Bilder/viking.png" alt="Viking" class="w-6 h-auto inline-block align-middle mr-1" /> Norske vikinger bosetter seg (ca. 874)</h3>
-                    <p class="text-sm text-gray-700">Vikingen Ingolv Arnarsson seilte fra Norge og slo seg ned der Reykjavík ligger i dag.</p>
+                    <h3 class="font-bold text-lg text-amber-900">⚔️ Det tysk-romerske riket (962–1806)</h3>
+                    <p class="text-sm text-gray-700">Tyskland var i hundrevis av år en samling av mange hundre små stater og fyrstedømmer.</p>
                 </div>
 
-                <!-- Timeline item 2 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">2</span>
-                    <h3 class="font-bold text-lg text-amber-900">🏛️ Altinget stiftes på Tingvellir (930)</h3>
-                    <p class="text-sm text-gray-700">Vikingene møttes på sletten Tingvellir for å lage lover og løse konflikter. Dette var starten på Altinget!</p>
+                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+                        <img src="https://flagcdn.com/w40/de.png" alt="Tysklands flagg" class="w-6 h-auto rounded border border-gray-200 shadow-sm inline-block">
+                        Et samlet Tyskland (1871)
+                    </h3>
+                    <p class="text-sm text-gray-700">I 1871 ble Tyskland for første gang samlet til ett stort samlet keiserrike.</p>
                 </div>
 
-                <!-- Timeline item 3 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">3</span>
-                    <h3 class="font-bold text-lg text-amber-900">👑 Under Norge og Danmark (1262–1944)</h3>
-                    <p class="text-sm text-gray-700">Island var først under den norske kongen, og kom senere under Danmark i mange hundre år.</p>
+                    <h3 class="font-bold text-lg text-amber-900">🕊️ Verdenskrigene (1914–1945)</h3>
+                    <p class="text-sm text-gray-700">Tyskland var en sentral aktør i første og andre verdenskrig. Etter andre verdenskrig ble landet delt i to: Vest-Tyskland og Øst-Tyskland.</p>
                 </div>
 
-                <!-- Timeline item 4 -->
-                <div class="relative">
-                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
-                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
-                        <img src="https://flagcdn.com/w40/is.png" alt="Islands flagg" class="w-6 h-auto rounded border border-gray-200 shadow-sm inline-block">
-                        Republikken Island blir født (17. juni 1944)
-                    </h3>
-                    <p class="text-sm text-gray-700">Den 17. juni 1944 ble Island erklært som en helt selvstendig republikk. Dagen feires som nasjonaldag!</p>
-                </div>
+<div class="relative">
+    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
+    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+        <img src="Bilder/berlin.png" alt="Berlinmuren" class="w-6 h-auto inline-block" />
+        Berlinmuren faller (1989)
+    </h3>
+    <p class="text-sm text-gray-700">Den berømte muren i Berlin som delte byen ble revet i 1989, og Tyskland ble gjenforent 3. oktober 1990!</p>
+</div>
 
-                <!-- Timeline item 5 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">5</span>
-                    <h3 class="font-bold text-lg text-amber-900">🌋 Eyjafjallajökull sitt utbrudd (2010)</h3>
-                    <p class="text-sm text-gray-700">Den kjente vulkanen hadde et enormt utbrudd som sendte så mye askeskyer ut i luften at flytrafikken i hele Europa stoppet opp!</p>
+                    <h3 class="font-bold text-lg text-amber-900"><img src="https://flagcdn.com/eu.svg" alt="EU-flagg" class="w-6 h-auto inline-block" /> Drivkraft i EU (Nåtid)</h3>
+                    <p class="text-sm text-gray-700">Tyskland har utviklet seg til å bli Europas største økonomi og en viktig leder i Den europeiske union (EU).</p>
                 </div>
             </div>
         </section>
@@ -308,32 +330,32 @@
             </div>
 
             <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
-                Hva lever de av på Island? Island bruker sine fantastiske naturressurser i havet og fra jorden!
+                Hva lever de av i Tyskland? Tyskland er verdenskjent for sin ingeniørkunst, bilproduksjon og vitenskap!
             </p>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🐟</div>
-                    <h3 class="font-bold text-emerald-900">Fiske & Havbruk</h3>
-                    <p class="text-xs text-gray-600 mt-1">Fiske har alltid vært den viktigste næringen på Island.</p>
+                    <div class="text-4xl mb-2">🚗</div>
+                    <h3 class="font-bold text-emerald-900">Bilindustri</h3>
+                    <p class="text-xs text-gray-600 mt-1">Lager merker som Volkswagen, BMW, Mercedes og Audi.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">♨️</div>
-                    <h3 class="font-bold text-emerald-900">Geotermisk energi</h3>
-                    <p class="text-xs text-gray-600 mt-1">Varmen fra jorden brukes til å varme opp hus og lage ren strøm!</p>
+                    <div class="text-4xl mb-2"><img src="Bilder/industri.png" alt="Industri" class="w-12 h-auto inline-block" /></div>
+                    <h3 class="font-bold text-emerald-900">Maskiner</h3>
+                    <p class="text-xs text-gray-600 mt-1">Produserer avanserte verktøy og fabrikkmaskiner til hele verden.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🧳</div>
-                    <h3 class="font-bold text-emerald-900">Turisme</h3>
-                    <p class="text-xs text-gray-600 mt-1">Millioner av turister reiser til Island for å se vulkaner og geysirer.</p>
+                    <div class="text-4xl mb-2">🧪</div>
+                    <h3 class="font-bold text-emerald-900">Kjemi & Medisin</h3>
+                    <p class="text-xs text-gray-600 mt-1">Store selskaper utvikler medisiner og vitenskapelige løsninger.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🥣</div>
-                    <h3 class="font-bold text-emerald-900">Skyr</h3>
-                    <p class="text-xs text-gray-600 mt-1">Det tradisjonelle islandske meieriproduktet selges nå over hele verden.</p>
+                    <div class="text-4xl mb-2"><img src="Bilder/gummi.png" alt="Gummibjørner" class="w-6 h-auto inline-block" /></div>
+                    <h3 class="font-bold text-emerald-900">Kjente Merker</h3>
+                    <p class="text-xs text-gray-600 mt-1">Opprinnelsesland for Haribo gummibjørner og Adidas!</p>
                 </div>
             </div>
         </section>
@@ -352,33 +374,33 @@
                         🏫 Skole og sport
                     </h3>
                     <p class="text-sm text-gray-700">
-                        I Island går alle barn på skole fra de er 6 år gamle.
+                        Skolesystemet varierer fra delstat til delstat, men barna starter på barneskolen (Grundschule) når de er 6 år.
                     </p>
                     <div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
-                        <p class="text-sm text-rose-900 font-semibold">⚽ Populære sporter på Island:</p>
-                        <p class="text-xs text-gray-600">Fotball, håndball, svømming og klatring!</p>
+                        <p class="text-sm text-rose-900 font-semibold">⚽ Tysklands mest populære sporter:</p>
+                        <p class="text-xs text-gray-600">Fotball (Bundesliga), håndball, motorsport og skisport!</p>
                     </div>
                 </div>
 
                 <!-- Kjente personer -->
                 <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
                     <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
-                        🌟 Kjente islendinger
+                        🌟 Kjente tyskere
                     </h3>
                     <ul class="text-sm text-gray-700 space-y-2">
-                        <li>🎤 <strong>Björk:</strong> Verdensberømt og unikal artist og sangerinne.</li>
-                        <li>📚 <strong>Halldór Laxness:</strong> Vant Nobelprisen i litteratur i 1955.</li>
-                        <li>⚽ <strong>Gylfi Sigurðsson:</strong> Berømt islandsk fotballspiller.</li>
-                        <li>🛡️ <strong>Leiv Eiriksson:</strong> Oppdaget Amerika for over 1000 år siden!</li>
+                        <li>🎵 <strong>L. v. Beethoven:</strong> En av verdens mest berømte musikkomponister.</li>
+                        <li>🧠 <strong>Albert Einstein:</strong> Fysikeren bak relativitetsteorien (E=mc<sup>2</sup>).</li>
+                        <li>🚗 <strong>Karl Benz:</strong> Fant opp den første moderne bilen.</li>
+                        <li>⚽ <strong>Manuel Neuer:</strong> Verdensberømt fotballkeeper.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- MORO QUIZ -->
+        <!-- QUIZ SEKSJON -->
         <section class="bg-yellow-100 rounded-3xl p-6 md:p-8 border-4 border-yellow-400 shadow-md">
             <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-4 text-center">
-                🧠 Test deg selv: Island-Quiz!
+                🧠 Test deg selv: Tyskland-Quiz!
             </h2>
             <div id="quiz-container" class="bg-white p-6 rounded-2xl border-2 border-yellow-300 max-w-2xl mx-auto space-y-4">
                 <p id="quiz-question" class="text-lg font-bold text-gray-800 text-center">Spørsmål laster...</p>
@@ -389,36 +411,34 @@
 
     </main>
 
-<!-- FULLSKJERM MODAL FOR ENKELTBILDE MED ZOOM -->
+    <!-- MODAL FOR KART -->
     <div 
         id="mapModal" 
         class="fixed inset-0 bg-black/90 z-50 hidden flex-col transition-opacity"
         onclick="closeModal()"
     >
-        <!-- TOPPBAR (Låst på toppen) -->
+
         <div class="w-full bg-slate-900/90 border-b border-white/10 px-4 py-3 flex flex-wrap items-center justify-between text-white shrink-0 z-20 gap-2" onclick="event.stopPropagation()">
             <div class="flex items-center gap-3">
                 <span id="modalTitle" class="text-sm md:text-base font-bold text-emerald-400">
-                    Kart over Island
+                    Kart over Tyskland
                 </span>
                 <span class="text-xs text-white/60 hidden sm:inline">
                     | Klikk på bildet for å veksle zoom
                 </span>
             </div>
 
-            <!-- Zoome-kontroller og Bytte av kart -->
             <div class="flex items-center gap-2">
-                <!-- Bytte-knapper -->
-                <button onclick="switchMap('Bilder/kart_island.png', 'Illustrasjonskart over Island')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+
+                <button onclick="switchMap('Bilder/kart_tyskland.png', 'Illustrasjonskart over Tyskland')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
                     Illustrasjon
                 </button>
-                <button onclick="switchMap('Bilder/kart_island_ekte.png', 'Geografisk kart over Island')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                <button onclick="switchMap('Bilder/kart_tyskland_ekte.png', 'Geografisk kart over Tyskland')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
                     Ekte kart
                 </button>
 
                 <div class="h-4 w-[1px] bg-white/20 mx-1"></div>
 
-                <!-- Zoom-knapper -->
                 <button onclick="zoomMap(30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom inn">
                     ➕
                 </button>
@@ -439,7 +459,6 @@
             </div>
         </div>
 
-<!-- BILDER-OMRÅDE MED SENTRERT ZOOM -->
         <div class="w-full h-full overflow-auto p-4 md:p-8 flex items-center justify-center" id="modalScrollArea" onclick="closeModal()">
             <div class="m-auto flex items-center justify-center p-8" onclick="event.stopPropagation()">
                 <img 
@@ -453,25 +472,44 @@
             </div>
         </div>
 
-        <!-- BUNNBAR -->
         <div class="w-full bg-slate-900/80 text-center py-2 shrink-0 border-t border-white/10">
             <p class="text-white/60 text-xs">
                 Klikk på kartet for å zoome inn/ut • Trykk på bakgrunnen eller ✕ for å lukke
             </p>
         </div>
     </div>
-
-    <!-- FOOTER -->
+<!-- Popup Modal -->
+<div id="imageFlagModal" class="fixed inset-0 bg-black/70 hidden justify-center items-center z-50 p-4 backdrop-blur-sm" onclick="closeFlagModal()">
+    <div class="relative max-w-3xl max-h-[90vh] bg-slate-900 p-2 rounded-lg shadow-2xl border border-white/20" onclick="event.stopPropagation()">
+        <!-- Lukk-knapp -->
+        <button onclick="closeFlagModal()" class="absolute -top-3 -right-3 bg-red-600 hover:bg-red-700 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg transition-colors cursor-pointer" aria-label="Lukk">
+            &times;
+        </button>
+        <!-- Bilde i modal -->
+        <img src="Flagg/DEU.png" alt="Tysklands flagg (stort)" class="max-w-full max-h-[80vh] object-contain rounded">
+    </div>
+</div>
     <footer class="bg-slate-800 text-white text-center py-6 mt-12">
-        <p class="text-sm">ISL.html - Laget for læring og moro i skolen!</p>
+        <p class="text-sm">🇩🇪 DEU.html - Laget for læring og moro i skolen! 🇩🇪</p>
     </footer>
 
     <script>
-        // MODAL/FULLSKJERM-FUNKSJONER
-        function openModal() {
+        function openSingleModal(src, title) {
             const modal = document.getElementById('mapModal');
+            const img = document.getElementById('singleModalImg');
+            const modalTitle = document.getElementById('modalTitle');
+            
+            img.src = src;
+            modalTitle.textContent = title;
             modal.classList.remove('hidden');
             modal.classList.add('flex');
+        }
+
+        function switchMap(src, title) {
+            const img = document.getElementById('singleModalImg');
+            const modalTitle = document.getElementById('modalTitle');
+            img.src = src;
+            modalTitle.textContent = title;
         }
 
         function closeModal() {
@@ -480,39 +518,36 @@
             modal.classList.add('hidden');
         }
 
-        // Lukk fullskjerm-visningen hvis man trykker på "Escape"
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal();
             }
         });
 
-        // OPPSTART AV PAGE / QUIZ
         window.onload = function() {
             loadQuiz();
         };
 
-        // QUIZ DATA & LOGIC
         const quizData = [
             {
-                question: "Hva heter Islands hovedstad?",
-                options: ["Akureyri", "Reykjavík", "Keflavík", "Vík"],
+                question: "Hva heter Tysklands hovedstad?",
+                options: ["München", "Berlin", "Hamburg", "Frankfurt"],
                 answer: 1
             },
             {
-                question: "Hva kalles en varm kilde som spruter vann og damp høyt opp i luften?",
-                options: ["Foss", "Geysir", "Isbre", "Fjord"],
+                question: "Hva heter det høyeste fjellet i Tyskland?",
+                options: ["Galdhøpiggen", "Zugspitze", "Mont Blanc", "Matterhorn"],
                 answer: 1
             },
             {
-                question: "Hvilken berømt isbre på Island er Europas største?",
-                options: ["Galdhøpiggen", "Vatnajökull", "Eyjafjallajökull", "Snæfellsjökull"],
+                question: "Hvilket år falt Berlinmuren?",
+                options: ["1975", "1989", "1995", "2001"],
                 answer: 1
             },
             {
-                question: "Hvilket tradisjonelt islandsk meieriprodukt spises over hele verden?",
-                options: ["Rømme", "Skyr", "Yoghurt", "Kefir"],
-                answer: 1
+                question: "Hvilke kjente godterigummibjørner kommer fra Tyskland?",
+                options: ["Haribo", "Sfinx", "Ahlgrens bilar", "Malaco"],
+                answer: 0
             }
         ];
 
@@ -540,7 +575,7 @@
             
             if (selectedIdx === quizData[currentQuestion].answer) {
                 resultDiv.className = "text-center font-bold text-lg mt-4 text-emerald-600";
-                resultDiv.textContent = "🎉 Riktig svar! Frábært! (Kjempebra!)";
+                resultDiv.textContent = "🎉 Riktig svar! Sehr gut!";
             } else {
                 resultDiv.className = "text-center font-bold text-lg mt-4 text-rose-600";
                 resultDiv.textContent = "❌ Nesten! Prøv en gang til.";
@@ -553,34 +588,33 @@
             }, 1800);
         }
 
-        // Funksjon for å hente oppdatert data om Island
-        async function oppdaterIslandFakta() {
-            // 1. Hent nyeste registrerte befolkningstall fra Wikidata (Islands ID = Q189)
+        async function oppdaterTysklandFakta() {
+            // Henter befolkningstall fra Wikidata (Tysklands ID = Q183)
             try {
-                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q189.json');
+                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q183.json');
                 const data = await response.json();
                 
-                const claims = data.entities.Q189.claims;
+                const claims = data.entities.Q183.claims;
                 if (claims.P1082) {
                     const folketallListe = claims.P1082;
                     const nyesteTelling = folketallListe[folketallListe.length - 1];
                     const antall = parseInt(nyesteTelling.mainsnak.datavalue.value.amount, 10);
                     
                     const formatertTall = new Intl.NumberFormat('no-NO').format(antall);
+                    const mill = (antall / 1000000).toFixed(1).replace('.', ',');
                     
-                    const befolkningEl = document.getElementById('island-befolkning');
+                    const befolkningEl = document.getElementById('tyskland-befolkning');
                     if (befolkningEl) {
-                        befolkningEl.textContent = `Ca. ${formatertTall}`;
+                        befolkningEl.textContent = `Ca. ${mill} mill. (${formatertTall})`;
                     }
                 }
             } catch (feil) {
                 console.error('Kunne ikke hente live befolkningstall:', feil);
-                document.getElementById('island-befolkning').textContent = "Ca. 390 000";
+                document.getElementById('tyskland-befolkning').textContent = "Ca. 84 mill.";
             }
 
-            // 2. Statsoverhode (President) og Statsminister
-            settFaktaOmLeder('island-president', 'stat-president-navn', 'Halla Tómasdóttir');
-            settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Bjarni Benediktsson');
+            settFaktaOmLeder('tyskland-president', 'stat-president-navn', 'Frank-Walter Steinmeier');
+            settFaktaOmLeder('stat-kansler-navn', 'stat-kansler-navn', 'Olaf Scholz');
         }
 
         function settFaktaOmLeder(elementId1, elementId2, navn) {
@@ -589,6 +623,7 @@
             if (el1) el1.textContent = navn;
             if (el2) el2.textContent = navn;
         }
+
 
 // MODAL OG SENTRERT ZOOM MOT KLIKKPUNKT
         let zoomStep = 0; // 0 = 100%, 1 = 175%, 2 = 250%, 3 = 325%
@@ -729,9 +764,56 @@
             }
         });
 
+<!-- JavaScript for å åpne og lukke -->
+    function openFlagModal() {
+        const modal = document.getElementById('imageFlagModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
 
-        // Kjør når siden laster
-        window.addEventListener('DOMContentLoaded', oppdaterIslandFakta);
+    function closeFlagModal() {
+        const modal = document.getElementById('imageFlagModal');
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }
+
+    // Lukk flagg-modalen dersom brukeren trykker Escape-tasten
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeFlagModal();
+        }
+    });
+document.addEventListener("DOMContentLoaded", () => {
+        // Hent landskode fra filnavnet (f.eks. "DNK.html" -> "DNK")
+        const landKode = window.location.pathname.split('/').pop().replace('.html', '').toUpperCase();
+        const data = hentFakta(landKode);
+
+        if (data) {
+            // Hjelpefunksjon for å lage punktliste uten tomme/ugyldige verdier ('-')
+            const fyllListe = (elementId, array) => {
+                const el = document.getElementById(elementId);
+                const gyldigeVerdier = array.filter(item => item && item !== '-');
+
+                if (gyldigeVerdier.length > 0) {
+                    el.innerHTML = gyldigeVerdier.map(item => `<li>${item}</li>`).join('');
+                } else {
+                    el.innerHTML = '<li class="text-gray-400 italic">Ingen registrerte data</li>';
+                }
+            };
+
+            fyllListe('fakta-topper', data.topper);
+            fyllListe('fakta-elver', data.elver);
+            fyllListe('fakta-innsjoer', data.innsjoer);
+        } else {
+            console.warn(`Fant ingen fakta for landskode: ${landKode}`);
+        }
+    });
+
+
+
+
+        window.addEventListener('DOMContentLoaded', oppdaterTysklandFakta);
     </script>
+<script src="fakta.js"></script>
 </body>
 </html>

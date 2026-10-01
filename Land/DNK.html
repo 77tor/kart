@@ -161,12 +161,44 @@
                 </div>
             </div>
 
+<!-- Geografiske fakta som tre kolonner -->
+<div class="mt-6 bg-white p-5 rounded-2xl border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-3 gap-6">
+    
+    <!-- Høyeste fjell -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Høyeste fjell</h4>
+        <ul id="fakta-topper" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+
+    <!-- Lengste elver -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Lengste elver</h4>
+        <ul id="fakta-elver" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+
+    <!-- Største innsjøer -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Største innsjøer</h4>
+        <ul id="fakta-innsjoer" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+</div>
+
+
+
+
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
                 <div class="text-4xl">🦌</div>
                 <p class="text-sm text-gray-700">
                     <strong>Dyreliv:</strong> I Danmark kan du finne rådyr, harer, rev og grevling. Langs kysten og på sandbankene liker selene å sole seg!
                 </p>
             </div>
+
         </section>
 
         <!-- SEKSJON 2: FOLK OG SAMFUNN -->
@@ -744,10 +776,35 @@ function settFaktaOmLeder(elementId1, elementId2, navn) {
             }
         });
 
+document.addEventListener("DOMContentLoaded", () => {
+        // Hent landskode fra filnavnet (f.eks. "DNK.html" -> "DNK")
+        const landKode = window.location.pathname.split('/').pop().replace('.html', '').toUpperCase();
+        const data = hentFakta(landKode);
 
+        if (data) {
+            // Hjelpefunksjon for å lage punktliste uten tomme/ugyldige verdier ('-')
+            const fyllListe = (elementId, array) => {
+                const el = document.getElementById(elementId);
+                const gyldigeVerdier = array.filter(item => item && item !== '-');
+
+                if (gyldigeVerdier.length > 0) {
+                    el.innerHTML = gyldigeVerdier.map(item => `<li>${item}</li>`).join('');
+                } else {
+                    el.innerHTML = '<li class="text-gray-400 italic">Ingen registrerte data</li>';
+                }
+            };
+
+            fyllListe('fakta-topper', data.topper);
+            fyllListe('fakta-elver', data.elver);
+            fyllListe('fakta-innsjoer', data.innsjoer);
+        } else {
+            console.warn(`Fant ingen fakta for landskode: ${landKode}`);
+        }
+    });
 
 // Kjør når siden laster
 window.addEventListener('DOMContentLoaded', oppdaterDanmarkFakta);
     </script>
+<script src="fakta.js"></script>
 </body>
 </html>

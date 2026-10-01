@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Island - Alt om landet til naboene våre!</title>
-    
-    <!-- Tailwind CSS -->
+    <title>Georgia - Alt om det kaukasiske landet! 🇬🇪</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts (Fredoka for friendly headers, Inter for readable text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,11 +29,11 @@
 <body class="bg-amber-50/50 text-slate-800 min-h-screen pb-12">
 
     <!-- HEADER -->
-    <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-40">
+    <header class="bg-red-600 text-white shadow-lg sticky top-0 z-40">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
             <div class="flex items-center gap-3">
-                <img src="https://flagcdn.com/w40/is.png" alt="Islands flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
-                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Island - Alt om landet til naboene våre!</h1>
+                <img src="https://flagcdn.com/w40/ge.png" alt="Georgias flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
+                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Georgia - Alt om det kaukasiske landet!</h1>
             </div>
         </div>
     </header>
@@ -47,65 +43,64 @@
         <!-- KORTE FAKTA -->
         <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-blue-400">
             <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-6 flex items-center gap-2">
-                ⚡ Korte fakta om Island
+                ⚡ Korte fakta om Georgia
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 <div class="bg-red-100 p-4 rounded-2xl text-center border-2 border-red-300 card-bounce">
                     <div class="text-3xl mb-1">🏰</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Hovedstad</div>
-                    <div class="font-bold text-red-700 text-lg">Reykjavík</div>
+                    <div class="font-bold text-red-700 text-lg">Tbilisi</div>
                 </div>
                 <div class="bg-blue-100 p-4 rounded-2xl text-center border-2 border-blue-300 card-bounce">
                     <div class="text-3xl mb-1">👨‍👩‍👧‍👦</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Mennesker</div>
-                    <div class="font-bold text-blue-700 text-lg" id="island-befolkning">Laster...</div>
+                    <div class="font-bold text-blue-700 text-lg" id="georgia-befolkning">Laster...</div>
                 </div>
                 <div class="bg-green-100 p-4 rounded-2xl text-center border-2 border-green-300 card-bounce">
                     <div class="text-3xl mb-1">🗣️</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Språk</div>
-                    <div class="font-bold text-green-700 text-base">Islandsk</div>
+                    <div class="font-bold text-green-700 text-base">Georgisk</div>
                 </div>
                 <div class="bg-amber-100 p-4 rounded-2xl text-center border-2 border-amber-300 card-bounce">
                     <div class="text-3xl mb-1">🏛️</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Statsoverhode</div>
-                    <div class="font-bold text-amber-800 text-base" id="island-president">Laster...</div>
+                    <div class="font-bold text-amber-800 text-base" id="georgia-president">Laster...</div>
                 </div>
                 <div class="bg-purple-100 p-4 rounded-2xl text-center border-2 border-purple-300 card-bounce">
                     <div class="text-3xl mb-1">🎉</div>
-                    <div class="text-xs text-gray-500 font-semibold uppercase">Nasjonalfeiring</div>
-                    <div class="font-bold text-purple-700 text-lg">17. juni</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Uavhengighetsdag</div>
+                    <div class="font-bold text-purple-700 text-lg">26. mai</div>
                 </div>
                 <div class="bg-emerald-100 p-4 rounded-2xl text-center border-2 border-emerald-300 card-bounce">
                     <div class="text-3xl mb-1">💰</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Valuta</div>
-                    <div class="font-bold text-emerald-700 text-base">Islandske krónur</div>
+                    <div class="font-bold text-emerald-700 text-base">Lari (GEL)</div>
                 </div>
             </div>
         </section>
 
-<!-- MAP SECTION (To kart side om side) -->
+        <!-- MAP SECTION (To kart side om side) -->
         <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-emerald-400">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-bold text-emerald-600 flex items-center gap-2">
-                        🗺️ Kart over Island
+                        🗺️ Kart over Georgia
                     </h2>
                     <p class="text-gray-600 text-sm">Klikk på et av kartene for å åpne og zoome i fullskjerm!</p>
                 </div>
             </div>
 
-            <!-- Bildebeholder -->
             <div class="bg-emerald-50/50 rounded-2xl p-4 border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
-                <!-- Vanlig kart (Venstre) -->
+                <!-- Illustrasjonskart (Venstre) -->
                 <div class="text-center w-full">
                     <img 
-                        src="Bilder/kart_island.png" 
-                        alt="Illustrasjonskart over Island" 
-                        onclick="openSingleModal('Bilder/kart_island.png', 'Illustrasjonskart over Island')"
+                        src="Bilder/kart_georgia.png" 
+                        alt="Illustrasjonskart over Georgia" 
+                        onclick="openSingleModal('Bilder/kart_georgia.png', 'Illustrasjonskart over Georgia')"
                         class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
                     >
                     <button 
-                        onclick="openSingleModal('Bilder/kart_island.png', 'Illustrasjonskart over Island')"
+                        onclick="openSingleModal('Bilder/kart_georgia.png', 'Illustrasjonskart over Georgia')"
                         class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
                     >
                         🔍 Åpne Illustrasjonskart
@@ -115,13 +110,13 @@
                 <!-- Ekte kart (Høyre) -->
                 <div class="text-center w-full">
                     <img 
-                        src="Bilder/kart_island_ekte.png" 
-                        alt="Ekte kart over Island" 
-                        onclick="openSingleModal('Bilder/kart_island_ekte.png', 'Geografisk kart over Island')"
+                        src="Bilder/kart_georgia_ekte.png" 
+                        alt="Ekte kart over Georgia" 
+                        onclick="openSingleModal('Bilder/kart_georgia_ekte.png', 'Geografisk kart over Georgia')"
                         class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
                     >
                     <button 
-                        onclick="openSingleModal('Bilder/kart_island_ekte.png', 'Geografisk kart over Island')"
+                        onclick="openSingleModal('Bilder/kart_georgia_ekte.png', 'Geografisk kart over Georgia')"
                         class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
                     >
                         🔍 Åpne Geografisk kart
@@ -133,39 +128,38 @@
         <!-- SEKSJON 1: NATUR OG KLIMA -->
         <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
-                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🌋</span>
+                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🏔️</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">1. Natur og klima</h2>
             </div>
             
             <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
-                Island kalles ofte for <strong>«Sagaøya»</strong> eller <strong>«Ilden og isens land»</strong>! Øya er full av spennende vulkaner, geysirer, varme kilder og digre isbreer.
+                Georgia ligger i grenselandet mellom Europa og Asia. Landet er preget av ruvende Kaukasusfjell i nord, dype daler og kystlinje mot Svartehavet i vest.
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">🌋</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Ekte vulkaner</div>
-                    <p class="text-sm text-gray-700">Island har over <strong>30 aktive vulkaner</strong>! Av og til spruter det rykende varm lava opp fra bakken.</p>
+                    <div class="text-3xl mb-2">⛰️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Høyeste punkt</div>
+                    <p class="text-sm text-gray-700"><strong>Sjkhara</strong> er Georgias høyeste fjelltopp, og ruver hele 5 201 meter over havet!</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">♨️</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Sprutende geysirer</div>
-                    <p class="text-sm text-gray-700">En <strong>geysir</strong> er en varm kilde som spruter kokende vann og damp skyhøyt opp i luften!</p>
+                    <div class="text-3xl mb-2">🌊</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Svartehavskysten</div>
+                    <p class="text-sm text-gray-700">I vest har Georgia en lang kystlinje mot <strong>Svartehavet</strong> med subtropisk klima og palmer!</p>
                 </div>
-<div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce flex flex-col items-start">
-    <div class="w-12 h-12 mb-3 rounded-xl overflow-hidden shadow-inner bg-emerald-50 p-1">
-        <img src="Bilder/isbre.png" alt="Isbre på Island" class="w-full h-full object-cover rounded-lg" />
-    </div>
-    <div class="font-bold text-lg text-emerald-800 mb-1">Kjempestore isbreer</div>
-    <p class="text-sm text-gray-700">Nesten 11 % av Island dekkes av isbreer. <strong>Vatnajökull</strong> er Europas største isbre!</p>
-</div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">🏔️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Variert klima</div>
+                    <p class="text-sm text-gray-700">Klimaet varierer fra snødekte fjelltopper i Kaukasus til varme og fuktige dalstreg i lavlandet.</p>
+                </div>
             </div>
 
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
-                <div class="text-4xl">🐴</div>
+                <div class="text-4xl">🐻</div>
                 <p class="text-sm text-gray-700">
-                    <strong>Dyreliv:</strong> Den sterke <strong>islandshesten</strong> er berømt for sine fem gangarter! På kysten finner du søte lundefugler, fjellrev og hvaler i havet.
+                    <strong>Dyreliv:</strong> I de tette skogene og fjellene bor det brunbjørner, ulver, gauper og den sjeldne kaukasiske steinbukken (tur).
                 </p>
             </div>
         </section>
@@ -178,38 +172,38 @@
             </div>
 
             <p class="text-lg text-sky-950 mb-6 leading-relaxed">
-                Island er et lite land i befolkning, med rundt <strong>390 000 mennesker</strong>. De fleste bor i eller i nærheten av hovedstaden Reykjavík.
+                I Georgia bor det ca. <strong>3,7 millioner mennesker</strong>. Georgiere er verdenskjent for sin enorme gjestfrihet og sin rike matkultur!
             </p>
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
                     <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
-                        🏢 Byer og steder
+                        🏢 Største byer i Georgia
                     </h3>
                     <ul class="space-y-2 text-sm text-gray-700">
-                        <li class="flex items-center gap-2">🔹 <strong>Reykjavík:</strong> Verdens nordligste hovedstad!</li>
-                        <li class="flex items-center gap-2">🔹 <strong>Kópavogur & Hafnarfjörður:</strong> Store nabobyer like ved Reykjavík.</li>
-                        <li class="flex items-center gap-2">🔹 <strong>Akureyri:</strong> Den største byen i den nordlige delen av Island.</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Tbilisi:</strong> Hovedstaden med fargerik gammelby og varme kilder!</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Batumi:</strong> Den moderne kystbyen ved Svartehavet.</li>
+                        <li class="flex items-center gap-2">🔹 Andre store byer: Kutaisi (historisk kulturby) og Rustavi.</li>
                     </ul>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
                     <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
-                        🏊 Varme utendørsbad
+                        🥖 Matkultur & Gjestfrihet
                     </h3>
                     <p class="text-sm text-gray-700">
-                        Siden jorden varmer opp vannet under bakken, elsker islendinger å bader ute i varme bassenger hele året!
+                        Georgisk mat er fantastisk! De er superkjente for <strong>Khachapuri</strong> (ostebrød) og <strong>Khinkali</strong> (saftige maultaschen/dumplings).
                     </p>
                     <p class="text-sm text-gray-700">
-                        Det mest berømte badet kalles <strong>«Den blå lagune»</strong>, der vannet er varmt og lyseblått.
+                        I Georgia sier et ordtak at <em>«en gjest er en gave fra Gud»</em>, så besøkende blir behandlet som kongelige!
                     </p>
                 </div>
             </div>
 
             <div class="mt-6 bg-sky-100 p-4 rounded-2xl border-2 border-sky-300">
-                <h4 class="font-bold text-sky-900 mb-1">🗣️ Et gammelt og spennende språk!</h4>
+                <h4 class="font-bold text-sky-900 mb-1">🗣️ Eget språk og alfabeth</h4>
                 <p class="text-sm text-sky-800">
-                    Norsk og islandsk var nesten helt likt i vikingtiden! Islandsk har forandret seg så lite at islendingene i dag kan lese 1000 år gamle vikingsagaer uten problemer.
+                    Georgisk (Kartveli) har sitt eget unike alfabet som ikke ligner på noe annet i verden (f.eks. «Kartuli» skrives <strong>ქართული</strong>)!
                 </p>
             </div>
         </section>
@@ -222,14 +216,14 @@
             </div>
 
             <p class="text-lg text-purple-950 mb-6 leading-relaxed">
-                Island er en <strong>republikk</strong> og et <strong>demokrati</strong>. Landet har sin egen valgte president og et av verdens eldste parlamenter!
+                Georgia er en parlamentarisk <strong>republikk</strong> og et <strong>demokrati</strong> med en valgt president og statsminister.
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
-                    <div class="text-4xl mb-2"><img src="https://flagcdn.com/w40/is.png" alt="Bulgarias flagg" class="w-12 h-auto inline-block" /></div>
+                    <div class="text-4xl mb-2"><img src="https://flagcdn.com/w40/ge.png" alt="Georgias flagg" class="w-12 h-auto inline-block" /></div>
                     <h3 class="font-bold text-purple-900" id="stat-president-navn">Laster...</h3>
-                    <p class="text-xs text-gray-600 mt-1">Islands president og statsoverhode.</p>
+                    <p class="text-xs text-gray-600 mt-1">Georgias president og statsoverhode.</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
@@ -240,14 +234,14 @@
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
                     <div class="text-4xl mb-2">🏛️</div>
-                    <h3 class="font-bold text-purple-900">Altinget (Alþingi)</h3>
-                    <p class="text-xs text-gray-600 mt-1">Islands parlament, stiftet så tidlig som i år 930!</p>
+                    <h3 class="font-bold text-purple-900">Sakartvelos Parlamenti</h3>
+                    <p class="text-xs text-gray-600 mt-1">Det georgiske parlamentet som vedtar lover.</p>
                 </div>
             </div>
 
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-purple-200 text-center">
                 <p class="text-sm font-semibold text-purple-900">
-                    📍 Island er delt inn i <strong>8 regioner</strong> og <strong>64 kommuner</strong>.
+                    📍 Georgia kalles på sitt eget språk for <strong>Sakartvelo</strong> (sakartvelo = landet til kartvelerne).
                 </p>
             </div>
         </section>
@@ -256,46 +250,45 @@
         <section class="bg-amber-50 rounded-3xl p-6 md:p-8 border-4 border-amber-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
                 <span class="bg-amber-500 text-white text-2xl p-3 rounded-2xl">📜</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Islands historie</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Georgias historie</h2>
             </div>
 
             <div class="relative border-l-4 border-amber-400 ml-4 pl-6 space-y-6">
                 <!-- Timeline item 1 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">1</span>
-                    <h3 class="font-bold text-lg text-amber-900"><img src="Bilder/viking.png" alt="Viking" class="w-6 h-auto inline-block align-middle mr-1" /> Norske vikinger bosetter seg (ca. 874)</h3>
-                    <p class="text-sm text-gray-700">Vikingen Ingolv Arnarsson seilte fra Norge og slo seg ned der Reykjavík ligger i dag.</p>
+                    <h3 class="font-bold text-lg text-amber-900">🍇 Verdens eldste vinmakere (6000 f.Kr.)</h3>
+                    <p class="text-sm text-gray-700">Arkeologer har funnet krukker som viser at det har blitt laget vin i Georgia i over 8 000 år!</p>
                 </div>
 
                 <!-- Timeline item 2 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">2</span>
-                    <h3 class="font-bold text-lg text-amber-900">🏛️ Altinget stiftes på Tingvellir (930)</h3>
-                    <p class="text-sm text-gray-700">Vikingene møttes på sletten Tingvellir for å lage lover og løse konflikter. Dette var starten på Altinget!</p>
+                    <h3 class="font-bold text-lg text-amber-900">✝️ Kristendommen innføres (337 e.Kr.)</h3>
+                    <p class="text-sm text-gray-700">Georgia ble et av verdens aller første land til å gjøre kristendommen til sin offisielle religion.</p>
                 </div>
 
                 <!-- Timeline item 3 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">3</span>
-                    <h3 class="font-bold text-lg text-amber-900">👑 Under Norge og Danmark (1262–1944)</h3>
-                    <p class="text-sm text-gray-700">Island var først under den norske kongen, og kom senere under Danmark i mange hundre år.</p>
+                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+                        👑 Georgias gullalder (1100–1200-tallet)
+                    </h3>
+                    <p class="text-sm text-gray-700">Under Dronning Tamar opplevde Georgia sin største blomstringstid innen makt, kunst og litteratur.</p>
                 </div>
 
                 <!-- Timeline item 4 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
-                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
-                        <img src="https://flagcdn.com/w40/is.png" alt="Islands flagg" class="w-6 h-auto rounded border border-gray-200 shadow-sm inline-block">
-                        Republikken Island blir født (17. juni 1944)
-                    </h3>
-                    <p class="text-sm text-gray-700">Den 17. juni 1944 ble Island erklært som en helt selvstendig republikk. Dagen feires som nasjonaldag!</p>
+                    <h3 class="font-bold text-lg text-amber-900"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Flag_of_the_Soviet_Union.svg" alt="Sovjetunionens flagg" class="w-6 h-auto inline-block" /> En del av Sovjetunionen (1921–1991)</h3>
+                    <p class="text-sm text-gray-700">Georgia ble okkupert og innlemmet i Sovjetunionen i 70 år før de ble selvstendige igjen i 1991.</p>
                 </div>
 
                 <!-- Timeline item 5 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">5</span>
-                    <h3 class="font-bold text-lg text-amber-900">🌋 Eyjafjallajökull sitt utbrudd (2010)</h3>
-                    <p class="text-sm text-gray-700">Den kjente vulkanen hadde et enormt utbrudd som sendte så mye askeskyer ut i luften at flytrafikken i hele Europa stoppet opp!</p>
+                    <h3 class="font-bold text-lg text-amber-900">🌹 Roserevolusjonen (2003)</h3>
+                    <p class="text-sm text-gray-700">En fredelig protest med roser førte til store demokratiske endringer og modernisering av landet.</p>
                 </div>
             </div>
         </section>
@@ -308,37 +301,37 @@
             </div>
 
             <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
-                Hva lever de av på Island? Island bruker sine fantastiske naturressurser i havet og fra jorden!
+                Hva lever de av i Georgia? Georgia satser stort på turisme, landbruk, mineralvann ogfornybar vannkraft!
             </p>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🐟</div>
-                    <h3 class="font-bold text-emerald-900">Fiske & Havbruk</h3>
-                    <p class="text-xs text-gray-600 mt-1">Fiske har alltid vært den viktigste næringen på Island.</p>
+                    <div class="text-4xl mb-2">🍇</div>
+                    <h3 class="font-bold text-emerald-900">Vin og frukt</h3>
+                    <p class="text-xs text-gray-600 mt-1">Eksport av tradisjonell vinkultur, nøtter og sitrusfrukter.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">♨️</div>
-                    <h3 class="font-bold text-emerald-900">Geotermisk energi</h3>
-                    <p class="text-xs text-gray-600 mt-1">Varmen fra jorden brukes til å varme opp hus og lage ren strøm!</p>
-                </div>
-
-                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🧳</div>
+                    <div class="text-4xl mb-2">🏖️</div>
                     <h3 class="font-bold text-emerald-900">Turisme</h3>
-                    <p class="text-xs text-gray-600 mt-1">Millioner av turister reiser til Island for å se vulkaner og geysirer.</p>
+                    <p class="text-xs text-gray-600 mt-1">Millioner av besøkende drar til fjellene og Svartehavet.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🥣</div>
-                    <h3 class="font-bold text-emerald-900">Skyr</h3>
-                    <p class="text-xs text-gray-600 mt-1">Det tradisjonelle islandske meieriproduktet selges nå over hele verden.</p>
+                    <div class="text-4xl mb-2">💧</div>
+                    <h3 class="font-bold text-emerald-900">Mineralvann</h3>
+                    <p class="text-xs text-gray-600 mt-1">Det berømte vannet «Borjomi» eksporteres til hele verden.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">⚡</div>
+                    <h3 class="font-bold text-emerald-900">Vannkraft</h3>
+                    <p class="text-xs text-gray-600 mt-1">Store elver i fjellene gir ren og fornybar energi.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SEKSJON 6: KULTUR OG UTDANNING -->
+        <!-- SEKSJON 6: KULTUR OG UNDERHOLDNING -->
         <section class="bg-rose-50 rounded-3xl p-6 md:p-8 border-4 border-rose-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
                 <span class="bg-rose-500 text-white text-2xl p-3 rounded-2xl">🎨</span>
@@ -352,33 +345,33 @@
                         🏫 Skole og sport
                     </h3>
                     <p class="text-sm text-gray-700">
-                        I Island går alle barn på skole fra de er 6 år gamle.
+                        Barn i Georgia begynner på skolen når de er 6 år. Utdanning står høyt i kurs i landet.
                     </p>
                     <div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
-                        <p class="text-sm text-rose-900 font-semibold">⚽ Populære sporter på Island:</p>
-                        <p class="text-xs text-gray-600">Fotball, håndball, svømming og klatring!</p>
+                        <p class="text-sm text-rose-900 font-semibold">🏉 Georgias mest populære sporter:</p>
+                        <p class="text-xs text-gray-600">Rugby (landslaget heter Lelos!), bryting, vektløfting og fotball!</p>
                     </div>
                 </div>
 
                 <!-- Kjente personer -->
                 <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
                     <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
-                        🌟 Kjente islendinger
+                        🌟 Kjente georgiere
                     </h3>
                     <ul class="text-sm text-gray-700 space-y-2">
-                        <li>🎤 <strong>Björk:</strong> Verdensberømt og unikal artist og sangerinne.</li>
-                        <li>📚 <strong>Halldór Laxness:</strong> Vant Nobelprisen i litteratur i 1955.</li>
-                        <li>⚽ <strong>Gylfi Sigurðsson:</strong> Berømt islandsk fotballspiller.</li>
-                        <li>🛡️ <strong>Leiv Eiriksson:</strong> Oppdaget Amerika for over 1000 år siden!</li>
+                        <li>👑 <strong>Dronning Tamar:</strong> Den mektige herskerinnen fra Georgias gullalder.</li>
+                        <li>⚽ <strong>Khvicha Kvaratskhelia («Kvara»):</strong> Superstjerne i fotball som har herjet for Napoli og landslaget!</li>
+                        <li>✍️ <strong>Sjota Rustaveli:</strong> Georgias mest berømte nasjonaldikter.</li>
+                        <li>🥋 <strong>Lasha Talakhadze:</strong> Verdens sterkeste mann og mangeårig OL-mester i vektløfting.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- MORO QUIZ -->
+        <!-- QUIZ SEKSJON -->
         <section class="bg-yellow-100 rounded-3xl p-6 md:p-8 border-4 border-yellow-400 shadow-md">
             <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-4 text-center">
-                🧠 Test deg selv: Island-Quiz!
+                🧠 Test deg selv: Georgia-Quiz!
             </h2>
             <div id="quiz-container" class="bg-white p-6 rounded-2xl border-2 border-yellow-300 max-w-2xl mx-auto space-y-4">
                 <p id="quiz-question" class="text-lg font-bold text-gray-800 text-center">Spørsmål laster...</p>
@@ -389,36 +382,32 @@
 
     </main>
 
-<!-- FULLSKJERM MODAL FOR ENKELTBILDE MED ZOOM -->
+    <!-- MAP MODAL -->
     <div 
         id="mapModal" 
         class="fixed inset-0 bg-black/90 z-50 hidden flex-col transition-opacity"
         onclick="closeModal()"
     >
-        <!-- TOPPBAR (Låst på toppen) -->
         <div class="w-full bg-slate-900/90 border-b border-white/10 px-4 py-3 flex flex-wrap items-center justify-between text-white shrink-0 z-20 gap-2" onclick="event.stopPropagation()">
             <div class="flex items-center gap-3">
                 <span id="modalTitle" class="text-sm md:text-base font-bold text-emerald-400">
-                    Kart over Island
+                    Kart over Georgia
                 </span>
                 <span class="text-xs text-white/60 hidden sm:inline">
                     | Klikk på bildet for å veksle zoom
                 </span>
             </div>
 
-            <!-- Zoome-kontroller og Bytte av kart -->
             <div class="flex items-center gap-2">
-                <!-- Bytte-knapper -->
-                <button onclick="switchMap('Bilder/kart_island.png', 'Illustrasjonskart over Island')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                <button onclick="switchMap('Bilder/kart_georgia.png', 'Illustrasjonskart over Georgia')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
                     Illustrasjon
                 </button>
-                <button onclick="switchMap('Bilder/kart_island_ekte.png', 'Geografisk kart over Island')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                <button onclick="switchMap('Bilder/kart_georgia_ekte.png', 'Geografisk kart over Georgia')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
                     Ekte kart
                 </button>
 
                 <div class="h-4 w-[1px] bg-white/20 mx-1"></div>
 
-                <!-- Zoom-knapper -->
                 <button onclick="zoomMap(30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom inn">
                     ➕
                 </button>
@@ -439,7 +428,6 @@
             </div>
         </div>
 
-<!-- BILDER-OMRÅDE MED SENTRERT ZOOM -->
         <div class="w-full h-full overflow-auto p-4 md:p-8 flex items-center justify-center" id="modalScrollArea" onclick="closeModal()">
             <div class="m-auto flex items-center justify-center p-8" onclick="event.stopPropagation()">
                 <img 
@@ -453,7 +441,6 @@
             </div>
         </div>
 
-        <!-- BUNNBAR -->
         <div class="w-full bg-slate-900/80 text-center py-2 shrink-0 border-t border-white/10">
             <p class="text-white/60 text-xs">
                 Klikk på kartet for å zoome inn/ut • Trykk på bakgrunnen eller ✕ for å lukke
@@ -463,15 +450,27 @@
 
     <!-- FOOTER -->
     <footer class="bg-slate-800 text-white text-center py-6 mt-12">
-        <p class="text-sm">ISL.html - Laget for læring og moro i skolen!</p>
+        <p class="text-sm">🇬🇪 GEO.html - Laget for læring og moro i skolen! 🇬🇪</p>
     </footer>
 
+    <!-- JAVASCRIPT -->
     <script>
-        // MODAL/FULLSKJERM-FUNKSJONER
-        function openModal() {
+        function openSingleModal(src, title) {
             const modal = document.getElementById('mapModal');
+            const img = document.getElementById('singleModalImg');
+            const titleEl = document.getElementById('modalTitle');
+            
+            img.src = src;
+            titleEl.textContent = title;
             modal.classList.remove('hidden');
             modal.classList.add('flex');
+        }
+
+        function switchMap(src, title) {
+            const img = document.getElementById('singleModalImg');
+            const titleEl = document.getElementById('modalTitle');
+            img.src = src;
+            titleEl.textContent = title;
         }
 
         function closeModal() {
@@ -480,38 +479,35 @@
             modal.classList.add('hidden');
         }
 
-        // Lukk fullskjerm-visningen hvis man trykker på "Escape"
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal();
             }
         });
 
-        // OPPSTART AV PAGE / QUIZ
         window.onload = function() {
             loadQuiz();
         };
 
-        // QUIZ DATA & LOGIC
         const quizData = [
             {
-                question: "Hva heter Islands hovedstad?",
-                options: ["Akureyri", "Reykjavík", "Keflavík", "Vík"],
+                question: "Hva heter Georgias hovedstad?",
+                options: ["Batumi", "Tbilisi", "Kutaisi", "Gori"],
                 answer: 1
             },
             {
-                question: "Hva kalles en varm kilde som spruter vann og damp høyt opp i luften?",
-                options: ["Foss", "Geysir", "Isbre", "Fjord"],
-                answer: 1
+                question: "Hvilket kjente ostebrød er en av Georgias nasjonalretter?",
+                options: ["Khachapuri", "Pizza", "Naan", "Pita"],
+                answer: 0
             },
             {
-                question: "Hvilken berømt isbre på Island er Europas største?",
-                options: ["Galdhøpiggen", "Vatnajökull", "Eyjafjallajökull", "Snæfellsjökull"],
-                answer: 1
+                question: "Omtrent hvor lenge har det blitt laget vin i Georgia?",
+                options: ["500 år", "2 000 år", "5 000 år", "Over 8 000 år"],
+                answer: 3
             },
             {
-                question: "Hvilket tradisjonelt islandsk meieriprodukt spises over hele verden?",
-                options: ["Rømme", "Skyr", "Yoghurt", "Kefir"],
+                question: "Hvilket hav har Georgia kystlinje mot i vest?",
+                options: ["Middelhavet", "Svartehavet", "Kaspahavet", "Rødehavet"],
                 answer: 1
             }
         ];
@@ -540,7 +536,7 @@
             
             if (selectedIdx === quizData[currentQuestion].answer) {
                 resultDiv.className = "text-center font-bold text-lg mt-4 text-emerald-600";
-                resultDiv.textContent = "🎉 Riktig svar! Frábært! (Kjempebra!)";
+                resultDiv.textContent = "🎉 Riktig svar! Supert jobbet!";
             } else {
                 resultDiv.className = "text-center font-bold text-lg mt-4 text-rose-600";
                 resultDiv.textContent = "❌ Nesten! Prøv en gang til.";
@@ -553,34 +549,33 @@
             }, 1800);
         }
 
-        // Funksjon for å hente oppdatert data om Island
-        async function oppdaterIslandFakta() {
-            // 1. Hent nyeste registrerte befolkningstall fra Wikidata (Islands ID = Q189)
+        async function oppdaterGeorgiaFakta() {
+            // Wikidata ID for Georgia = Q230
             try {
-                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q189.json');
+                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q230.json');
                 const data = await response.json();
                 
-                const claims = data.entities.Q189.claims;
+                const claims = data.entities.Q230.claims;
                 if (claims.P1082) {
                     const folketallListe = claims.P1082;
                     const nyesteTelling = folketallListe[folketallListe.length - 1];
                     const antall = parseInt(nyesteTelling.mainsnak.datavalue.value.amount, 10);
                     
                     const formatertTall = new Intl.NumberFormat('no-NO').format(antall);
+                    const mill = (antall / 1000000).toFixed(1).replace('.', ',');
                     
-                    const befolkningEl = document.getElementById('island-befolkning');
+                    const befolkningEl = document.getElementById('georgia-befolkning');
                     if (befolkningEl) {
-                        befolkningEl.textContent = `Ca. ${formatertTall}`;
+                        befolkningEl.textContent = `Ca. ${mill} mill. (${formatertTall})`;
                     }
                 }
             } catch (feil) {
                 console.error('Kunne ikke hente live befolkningstall:', feil);
-                document.getElementById('island-befolkning').textContent = "Ca. 390 000";
+                document.getElementById('georgia-befolkning').textContent = "Ca. 3,7 mill.";
             }
 
-            // 2. Statsoverhode (President) og Statsminister
-            settFaktaOmLeder('island-president', 'stat-president-navn', 'Halla Tómasdóttir');
-            settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Bjarni Benediktsson');
+            settFaktaOmLeder('georgia-president', 'stat-president-navn', 'Salome Zourabichvili');
+            settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Irakli Kobakhidze');
         }
 
         function settFaktaOmLeder(elementId1, elementId2, navn) {
@@ -730,8 +725,7 @@
         });
 
 
-        // Kjør når siden laster
-        window.addEventListener('DOMContentLoaded', oppdaterIslandFakta);
+        window.addEventListener('DOMContentLoaded', oppdaterGeorgiaFakta);
     </script>
 </body>
 </html>

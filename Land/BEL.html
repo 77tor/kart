@@ -36,9 +36,12 @@
     <header class="bg-slate-900 text-white shadow-lg sticky top-0 z-40 border-b-4 border-amber-400">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
             <div class="flex items-center gap-3">
-                <img src="https://flagcdn.com/w40/be.png" alt="Belgias flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
+                <button onclick="openFlagModal()" class="focus:outline-none focus:ring-2 focus:ring-white/50 rounded" aria-label="Åpne flaggbilde">
+        <img src="https://flagcdn.com/w40/be.png" alt="Belgias flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm hover:scale-105 transition-transform cursor-pointer">
+    </button>
                 <h1 class="text-xl md:text-3xl font-bold tracking-wide">Belgia - Alt om hjertet av Europa!</h1>
             </div>
+
         </div>
     </header>
 
@@ -161,6 +164,35 @@
                 </div>
             </div>
 
+
+<!-- Geografiske fakta som tre kolonner -->
+<div class="mt-6 bg-white p-5 rounded-2xl border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-3 gap-6">
+    
+    <!-- Høyeste fjell -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Høyeste fjell</h4>
+        <ul id="fakta-topper" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+
+    <!-- Lengste elver -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Lengste elver</h4>
+        <ul id="fakta-elver" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+
+    <!-- Største innsjøer -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Største innsjøer</h4>
+        <ul id="fakta-innsjoer" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+</div>
+
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
                 <div class="text-4xl">🐗</div>
                 <p class="text-sm text-gray-700">
@@ -238,9 +270,9 @@
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🇪🇺</div>
-                    <h3 class="font-bold text-purple-900">EU og NATO</h3>
-                    <p class="text-xs text-gray-600 mt-1">Både EU (Den europeiske union) og NATO har sitt hovedkvarter i Brussel.</p>
+                    <div class="text-4xl mb-2">🏛️</div>
+                    <h3 class="font-bold text-purple-900">Parlement fédéral</h3>
+                    <p class="text-xs text-gray-600 mt-1">Det belgiske parlamentet i Brussel.</p>
                 </div>
             </div>
 
@@ -286,7 +318,10 @@
                 <!-- Timeline item 4 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
-                    <h3 class="font-bold text-lg text-amber-900">🦸 Smurfene og Tintin (1929–1958)</h3>
+                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+  <img src="Bilder/tintin.png" alt="Tintin" class="w-6 h-auto inline-block" />
+  Smurfene og Tintin (1929–1958)
+</h3>
                     <p class="text-sm text-gray-700">Belgia ble en verdenskjent tegneserienasjon! Tintin ble skapt i 1929 og de små blå Smurfene kom i 1958.</p>
                 </div>
 
@@ -366,7 +401,10 @@
                     </h3>
                     <ul class="text-sm text-gray-700 space-y-2">
                         <li>🎨 <strong>Hergé:</strong> Tegneserieskaperen som fant på eventyrene om <em>Tintin</em>.</li>
-                        <li>🍄 <strong>Peyo:</strong> Mannen bak de kjente blå <em>Smurfene</em>.</li>
+                        <li>
+  <img src="Bilder/smurf.png" alt="Smurf" class="w-4 h-auto inline-block" />
+  <strong>Peyo:</strong> Mannen bak de kjente blå <em>Smurfene</em>.
+</li>
                         <li>🚴 <strong>Eddy Merckx:</strong> Ansett som en av verdens beste syklister gjennom tidene.</li>
                         <li>⚽ <strong>Kevin De Bruyne:</strong> Verdensberømt fotballspiller.</li>
                     </ul>
@@ -387,6 +425,18 @@
         </section>
 
     </main>
+
+<!-- Popup Modal -->
+<div id="imageFlagModal" class="fixed inset-0 bg-black/70 hidden justify-center items-center z-50 p-4 backdrop-blur-sm" onclick="closeFlagModal()">
+    <div class="relative max-w-3xl max-h-[90vh] bg-slate-900 p-2 rounded-lg shadow-2xl border border-white/20" onclick="event.stopPropagation()">
+        <!-- Lukk-knapp -->
+        <button onclick="closeFlagModal()" class="absolute -top-3 -right-3 bg-red-600 hover:bg-red-700 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg transition-colors cursor-pointer" aria-label="Lukk">
+            &times;
+        </button>
+        <!-- Bilde i modal -->
+        <img src="Flagg/BEL.png" alt="Belgias flagg (stort)" class="max-w-full max-h-[80vh] object-contain rounded">
+    </div>
+</div>
 
 <!-- FULLSKJERM MODAL FOR ENKELTBILDE MED ZOOM -->
     <div 
@@ -461,6 +511,29 @@
     </div>
 
     <script>
+
+function openFlagModal() {
+    const modal = document.getElementById('imageFlagModal');
+    if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+}
+
+function closeFlagModal() {
+    const modal = document.getElementById('imageFlagModal');
+    if (modal) {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }
+}
+
+// Lukk flagg-modalen dersom brukeren trykker Escape-tasten
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeFlagModal();
+    }
+});
         // MODAL/FULLSKJERM-FUNKSJONER
         function openModal() {
             const modal = document.getElementById('mapModal');
@@ -724,10 +797,38 @@
                 closeModal();
             }
         });
+document.addEventListener("DOMContentLoaded", () => {
+        // Hent landskode fra filnavnet (f.eks. "DNK.html" -> "DNK")
+        const landKode = window.location.pathname.split('/').pop().replace('.html', '').toUpperCase();
+        const data = hentFakta(landKode);
+
+        if (data) {
+            // Hjelpefunksjon for å lage punktliste uten tomme/ugyldige verdier ('-')
+            const fyllListe = (elementId, array) => {
+                const el = document.getElementById(elementId);
+                const gyldigeVerdier = array.filter(item => item && item !== '-');
+
+                if (gyldigeVerdier.length > 0) {
+                    el.innerHTML = gyldigeVerdier.map(item => `<li>${item}</li>`).join('');
+                } else {
+                    el.innerHTML = '<li class="text-gray-400 italic">Ingen registrerte data</li>';
+                }
+            };
+
+            fyllListe('fakta-topper', data.topper);
+            fyllListe('fakta-elver', data.elver);
+            fyllListe('fakta-innsjoer', data.innsjoer);
+        } else {
+            console.warn(`Fant ingen fakta for landskode: ${landKode}`);
+        }
+    });
+
+
 
 
         // Kjør når siden laster
         window.addEventListener('DOMContentLoaded', oppdaterBelgiaFakta);
     </script>
+<script src="fakta.js"></script>
 </body>
 </html>
