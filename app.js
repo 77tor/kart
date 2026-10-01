@@ -207,6 +207,13 @@ function findCountryFeature(country) {
     country.matchKeys.forEach(k => k && keys.add(k.toString().trim().toLowerCase()));
   }
 
+  // Legg til koder for Nord-Kypros dersom Kypros velges
+  if (country.iso3 === 'CYP' || keys.has('cyp') || keys.has('kypros') || keys.has('cyprus')) {
+    keys.add('cyn');
+    keys.add('northern cyprus');
+    keys.add('nord-kypros');
+  }
+
   const isFrenchGuiana = country.iso3 === "GUF" || 
                          keys.has("guf") || 
                          keys.has("french guiana") || 
@@ -355,7 +362,19 @@ function highlightAndFocusCountry(country) {
   const feature = findCountryFeature(country);
 
   if (feature) {
+    // Sjekk om landet som skal vises er Kypros
+    const isCyprus = (country.iso3 || '').toUpperCase() === 'CYP' || (country.name && country.name.toLowerCase() === 'kypros');
+
     currentCountryLayer = L.geoJSON(feature, {
+      filter: function(feat) {
+        // Hvis vi fremviser Kypros, godta BÅDE CYP og Nord-Kypros (CYN)
+        if (isCyprus) {
+          const iso = (feat.properties?.ISO_A3 || feat.properties?.iso_a3 || feat.id || '').toUpperCase();
+          const name = (feat.properties?.name || feat.properties?.NAME || '').toLowerCase();
+          return iso === 'CYP' || iso === 'CYN' || name.includes('northern cyprus');
+        }
+        return true;
+      },
       style: {
         color: '#38bdf8',
         weight: 2.5,
@@ -1046,12 +1065,45 @@ document.querySelectorAll('.continent-btn').forEach(btn => {
     });
   }
 
-  const searchElem = document.getElementById('countrySearch');
+const searchElem = document.getElementById('countrySearch');
+  const searchList = document.getElementById('countrySearchList');
+
   if (searchElem) {
     searchElem.addEventListener('input', (e) => {
-      const query = e.target.value.toLowerCase();
-      const filtered = countriesData.filter(c => c.name.toLowerCase().includes(query));
+      const query = e.target.value.trim().toLowerCase();
+
+      // 1. Hvis færre enn 2 bokstaver, tøm forslagslisten
+      if (query.length < 2) {
+        if (searchList) searchList.innerHTML = '';
+        populateCountryDropdown(countriesData);
+        return;
+      }
+
+      // 2. Filtrer land basert på navn eller ISO3-kode
+      const filtered = countriesData.filter(c => 
+        (c.name && c.name.toLowerCase().includes(query)) ||
+        (c.iso3 && c.iso3.toLowerCase().includes(query))
+      );
+
+      // 3. Fyll autofullfør-menyen (<datalist>) med treff
+      if (searchList) {
+        searchList.innerHTML = filtered
+          .map(c => `<option value="${c.name}"></option>`)
+          .join('');
+      }
+
+      // 4. Oppdater den eksisterende rullemenyen med filtrerte resultater
       populateCountryDropdown(filtered);
+    });
+
+    // 5. Zoom til landet når brukeren velger et forslag fra datalisten (eller trykker Enter)
+    searchElem.addEventListener('change', (e) => {
+      const query = e.target.value.trim().toLowerCase();
+      const exactMatch = countriesData.find(c => c.name.toLowerCase() === query);
+      
+      if (exactMatch) {
+        selectCountryByName(exactMatch.name);
+      }
     });
   }
 

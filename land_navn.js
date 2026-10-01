@@ -225,7 +225,7 @@ window.norwegianNameOverrides = {
 };
 
 // Liste over ISO3-koder som har sin egen detaljside i Land/-mappen
-window.availableLandPages = ['NOR', 'SWE', 'DNK', 'ITA', 'DEU', 'FIN', 'BEL', 'AUT', 'NLD', 'ISL', 'GBR', 'ESP', 'CHE', 'FRA', 'IRL', 'POL'];
+window.availableLandPages = ['AUT', 'BEL', 'BGR', 'BLR', 'CHE', 'CYP', 'CZE', 'DEU', 'DNK', 'ESP', 'EST', 'FIN', 'FRA', 'GBR', 'GEO', 'GRC', 'IRL', 'ISL', 'KOS', 'LIE', 'LTU', 'LUX', 'LVA', 'MDA', 'MKD', 'MLT', 'MNE', 'NLD', 'NOR', 'POL', 'PRT', 'ROU', 'SRB', 'SVK', 'SWE'];
 
 // Globalt kart som kobler alle landnavn (norsk/engelsk/ISO) direkte til sin ISO3-kode
 window.isoNameMap = {

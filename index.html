@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interaktivt Verdens- og Landkart</title>
+  <title>Verdenskart</title>
+  <link rel="icon" type="image/svg" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
 <script>
   // Hindrer krasj fra biblioteker som forventer Node.js sin process-variabel
   window.process = { env: { NODE_ENV: 'production' } };
@@ -108,10 +110,11 @@
               <i class="fa-solid fa-magnifying-glass"></i> Søk & Velg Land
             </h2>
             <div class="space-y-1.5">
-              <div class="relative">
-                <input type="text" id="countrySearch" placeholder="Søk etter land..." class="w-full bg-gray-800 text-xs rounded-lg pl-8 pr-3 py-1.5 border border-gray-700 focus:outline-none focus:border-sky-500 text-white placeholder-gray-500">
-                <i class="fa-solid fa-search absolute left-2.5 top-2.5 text-gray-500 text-xs"></i>
-              </div>
+<div class="relative">
+  <input type="text" id="countrySearch" list="countrySearchList" autocomplete="off" placeholder="Søk etter land..." class="w-full bg-gray-800 text-xs rounded-lg pl-8 pr-3 py-1.5 border border-gray-700 focus:outline-none focus:border-sky-500 text-white placeholder-gray-500">
+  <i class="fa-solid fa-search absolute left-2.5 top-2.5 text-gray-500 text-xs"></i>
+  <datalist id="countrySearchList"></datalist>
+</div>
               <select id="countrySelect" class="w-full bg-gray-800 text-xs rounded-lg p-1.5 border border-gray-700 text-gray-200 focus:outline-none focus:border-sky-500 truncate">
                 <option value="">Velg et land fra listen...</option>
               </select>
