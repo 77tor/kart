@@ -165,7 +165,7 @@ const faktaData = {
   },
   'FRA': {
     land: 'Frankrike',
-    topper: ['Mont Blanc (4808 m)', 'Mont Maudit (4465 m)', 'Dôme du Goûter (4304 m)'],
+    topper: ['Mont Blanc (4806 m)', 'Mont Maudit (4465 m)', 'Dôme du Goûter (4304 m)'],
     elver: ['Loire (1006 km)', 'Seine (777 km)', 'Garonne (522 km i FR)'],
     innsjoer: ['Genfersjøen (Lac Léman - fransk del)', 'Lac du Bourget', 'Lac d\'Annecy']
   },
@@ -177,7 +177,7 @@ const faktaData = {
   },
   'GEO': {
     land: 'Georgia',
-    topper: ['Shkhara (5193 m)', 'Janga (5059 m)', 'Kazbek (5054 m)'],
+    topper: ['Shkhara (5200 m)', 'Janga (5059 m)', 'Kazbek (5054 m)'],
     elver: ['Kura / Mtkvari (1515 km tot.)', 'Rioni (327 km)', 'Enguri (213 km)'],
     innsjoer: ['Paravani', 'Tabatskuri', 'Paliastomi']
   },
@@ -233,7 +233,7 @@ const faktaData = {
     land: 'Liechtenstein',
     topper: ['Grauspitz (2599 m)', 'Hinter Grauspitz (2574 m)', 'Naafkopf (2570 m)'],
     elver: ['Rinen (27 km i FL)', 'Samina (12 km)', 'Sammelkanal'],
-    innsjoer: ['Gampriner Seelein (E唯一 naturlig innsjø)', 'Steg-reservoaret', 'Guschg']
+    innsjoer: ['Gampriner Seelein (Eneste naturlig innsjø)', 'Steg-reservoaret', 'Guschg']
   },
   'LTU': {
     land: 'Litauen',
