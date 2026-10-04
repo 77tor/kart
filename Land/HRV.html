@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kroatia - Perlen ved Adriaterhavet! 🇭🇷</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9ff;
+        }
+        h1, h2, h3, .font-fun {
+            font-family: 'Fredoka', cursive, sans-serif;
+        }
+        .card-bounce {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-bounce:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-sky-50/50 text-slate-800 min-h-screen pb-12">
+
+    <!-- HEADER -->
+    <header class="bg-red-600 text-white shadow-lg sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
+            <div class="flex items-center gap-3">
+                <img src="https://flagcdn.com/w40/hr.png" alt="Kroatias flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
+                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Kroatia - Perlen ved Adriaterhavet!</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 mt-6 space-y-10">
+
+        <!-- KORTE FAKTA -->
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-blue-500">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-6 flex items-center gap-2">
+                ⚡ Korte fakta om Kroatia
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="bg-red-100 p-4 rounded-2xl text-center border-2 border-red-300 card-bounce">
+                    <div class="text-3xl mb-1">🏛️</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Hovedstad</div>
+                    <div class="font-bold text-red-700 text-lg">Zagreb</div>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-2xl text-center border-2 border-blue-300 card-bounce">
+                    <div class="text-3xl mb-1">👨‍👩‍👧‍👦</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Mennesker</div>
+                    <div class="font-bold text-blue-700 text-lg" id="kroatia-befolkning">Laster...</div>
+                </div>
+                <div class="bg-green-100 p-4 rounded-2xl text-center border-2 border-green-300 card-bounce">
+                    <div class="text-3xl mb-1">🗣️</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Språk</div>
+                    <div class="font-bold text-green-700 text-base">Kroatisk</div>
+                </div>
+                <div class="bg-amber-100 p-4 rounded-2xl text-center border-2 border-amber-300 card-bounce">
+                    <div class="text-3xl mb-1">👔</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Statsoverhode</div>
+                    <div class="font-bold text-amber-800 text-base" id="kroatia-president">Laster...</div>
+                </div>
+                <div class="bg-purple-100 p-4 rounded-2xl text-center border-2 border-purple-300 card-bounce">
+                    <div class="text-3xl mb-1">🎉</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Nasjonaldag</div>
+                    <div class="font-bold text-purple-700 text-lg">30. mai</div>
+                </div>
+                <div class="bg-emerald-100 p-4 rounded-2xl text-center border-2 border-emerald-300 card-bounce">
+                    <div class="text-3xl mb-1">💶</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Valuta</div>
+                    <div class="font-bold text-emerald-700 text-base">Euro (€)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAP SECTION (To kart side om side) -->
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-sky-400">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-sky-600 flex items-center gap-2">
+                        🗺️ Kart over Kroatia
+                    </h2>
+                    <p class="text-gray-600 text-sm">Klikk på et av kartene for å åpne og zoome i fullskjerm!</p>
+                </div>
+            </div>
+
+            <div class="bg-sky-50/50 rounded-2xl p-4 border-2 border-sky-200 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
+                <!-- Vanlig kart (Venstre) -->
+                <div class="text-center w-full">
+                    <img 
+                        src="Bilder/kart_kroatia.png" 
+                        alt="Illustrasjonskart over Kroatia" 
+                        onclick="openSingleModal('Bilder/kart_kroatia.png', 'Illustrasjonskart over Kroatia')"
+                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-sky-200"
+                    >
+                    <button 
+                        onclick="openSingleModal('Bilder/kart_kroatia.png', 'Illustrasjonskart over Kroatia')"
+                        class="text-xs font-semibold text-sky-800 mt-2 hover:underline inline-flex items-center gap-1"
+                    >
+                        🔍 Åpne Illustrasjonskart
+                    </button>
+                </div>
+
+                <!-- Ekte kart (Høyre) -->
+                <div class="text-center w-full">
+                    <img 
+                        src="Bilder/kart_kroatia_ekte.png" 
+                        alt="Ekte kart over Kroatia" 
+                        onclick="openSingleModal('Bilder/kart_kroatia_ekte.png', 'Geografisk kart over Kroatia')"
+                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-sky-200"
+                    >
+                    <button 
+                        onclick="openSingleModal('Bilder/kart_kroatia_ekte.png', 'Geografisk kart over Kroatia')"
+                        class="text-xs font-semibold text-sky-800 mt-2 hover:underline inline-flex items-center gap-1"
+                    >
+                        🔍 Åpne Geografisk kart
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 1: NATUR OG KLIMA -->
+        <section class="bg-cyan-50 rounded-3xl p-6 md:p-8 border-4 border-cyan-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-cyan-500 text-white text-2xl p-3 rounded-2xl">🌊</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-cyan-800">1. Natur og klima</h2>
+            </div>
+            
+            <p class="text-lg text-cyan-950 mb-6 leading-relaxed">
+                Kroatia har en helt unik form – det ser nesten ut som en måne eller en drage! Landet har en lang og vakker kystlinje langs Adriaterhavet med over 1 200 øyer.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border-2 border-cyan-200 card-bounce">
+                    <div class="text-3xl mb-2">⛰️</div>
+                    <div class="font-bold text-lg text-cyan-800 mb-1">Høyeste punkt</div>
+                    <p class="text-sm text-gray-700"><strong>Dinara</strong> er Kroatias høyeste fjelltopp og raget hele 1 831 meter over havet!</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-cyan-200 card-bounce">
+                    <div class="text-3xl mb-2">🏝️</div>
+                    <div class="font-bold text-lg text-cyan-800 mb-1">Øyparadiset</div>
+                    <p class="text-sm text-gray-700">Kroatia har over <strong>1 200 øyer</strong>, men bare rundt 50 av dem bor det folk på!</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-cyan-200 card-bounce">
+                    <div class="text-3xl mb-2">☀️</div>
+                    <div class="font-bold text-lg text-cyan-800 mb-1">Sol og varme</div>
+                    <p class="text-sm text-gray-700">Langs kysten er det <strong>Middelhavsklima</strong> med varme somre og mer enn 2 600 soltimer i året!</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-cyan-200 flex items-center gap-4">
+                <div class="text-4xl">🐺</div>
+                <p class="text-sm text-gray-700">
+                    <strong>Dyreliv:</strong> I de dype skogene og fjellene bor det ulv, brunbjørn og gaupe. I Plitvice-nasjonalparken med sine 16 turkise innsjøer finnes det også sjeldne fugler og sommerfugler!
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 2: FOLK OG SAMFUNN -->
+        <section class="bg-sky-50 rounded-3xl p-6 md:p-8 border-4 border-sky-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-sky-500 text-white text-2xl p-3 rounded-2xl">👨‍👩‍👧‍👦</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-sky-800">2. Folk og samfunn</h2>
+            </div>
+
+            <p class="text-lg text-sky-950 mb-6 leading-relaxed">
+                I Kroatia bor det ca. <strong>3,8 millioner mennesker</strong>. Kroatene er veldig stolte av historien sin, fotballandslaget og den vakre kysten sin!
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
+                    <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
+                        🏢 Største byer i Kroatia
+                    </h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">🔹 <strong>Zagreb:</strong> Hovedstaden og den største byen, full av parker og historiske bygninger.</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Split:</strong> Kystby kjent for det enorme, antikke slottet Diokletians palass.</li>
+                        <li class="flex items-center gap-2">🔹 Andre kjente byer: Rijeka, Osijek og <strong>Dubrovnik</strong> (kjent som "Adriaterhavets perle").</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
+                    <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
+                        ☕ Kaffekultur & Kaféliv
+                    </h3>
+                    <p class="text-sm text-gray-700">
+                        Å "gå på kaffe" er en veldig viktig del av kroatisk kultur. Det handler ikke bare om å drikke kaffe, men å sitte ute og prate med venner i flere timer!
+                    </p>
+                    <p class="text-sm text-gray-700">
+                        Det sjakkbrettmønstrede riksvåpenet kalles <strong>«Šahovnica»</strong> og finnes på alt fra flagg til landslagsdrakter.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-sky-100 p-4 rounded-2xl border-2 border-sky-300">
+                <h4 class="font-bold text-sky-900 mb-1">🗣️ Språk og alfabet</h4>
+                <p class="text-sm text-sky-800">
+                    I Kroatia snakker de <strong>kroatisk</strong>, et sørslavisk språk som bruker det latinske alfabetet, men med noen ekstra bokstaver som Č, Ć, Đ, Š og Ž!
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 3: STAT OG POLITIKK -->
+        <section class="bg-purple-50 rounded-3xl p-6 md:p-8 border-4 border-purple-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-purple-500 text-white text-2xl p-3 rounded-2xl">🏛️</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-purple-800">3. Stat og politikk</h2>
+            </div>
+
+            <p class="text-lg text-purple-950 mb-6 leading-relaxed">
+                Kroatia er en <strong>republikk</strong> og et parlamentarisk <strong>demokrati</strong> der folket velger hvem som skal styre. Landet er også medlem av EU og NATO.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">👔</div>
+                    <h3 class="font-bold text-purple-900" id="stat-president-navn">Laster...</h3>
+                    <p class="text-xs text-gray-600 mt-1">Kroatias president og statsoverhode.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">💼</div>
+                    <h3 class="font-bold text-purple-900" id="stat-pm-navn">Laster...</h3>
+                    <p class="text-xs text-gray-600 mt-1">Statsministeren som leder regjeringen.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🏛️</div>
+                    <h3 class="font-bold text-purple-900">Sabor</h3>
+                    <p class="text-xs text-gray-600 mt-1">Det kroatiske parlamentet i Zagreb.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-purple-200 text-center">
+                <p class="text-sm font-semibold text-purple-900">
+                    📍 Kroatia er delt inn i <strong>20 fylker (županije)</strong> pluss hovedstaden Zagreb som har sin egen status.
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 4: HISTORIE -->
+        <section class="bg-amber-50 rounded-3xl p-6 md:p-8 border-4 border-amber-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-amber-500 text-white text-2xl p-3 rounded-2xl">📜</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Kroatias historie</h2>
+            </div>
+
+            <div class="relative border-l-4 border-amber-400 ml-4 pl-6 space-y-6">
+                <!-- Timeline item 1 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">1</span>
+                    <h3 class="font-bold text-lg text-amber-900">🏛️ Romerriket og Diokletian (Aar 305)</h3>
+                    <p class="text-sm text-gray-700">Den romerske keiseren Diokletian bygde et enormt slott ved Adriaterhavet – der byen Split ligger i dag!</p>
+                </div>
+
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">2</span>
+                    <h3 class="font-bold text-lg text-amber-900">👑 Kong Tomislav (År 925)</h3>
+                    <p class="text-sm text-gray-700">Tomislav ble den alleredførste kongen av Kroatia og samlet det kroatiske riket.</p>
+                </div>
+
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">3</span>
+                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+                        👔 Slips oppfinnes (1600-tallet)
+                    </h3>
+                    <p class="text-sm text-gray-700">Kroatiske soldater brukte fargerike tørkler knyttet rundt halsen. Franskmennene elsket det og oppfant slipset (som het "Cravat", oppkalt etter kroatene)!</p>
+                </div>
+
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
+                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+                        🏰 Republikken Jugoslavia (1918–1991)
+                    </h3>
+                    <p class="text-sm text-gray-700">Gjennom 1900-tallet var Kroatia en del av fellesstaten Jugoslavia sammen med sine naboland.</p>
+                </div>
+
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">5</span>
+                    <h3 class="font-bold text-lg text-amber-900">🕊️ Selvstendighet og EU (1991 / 2013)</h3>
+                    <p class="text-sm text-gray-700">I 1991 ble Kroatia et helt selvstendig land, og i 2013 ble de med i Den europeiske union (EU).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 5: ØKONOMI OG NÆRINGSLIV -->
+        <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-emerald-600 text-white text-2xl p-3 rounded-2xl">💰</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">5. Økonomi og næringsliv</h2>
+            </div>
+
+            <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
+                Hva lever de av i Kroatia? Turisme er den aller viktigste næringen, men Kroatia er også berømt for sin teknologi, skipsbygging og fantastiske mat!
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🏖️</div>
+                    <h3 class="font-bold text-emerald-900">Turisme</h3>
+                    <p class="text-xs text-gray-600 mt-1">Millioner av turistbesøk hvert år for å oppleve kysten og historiske byer.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🏎️</div>
+                    <h3 class="font-bold text-emerald-900">Rimac Automobili</h3>
+                    <p class="text-xs text-gray-600 mt-1">Kroatia lager verdens raskeste elektriske hyperbiler!</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🫒</div>
+                    <h3 class="font-bold text-emerald-900">Landbruk & Oliven</h3>
+                    <p class="text-xs text-gray-600 mt-1">Produserer prisvinnende olivenolje, vin, trøfler og ost.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🚢</div>
+                    <h3 class="font-bold text-emerald-900">Skipsbygging</h3>
+                    <p class="text-xs text-gray-600 mt-1">Lange tradisjoner for å bygge store og moderne skip på verftene.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 6: KULTUR OG UTDANNING -->
+        <section class="bg-rose-50 rounded-3xl p-6 md:p-8 border-4 border-rose-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-rose-500 text-white text-2xl p-3 rounded-2xl">🎨</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-rose-800">6. Kultur og underholdning</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Skole og Idrett -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
+                    <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
+                        🏫 Skole og sport
+                    </h3>
+                    <p class="text-sm text-gray-700">
+                        Grunnskolen kalles «Osnovna škola» og varer i 8 år fra barna er 6–7 år gamle.
+                    </p>
+                    <div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
+                        <p class="text-sm text-rose-900 font-semibold">⚽ Kroatias mest populære sporter:</p>
+                        <p class="text-xs text-gray-600">Fotball (VM-sølv i 2018 og bronse i 2022!), håndball og vannpolo!</p>
+                    </div>
+                </div>
+
+                <!-- Kjente personer -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
+                    <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
+                        🌟 Kjente kroater
+                    </h3>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>⚡ <strong>Nikola Tesla:</strong> En av verdens største oppfinnere innen elektrisitet (født i Smiljan i Kroatia).</li>
+                        <li>⚽ <strong>Luka Modrić:</strong> Legendarisk fotballspiller som vant Gullballen (Ballon d'Or) i 2018.</li>
+                        <li>🐕 <strong>Dalmatineren:</strong> Den berømte hunderasen med svarte prikker kommer fra Dalmatia-regionen!</li>
+                        <li>🧭 <strong>Marco Polo:</strong> Den berømte oppdagelsesreisende sies å være født på øya Korčula.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SEKSJON -->
+        <section class="bg-yellow-100 rounded-3xl p-6 md:p-8 border-4 border-yellow-400 shadow-md">
+            <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-4 text-center">
+                🧠 Test deg selv: Kroatia-Quiz!
+            </h2>
+            <div id="quiz-container" class="bg-white p-6 rounded-2xl border-2 border-yellow-300 max-w-2xl mx-auto space-y-4">
+                <p id="quiz-question" class="text-lg font-bold text-gray-800 text-center">Spørsmål laster...</p>
+                <div id="quiz-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+                <div id="quiz-result" class="text-center font-bold text-lg mt-4 hidden"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL FOR KART -->
+    <div 
+        id="mapModal" 
+        class="fixed inset-0 bg-black/90 z-50 hidden flex-col transition-opacity"
+        onclick="closeModal()"
+    >
+        <div class="w-full bg-slate-900/90 border-b border-white/10 px-4 py-3 flex flex-wrap items-center justify-between text-white shrink-0 z-20 gap-2" onclick="event.stopPropagation()">
+            <div class="flex items-center gap-3">
+                <span id="modalTitle" class="text-sm md:text-base font-bold text-sky-400">
+                    Kart over Kroatia
+                </span>
+                <span class="text-xs text-white/60 hidden sm:inline">
+                    | Klikk på bildet for å veksle zoom
+                </span>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button onclick="switchMap('Bilder/kart_kroatia.png', 'Illustrasjonskart over Kroatia')" class="bg-sky-600 hover:bg-sky-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                    Illustrasjon
+                </button>
+                <button onclick="switchMap('Bilder/kart_kroatia_ekte.png', 'Geografisk kart over Kroatia')" class="bg-sky-600 hover:bg-sky-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                    Ekte kart
+                </button>
+
+                <div class="h-4 w-[1px] bg-white/20 mx-1"></div>
+
+                <button onclick="zoomMap(30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom inn">
+                    ➕
+                </button>
+                <button onclick="zoomMap(-30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom ut">
+                    ➖
+                </button>
+                <button onclick="resetZoom()" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Nullstill zoom">
+                    ↺
+                </button>
+                
+                <button 
+                    onclick="closeModal()" 
+                    class="bg-red-500 hover:bg-red-600 text-white w-8 h-8 rounded-full font-bold text-sm flex items-center justify-center transition ml-2 shadow"
+                    title="Lukk fullskjerm"
+                >
+                    ✕
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full h-full overflow-auto p-4 md:p-8 flex items-center justify-center" id="modalScrollArea" onclick="closeModal()">
+            <div class="m-auto flex items-center justify-center p-8" onclick="event.stopPropagation()">
+                <img 
+                    id="singleModalImg"
+                    src="" 
+                    alt="Kart i fullskjerm" 
+                    onclick="handleImageClick(event)"
+                    class="h-auto w-auto object-contain rounded-xl shadow-2xl border-2 border-white/20 cursor-zoom-in transition-transform duration-200"
+                    style="max-height: 75vh; max-width: 85vw;"
+                >
+            </div>
+        </div>
+
+        <div class="w-full bg-slate-900/80 text-center py-2 shrink-0 border-t border-white/10">
+            <p class="text-white/60 text-xs">
+                Klikk på kartet for å zoome inn/ut • Trykk på bakgrunnen eller ✕ for å lukke
+            </p>
+        </div>
+    </div>
+
+    <footer class="bg-slate-800 text-white text-center py-6 mt-12">
+        <p class="text-sm">🇭🇷 HRV.html - Laget for læring og moro i skolen! 🇭🇷</p>
+    </footer>
+
+    <script>
+        function openSingleModal(imgSrc, title) {
+            document.getElementById('singleModalImg').src = imgSrc;
+            document.getElementById('modalTitle').textContent = title;
+            openModal();
+        }
+
+        function switchMap(imgSrc, title) {
+            document.getElementById('singleModalImg').src = imgSrc;
+            document.getElementById('modalTitle').textContent = title;
+        }
+
+        function openModal() {
+            const modal = document.getElementById('mapModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('mapModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        window.onload = function() {
+            loadQuiz();
+        };
+
+        const quizData = [
+            {
+                question: "Hva heter Kroatias hovedstad?",
+                options: ["Split", "Dubrovnik", "Zagreb", "Rijeka"],
+                answer: 2
+            },
+            {
+                question: "Hvilket klesplagg ble opprinnelig inspirert av kroatiske soldater?",
+                options: ["Hatt", "Slips", "Sokker", "Hansker"],
+                answer: 1
+            },
+            {
+                question: "Hvilken berømt oppfinner ble født i Kroatia?",
+                options: ["Nikola Tesla", "Thomas Edison", "Albert Einstein", "Isaac Newton"],
+                answer: 0
+            },
+            {
+                question: "Hvilken berømt hunderasemed svarte prikker stammer fra Kroatia?",
+                options: ["Puddel", "Schäfer", "Dalmatiner", "Labrador"],
+                answer: 2
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        function loadQuiz() {
+            const q = quizData[currentQuestion];
+            document.getElementById('quiz-question').textContent = q.question;
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+            document.getElementById('quiz-result').classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "bg-amber-100 hover:bg-amber-200 text-amber-900 font-semibold py-3 px-4 rounded-xl border-2 border-amber-300 transition text-sm";
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(idx);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIdx) {
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.classList.remove('hidden');
+            
+            if (selectedIdx === quizData[currentQuestion].answer) {
+                resultDiv.className = "text-center font-bold text-lg mt-4 text-emerald-600";
+                resultDiv.textContent = "🎉 Riktig svar! Fantastisk jobba!";
+            } else {
+                resultDiv.className = "text-center font-bold text-lg mt-4 text-rose-600";
+                resultDiv.textContent = "❌ Nesten! Prøv en gang til.";
+                return;
+            }
+
+            setTimeout(() => {
+                currentQuestion = (currentQuestion + 1) % quizData.length;
+                loadQuiz();
+            }, 1800);
+        }
+
+        async function oppdaterKroatiaFakta() {
+            // Hent befolkningstall fra Wikidata for Kroatia (ID = Q224)
+            try {
+                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q224.json');
+                const data = await response.json();
+                
+                const claims = data.entities.Q224.claims;
+                if (claims.P1082) {
+                    const folketallListe = claims.P1082;
+                    const nyesteTelling = folketallListe[folketallListe.length - 1];
+                    const antall = parseInt(nyesteTelling.mainsnak.datavalue.value.amount, 10);
+                    
+                    const formatertTall = new Intl.NumberFormat('no-NO').format(antall);
+                    const mill = (antall / 1000000).toFixed(1).replace('.', ',');
+                    
+                    const befolkningEl = document.getElementById('kroatia-befolkning');
+                    if (befolkningEl) {
+                        befolkningEl.textContent = `Ca. ${mill} mill. (${formatertTall})`;
+                    }
+                }
+            } catch (feil) {
+                console.error('Kunne ikke hente live befolkningstall:', feil);
+                document.getElementById('kroatia-befolkning').textContent = "Ca. 3,8 mill.";
+            }
+
+            settFaktaOmLeder('kroatia-president', 'stat-president-navn', 'Zoran Milanović');
+            settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Andrej Plenković');
+        }
+
+        function settFaktaOmLeder(elementId1, elementId2, navn) {
+            const el1 = document.getElementById(elementId1);
+            const el2 = document.getElementById(elementId2);
+            if (el1) el1.textContent = navn;
+            if (el2) el2.textContent = navn;
+        }
+
+        window.addEventListener('DOMContentLoaded', oppdaterKroatiaFakta);
+    </script>
+</body>
+</html>

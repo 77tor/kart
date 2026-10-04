@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Storbritannia - Alt om landet til naboene våre!</title>
-    
-    <!-- Tailwind CSS -->
+    <title>Ungarn - Alt om landet i hjertet av Europa! 🇭🇺</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts (Fredoka for friendly headers, Inter for readable text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,13 +29,13 @@
 <body class="bg-amber-50/50 text-slate-800 min-h-screen pb-12">
 
     <!-- HEADER -->
-    <header class="bg-blue-800 text-white shadow-lg sticky top-0 z-40">
+    <header class="bg-red-600 text-white shadow-lg sticky top-0 z-40">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
 <div class="flex items-center gap-3">
     <button onclick="openFlagModal()" class="focus:outline-none focus:ring-2 focus:ring-white/50 rounded" aria-label="Åpne flaggbilde">
-        <img src="https://flagcdn.com/w40/gb.png" alt="Storbritannias flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm" hover:scale-105 transition-transform cursor-pointer">
+        <img src="https://flagcdn.com/w40/hu.png" alt="Ungarns flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm" hover:scale-105 transition-transform cursor-pointer">
     </button>
-    <h1 class="text-xl md:text-3xl font-bold tracking-wide">Storbritannia - Alt om landet til naboene våre!</h1>
+    <h1 class="text-xl md:text-3xl font-bold tracking-wide">Ungarn - Alt om landet i hjertet av Europa!</h1>
 </div>
     </header>
 
@@ -48,81 +44,80 @@
         <!-- KORTE FAKTA -->
         <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-blue-400">
             <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-6 flex items-center gap-2">
-                ⚡ Korte fakta om Storbritannia
+                ⚡ Korte fakta om Ungarn
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 <div class="bg-red-100 p-4 rounded-2xl text-center border-2 border-red-300 card-bounce">
                     <div class="text-3xl mb-1">🏰</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Hovedstad</div>
-                    <div class="font-bold text-red-700 text-lg">London</div>
+                    <div class="font-bold text-red-700 text-lg">Budapest</div>
                 </div>
                 <div class="bg-blue-100 p-4 rounded-2xl text-center border-2 border-blue-300 card-bounce">
                     <div class="text-3xl mb-1">👨‍👩‍👧‍👦</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Mennesker</div>
-                    <div class="font-bold text-blue-700 text-lg" id="storbritannia-befolkning">Laster...</div>
+                    <div class="font-bold text-blue-700 text-lg" id="ungarn-befolkning">Laster...</div>
                 </div>
                 <div class="bg-green-100 p-4 rounded-2xl text-center border-2 border-green-300 card-bounce">
                     <div class="text-3xl mb-1">🗣️</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Språk</div>
-                    <div class="font-bold text-green-700 text-base">Engelsk</div>
+                    <div class="font-bold text-green-700 text-base">Ungarsk</div>
                 </div>
                 <div class="bg-amber-100 p-4 rounded-2xl text-center border-2 border-amber-300 card-bounce">
-                    <div class="text-3xl mb-1">👑</div>
+                    <div class="text-3xl mb-1">🏛️</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Statsoverhode</div>
-                    <div class="font-bold text-amber-800 text-base" id="storbritannia-konge">Laster...</div>
+                    <div class="font-bold text-amber-800 text-base" id="ungarn-president">Laster...</div>
                 </div>
                 <div class="bg-purple-100 p-4 rounded-2xl text-center border-2 border-purple-300 card-bounce">
                     <div class="text-3xl mb-1">🎉</div>
-                    <div class="text-xs text-gray-500 font-semibold uppercase">Offisiell bursdag</div>
-                    <div class="font-bold text-purple-700 text-lg">Trooping the Colour</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Nasjonaldag</div>
+                    <div class="font-bold text-purple-700 text-lg">20. august</div>
                 </div>
                 <div class="bg-emerald-100 p-4 rounded-2xl text-center border-2 border-emerald-300 card-bounce">
-                    <div class="text-3xl mb-1">💷</div>
+                    <div class="text-3xl mb-1">💰</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Valuta</div>
-                    <div class="font-bold text-emerald-700 text-base">Britiske pund (£)</div>
+                    <div class="font-bold text-emerald-700 text-base">Forint (HUF)</div>
                 </div>
             </div>
         </section>
 
-<!-- MAP SECTION (To kart side om side) -->
+        <!-- MAP SECTION (To kart side om side) -->
         <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-emerald-400">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-bold text-emerald-600 flex items-center gap-2">
-                        🗺️ Kart over Storbritannia
+                        🗺️ Kart over Ungarn
                     </h2>
                     <p class="text-gray-600 text-sm">Klikk på et av kartene for å åpne og zoome i fullskjerm!</p>
                 </div>
             </div>
 
-            <!-- Bildebeholder -->
             <div class="bg-emerald-50/50 rounded-2xl p-4 border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
                 <!-- Vanlig kart (Venstre) -->
                 <div class="text-center w-full">
                     <img 
-                        src="Bilder/kart_storbritannia.png" 
-                        alt="Illustrasjonskart over Storbritannia" 
-                        onclick="openSingleModal('Bilder/kart_storbritannia.png', 'Illustrasjonskart over Storbritannia')"
+                        src="Bilder/kart_ungarn.png" 
+                        alt="Illustrasjonskart over Ungarn" 
+                        onclick="openSingleModal('Bilder/kart_ungarn.png', 'Illustrasjonskart over Ungarn')"
                         class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
                     >
                     <button 
-                        onclick="openSingleModal('Bilder/kart_storbritannia.png', 'Illustrasjonskart over Storbritannia')"
+                        onclick="openSingleModal('Bilder/kart_ungarn.png', 'Illustrasjonskart over Ungarn')"
                         class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
                     >
                         🔍 Åpne Illustrasjonskart
                     </button>
                 </div>
 
-                <!-- Ekte kart (Høyre) -->
+                <!-- Geografisk kart (Høyre) -->
                 <div class="text-center w-full">
                     <img 
-                        src="Bilder/kart_storbritannia_ekte.png" 
-                        alt="Ekte kart over Storbritannia" 
-                        onclick="openSingleModal('Bilder/kart_storbritannia_ekte.png', 'Geografisk kart over Storbritannia')"
+                        src="Bilder/kart_ungarn_ekte.png" 
+                        alt="Ekte kart over Ungarn" 
+                        onclick="openSingleModal('Bilder/kart_ungarn_ekte.png', 'Geografisk kart over Ungarn')"
                         class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
                     >
                     <button 
-                        onclick="openSingleModal('Bilder/kart_storbritannia_ekte.png', 'Geografisk kart over Storbritannia')"
+                        onclick="openSingleModal('Bilder/kart_ungarn_ekte.png', 'Geografisk kart over Ungarn')"
                         class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
                     >
                         🔍 Åpne Geografisk kart
@@ -134,34 +129,33 @@
         <!-- SEKSJON 1: NATUR OG KLIMA -->
         <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
-                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🌧️</span>
+                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🌾</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">1. Natur og klima</h2>
             </div>
             
             <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
-                Storbritannia er en stor øynasjon i Atlenterhavet! Landet består av fire deler: <strong>England, Skottland, Wales og Nord-Irland</strong>.
+                Ungarn ligger i Sentral-Europa og har ingen kystlinje mot havet, men er i stedet kjent for store sletter, mektige elver og Sentral-Europas største innsjø!
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">🏔️</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Ben Nevis</div>
-                    <p class="text-sm text-gray-700">Det høyeste fjellet heter <strong>Ben Nevis</strong> og ligger i Skottland (1 345 meter over havet).</p>
+                    <div class="text-3xl mb-2">⛰️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Høyeste punkt</div>
+                    <p class="text-sm text-gray-700"><strong>Kékes</strong> i Mátrafjellene er Ungarns høyeste fjelltopp, og måler 1 014 meter over havet.</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">🌧️</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Mye regn og tåke</div>
-                    <p class="text-sm text-gray-700">Klimaet er milt, men det regner ganske ofte! Derfor er landskapet veldig grønt og flott.</p>
+                    <div class="text-3xl mb-2">🌊</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Balatonsjøen</div>
+                    <p class="text-sm text-gray-700">Kalt «Det ungarske hav». Det er Sentral-Europas største innsjø og et populært sted for bading om sommeren!</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">🦕</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Loch Ness-monsteret?</div>
-                    <p class="text-sm text-gray-700">I den dype skotske innsjøen <strong>Loch Ness</strong> sies det at sjøormen «Nessie» gjemmer seg!</p>
+                    <div class="text-3xl mb-2">🌾</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Pusztaen</div>
+                    <p class="text-sm text-gray-700">Den store ungarske sletten (Alföld) er et enormt flatt gresslandskap kjent for sin unike kultur og hestesport.</p>
                 </div>
             </div>
-
 
 <!-- Geografiske fakta som tre kolonner -->
 <div class="mt-6 bg-white p-5 rounded-2xl border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -192,9 +186,9 @@
 </div>
 
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
-                <div class="text-4xl">🦊</div>
+                <div class="text-4xl">🦅</div>
                 <p class="text-sm text-gray-700">
-                    <strong>Dyreliv:</strong> I Storbritannia kan du se rødrev, pinnsvin, rådyr og harer. Kysten har også store kolonies med lundefugler og sel!
+                    <strong>Dyreliv:</strong> I nasjonalparker som Hortobágy finner du mektige rovfugler, villsvin, hjort og de berømte langhornede ungarske gråfeene!
                 </p>
             </div>
         </section>
@@ -207,38 +201,38 @@
             </div>
 
             <p class="text-lg text-sky-950 mb-6 leading-relaxed">
-                I Storbritannia bor det over <strong>67 millioner mennesker</strong>! Det gjør landet til et av de mest befolkede i Europa.
+                I Ungarn bor det ca. <strong>9,6 millioner mennesker</strong>. Ungarn har en rik kultur full av musikk, dans, god mat og tradisjonelle bad!
             </p>
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
                     <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
-                        🏢 Største byer
+                        🏢 Største byer i Ungarn
                     </h3>
                     <ul class="space-y-2 text-sm text-gray-700">
-                        <li class="flex items-center gap-2">🔹 <strong>London:</strong> Hovedstaden med Big Ben, Eye og rød dobbeldekkerbuss!</li>
-                        <li class="flex items-center gap-2">🔹 <strong>Birmingham & Manchester:</strong> Kjent for industri, kultur og fotball.</li>
-                        <li class="flex items-center gap-2">🔹 <strong>Edinburgh:</strong> Hovedstaden i Skottland med sitt flotte slott.</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Budapest:</strong> Hovedstaden som er delt i to av elven Donau (Buda og Pest).</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Debrecen:</strong> Den nest største byen, kjent for sin historie og universiteter.</li>
+                        <li class="flex items-center gap-2">🔹 Andre store byer: Szeged (solskinnets by), Miskolc og Pécs.</li>
                     </ul>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
                     <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
-                        ☕ Te-kultur & Venstrekjøring
+                        ♨️ Badeliv & Matkultur
                     </h3>
                     <p class="text-sm text-gray-700">
-                        Akkurat som nordmenn elsker kaffe, elsker britene <strong>te</strong>! De drikker over 100 millioner kopper te hver eneste dag.
+                        Ungarn har hundrevis av varme kilder! I Budapest finner du store, berømte termalbad som Széchenyi.
                     </p>
                     <p class="text-sm text-gray-700">
-                        I Storbritannia kjører bilene på **venstre side** av veien! Pass på når du skal gå over gaten!
+                        Nationalretten er <strong>Gulasj (Gulyás)</strong> – en smakfull suppe/gryte med kjøtt, grønnsaker og masse paprikakrydder!
                     </p>
                 </div>
             </div>
 
             <div class="mt-6 bg-sky-100 p-4 rounded-2xl border-2 border-sky-300">
-                <h4 class="font-bold text-sky-900 mb-1">🗣️ Fire land i ett rike!</h4>
+                <h4 class="font-bold text-sky-900 mb-1">🗣️ Språk og opprinnelse</h4>
                 <p class="text-sm text-sky-800">
-                    Storbritannia består av <strong>England, Skottland, Wales og Nord-Irland</strong>. I Wales snakker noen også det gamle språket valisisk (Cymraeg)!
+                    Sproget <strong>ungarsk (magyar)</strong> er helt spesielt! Det ligner ikke på de fleste andre europeiske språk, men er i slekt med blant annet finsk og estisk (de finno-ugriske språkene).
                 </p>
             </div>
         </section>
@@ -246,19 +240,19 @@
         <!-- SEKSJON 3: STAT OG POLITIKK -->
         <section class="bg-purple-50 rounded-3xl p-6 md:p-8 border-4 border-purple-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
-                <span class="bg-purple-500 text-white text-2xl p-3 rounded-2xl">👑</span>
+                <span class="bg-purple-500 text-white text-2xl p-3 rounded-2xl">🏛️</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-purple-800">3. Stat og politikk</h2>
             </div>
 
             <p class="text-lg text-purple-950 mb-6 leading-relaxed">
-                Akkurat som Norge er Storbritannia et <strong>konstitusjonelt monarki</strong> og et <strong>demokrati</strong>.
+                Ungarn er en <strong>republikk</strong> og et demokrati i Sentral-Europa, og har vært medlem av EU og NATO siden 2004.
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🤴</div>
-                    <h3 class="font-bold text-purple-900" id="stat-konge-navn">Laster...</h3>
-                    <p class="text-xs text-gray-600 mt-1">Storbritannias konge og statsoverhode.</p>
+                    <div class="text-4xl mb-2"><img src="https://flagcdn.com/w40/hu.png" alt="Ungarns flagg" class="w-12 h-auto inline-block" /></div>
+                    <h3 class="font-bold text-purple-900" id="stat-president-navn">Laster...</h3>
+                    <p class="text-xs text-gray-600 mt-1">Ungarns president og statsoverhode.</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
@@ -270,13 +264,13 @@
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
                     <div class="text-4xl mb-2">🏛️</div>
                     <h3 class="font-bold text-purple-900">Parlamentet</h3>
-                    <p class="text-xs text-gray-600 mt-1">Sitter i det berømte Palace of Westminster i London.</p>
+                    <p class="text-xs text-gray-600 mt-1">Országház i Budapest, en av verdens vakreste parlamentsbygninger!</p>
                 </div>
             </div>
 
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-purple-200 text-center">
                 <p class="text-sm font-semibold text-purple-900">
-                    📍 Kongefamilien bor blant annet på <strong>Buckingham Palace</strong> midt i London!
+                    📍 Ungarn er delt inn i <strong>19 fylker (megye)</strong> pluss hovedstaden Budapest.
                 </p>
             </div>
         </section>
@@ -285,49 +279,45 @@
         <section class="bg-amber-50 rounded-3xl p-6 md:p-8 border-4 border-amber-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
                 <span class="bg-amber-500 text-white text-2xl p-3 rounded-2xl">📜</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Storbritannias historie</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Ungarns historie</h2>
             </div>
 
             <div class="relative border-l-4 border-amber-400 ml-4 pl-6 space-y-6">
                 <!-- Timeline item 1 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">1</span>
-                    <h3 class="font-bold text-lg text-amber-900">🏛️ Romerne og Stonehenge</h3>
-                    <p class="text-sm text-gray-700">Stonehenge er over 4000 år gammelt! Senere bygde romerne store veier og byer som «Londinium» (London).</p>
+                    <h3 class="font-bold text-lg text-amber-900">🐎 Magyarene ankommer (895)</h3>
+                    <p class="text-sm text-gray-700">De ungarske stammene (magyarene) under ledelse av Árpád slo seg ned i Karpatbekkenet.</p>
                 </div>
 
-<!-- Timeline item 2 -->
-<div class="relative">
-    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">2</span>
-    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
-        <img src="Bilder/viking.png" alt="Viking" class="w-6 h-6 inline-block">
-        <span>Vikingene angriper! (793)</span>
-    </h3>
-    <p class="text-sm text-gray-700">Norske og danske vikinger seilte over havet. Angrepet på Lindisfarne i 793 regnes som starten på vikingtiden!</p>
-</div>
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">2</span>
+                    <h3 class="font-bold text-lg text-amber-900">👑 Kongeriket Ungarn (år 1000)</h3>
+                    <p class="text-sm text-gray-700">Stefan 1. (Szent István) ble kronet som Ungarns første kristne konge på første nyårsdag i år 1000.</p>
+                </div>
 
-                <!-- Timeline item 3 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">3</span>
                     <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
-                        <img src="https://flagcdn.com/w40/gb.png" alt="Storbritannias flagg" class="w-6 h-auto rounded border border-gray-200 shadow-sm inline-block">
-                        Union Jack og Det britiske imperiet
+                        <img src="Bilder/ungarn.png" alt="Habsburg" class="w-6 h-6 object-contain shrink-0">
+                        Østerrike-Ungarn (1867)
                     </h3>
-                    <p class="text-sm text-gray-700">Flagget kalles «Union Jack» og er en sammensmelting av det engelske, skotske og irske flagget.</p>
+                    <p class="text-sm text-gray-700">Ungarn gikk inn i en mektig union med Østerrike og ble stormakten Østerrike-Ungarn helt fram til 1. verdenskrig.</p>
                 </div>
 
-                <!-- Timeline item 4 -->
-                <div class="relative">
-                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
-                    <h3 class="font-bold text-lg text-amber-900">🚂 Den industrielle revolusjon (1700–1800-tallet)</h3>
-                    <p class="text-sm text-gray-700">Britene fant opp dampmaskiner, fabrikker og de første togsporene i verden!</p>
-                </div>
+<div class="relative">
+    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
+    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+        <img src="Bilder/rubix.png" alt="Rubiks kube" class="w-6 h-6 object-contain shrink-0">
+        <span>Rubiks kube oppfinnes (1974)</span>
+    </h3>
+    <p class="text-sm text-gray-700">Arkitekten og professoren Ernő Rubik fant opp den berømte 3D-kuben som ble en verdensomspennende suksess!</p>
+</div>
 
-                <!-- Timeline item 5 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">5</span>
-                    <h3 class="font-bold text-lg text-amber-900">👑 Dronning Elizabeth 2. sin lange tid</h3>
-                    <p class="text-sm text-gray-700">Dronning Elizabeth 2. var dronning i hele 70 år, før King Charles 3. overtok tronen.</p>
+                    <h3 class="font-bold text-lg text-amber-900">🕊️ Demokrati og EU (1989/2004)</h3>
+                    <p class="text-sm text-gray-700">Kommunismen falt i 1989, og Ungarn ble et fritt demokrati som senere ble med i EU i 2004.</p>
                 </div>
             </div>
         </section>
@@ -340,37 +330,37 @@
             </div>
 
             <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
-                Hva lever de av i Storbritannia? Landet har en av verdens største og viktigste økonomier!
+                Hva lever de av i Ungarn? Landet har en sterk bilindustri, teknologi, farmasi og et fargerikt landbruk!
             </p>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🏦</div>
-                    <h3 class="font-bold text-emerald-900">Bank & Finans</h3>
-                    <p class="text-xs text-gray-600 mt-1">London er et av verdens største finanssentre.</p>
-                </div>
-
-                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🎬</div>
-                    <h3 class="font-bold text-emerald-900">Film & Musikk</h3>
-                    <p class="text-xs text-gray-600 mt-1">Harry Potter, James Bond og verdenskjent popmusikk!</p>
-                </div>
-
-                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
                     <div class="text-4xl mb-2">🚗</div>
-                    <h3 class="font-bold text-emerald-900">Bilproduksjon</h3>
-                    <p class="text-xs text-gray-600 mt-1">Lager berømte biler som Rolls-Royce, Mini og Land Rover.</p>
+                    <h3 class="font-bold text-emerald-900">Bilindustri</h3>
+                    <p class="text-xs text-gray-600 mt-1">Stoort produksjonsland for bilmerker som Audi, Suzuki og Mercedes.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🎓</div>
-                    <h3 class="font-bold text-emerald-900">Universiteter</h3>
-                    <p class="text-xs text-gray-600 mt-1">Oxford og Cambridge er blant verdens beste skoler.</p>
+                    <div class="text-4xl mb-2">🌶️</div>
+                    <h3 class="font-bold text-emerald-900">Landbruk</h3>
+                    <p class="text-xs text-gray-600 mt-1">Verdensberømt for paprika, hvete, mais og vin (f.eks. Tokaji).</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">💊</div>
+                    <h3 class="font-bold text-emerald-900">Medisin</h3>
+                    <p class="text-xs text-gray-600 mt-1">Ungarn har en lang tradisjon innen farmasøytisk industri og forskning.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🧳</div>
+                    <h3 class="font-bold text-emerald-900">Turisme</h3>
+                    <p class="text-xs text-gray-600 mt-1">Millioner besøker Budapest, Balatonsjøen og de varme kildene hvert år.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SEKSJON 6: KULTUR OG UTDANNING -->
+        <!-- SEKSJON 6: KULTUR OG UNDERHOLDNING -->
         <section class="bg-rose-50 rounded-3xl p-6 md:p-8 border-4 border-rose-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
                 <span class="bg-rose-500 text-white text-2xl p-3 rounded-2xl">🎨</span>
@@ -381,36 +371,36 @@
                 <!-- Skole og Idrett -->
                 <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
                     <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
-                        ⚽ Fotballens hjemland!
+                        🏫 Skole og sport
                     </h3>
                     <p class="text-sm text-gray-700">
-                        Modern fotball ble oppfunnet i England! Den engelske ligasystemet **Premier League** er den mest populære fotballigaen i verden.
+                        Barna i Ungarn starter på skolen når de er 6 år gamle. Utdanning og vitenskap står veldig sterkt i landet!
                     </p>
                     <div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
-                        <p class="text-sm text-rose-900 font-semibold">🏏 Andre populære sporter:</p>
-                        <p class="text-xs text-gray-600">Cricket, rugby, tennis (Wimbledon) og golf!</p>
+                        <p class="text-sm text-rose-900 font-semibold">🏊‍♂️️ Ungarns mest populære sporter:</p>
+                        <p class="text-xs text-gray-600">Svømming, vannpolo, fotball og fekting!</p>
                     </div>
                 </div>
 
                 <!-- Kjente personer -->
                 <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
                     <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
-                        🌟 Kjente briter
+                        🌟 Kjente ungarere
                     </h3>
                     <ul class="text-sm text-gray-700 space-y-2">
-                        <li>📚 <strong>J.K. Rowling:</strong> Forfatteren av de magiske Harry Potter-bøkene!</li>
-                        <li>🎭 <strong>William Shakespeare:</strong> Verdens mest kjente skuespillforfatter.</li>
-                        <li>🎸 <strong>The Beatles & Ed Sheeran:</strong> Verdensberømte musikere.</li>
-                        <li>🔬 <strong>Isaac Newton:</strong> Fant ut hvordan tyngdekraften fungerer!</li>
+                        <li>🧩 <strong>Ernő Rubik:</strong> Oppfinneren av Rubiks kube.</li>
+                        <li>🎼 <strong>Franz Liszt:</strong> En av historiens mest berømte pianister og komponister.</li>
+                        <li>⚽ <strong>Ferenc Puskás:</strong> Legendarisk fotballspiller regnet som en av tidenes beste.</li>
+                        <li>🤹 <strong>Harry Houdini:</strong> Verdens mest kjente utbryterkonge og magiker ble født i Budapest!</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- MORO QUIZ -->
+        <!-- QUIZ SEKSJON -->
         <section class="bg-yellow-100 rounded-3xl p-6 md:p-8 border-4 border-yellow-400 shadow-md">
             <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-4 text-center">
-                🧠 Test deg selv: Storbritannia-Quiz!
+                🧠 Test deg selv: Ungarn-Quiz!
             </h2>
             <div id="quiz-container" class="bg-white p-6 rounded-2xl border-2 border-yellow-300 max-w-2xl mx-auto space-y-4">
                 <p id="quiz-question" class="text-lg font-bold text-gray-800 text-center">Spørsmål laster...</p>
@@ -421,36 +411,34 @@
 
     </main>
 
-<!-- FULLSKJERM MODAL FOR ENKELTBILDE MED ZOOM -->
+    <!-- MODAL FOR KART -->
     <div 
         id="mapModal" 
         class="fixed inset-0 bg-black/90 z-50 hidden flex-col transition-opacity"
         onclick="closeModal()"
     >
-        <!-- TOPPBAR (Låst på toppen) -->
+
         <div class="w-full bg-slate-900/90 border-b border-white/10 px-4 py-3 flex flex-wrap items-center justify-between text-white shrink-0 z-20 gap-2" onclick="event.stopPropagation()">
             <div class="flex items-center gap-3">
                 <span id="modalTitle" class="text-sm md:text-base font-bold text-emerald-400">
-                    Kart over Storbritannia
+                    Kart over Ungarn
                 </span>
                 <span class="text-xs text-white/60 hidden sm:inline">
                     | Klikk på bildet for å veksle zoom
                 </span>
             </div>
 
-            <!-- Zoome-kontroller og Bytte av kart -->
             <div class="flex items-center gap-2">
-                <!-- Bytte-knapper -->
-                <button onclick="switchMap('Bilder/kart_storbritannia.png', 'Illustrasjonskart over Storbritannia')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+
+                <button onclick="switchMap('Bilder/kart_ungarn.png', 'Illustrasjonskart over Ungarn')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
                     Illustrasjon
                 </button>
-                <button onclick="switchMap('Bilder/kart_storbritannia_ekte.png', 'Geografisk kart over Storbritannia')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                <button onclick="switchMap('Bilder/kart_ungarn_ekte.png', 'Geografisk kart over Ungarn')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
                     Ekte kart
                 </button>
 
                 <div class="h-4 w-[1px] bg-white/20 mx-1"></div>
 
-                <!-- Zoom-knapper -->
                 <button onclick="zoomMap(30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom inn">
                     ➕
                 </button>
@@ -471,7 +459,6 @@
             </div>
         </div>
 
-<!-- BILDER-OMRÅDE MED SENTRERT ZOOM -->
         <div class="w-full h-full overflow-auto p-4 md:p-8 flex items-center justify-center" id="modalScrollArea" onclick="closeModal()">
             <div class="m-auto flex items-center justify-center p-8" onclick="event.stopPropagation()">
                 <img 
@@ -485,7 +472,6 @@
             </div>
         </div>
 
-        <!-- BUNNBAR -->
         <div class="w-full bg-slate-900/80 text-center py-2 shrink-0 border-t border-white/10">
             <p class="text-white/60 text-xs">
                 Klikk på kartet for å zoome inn/ut • Trykk på bakgrunnen eller ✕ for å lukke
@@ -501,21 +487,36 @@
             &times;
         </button>
         <!-- Bilde i modal -->
-        <img src="Flagg/GBR.png" alt="Storbritannias flagg (stort)" class="max-w-full max-h-[80vh] object-contain rounded">
+        <img src="Flagg/HUN.png" alt="Ungarns flagg (stort)" class="max-w-full max-h-[80vh] object-contain rounded">
     </div>
 </div>
 
     <!-- FOOTER -->
     <footer class="bg-slate-800 text-white text-center py-6 mt-12">
-        <p class="text-sm">GBR.html - Laget for læring og moro i skolen!</p>
+        <p class="text-sm">🇭🇺 HUN.html - Laget for læring og moro i skolen! 🇭🇺</p>
     </footer>
 
+    <!-- SCRIPT -->
     <script>
-        // MODAL/FULLSKJERM-FUNKSJONER
-        function openModal() {
+        function openSingleModal(src, title) {
             const modal = document.getElementById('mapModal');
+            const img = document.getElementById('singleModalImg');
+            const titleEl = document.getElementById('modalTitle');
+            
+            img.src = src;
+            img.alt = title;
+            if (titleEl) titleEl.textContent = title;
+            
             modal.classList.remove('hidden');
             modal.classList.add('flex');
+        }
+
+        function switchMap(src, title) {
+            const img = document.getElementById('singleModalImg');
+            const titleEl = document.getElementById('modalTitle');
+            img.src = src;
+            img.alt = title;
+            if (titleEl) titleEl.textContent = title;
         }
 
         function closeModal() {
@@ -524,38 +525,36 @@
             modal.classList.add('hidden');
         }
 
-        // Lukk fullskjerm-visningen hvis man trykker på "Escape"
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal();
             }
         });
 
-        // OPPSTART AV PAGE / QUIZ
         window.onload = function() {
             loadQuiz();
+            oppdaterUngarnFakta();
         };
 
-        // QUIZ DATA & LOGIC
         const quizData = [
             {
-                question: "Hva heter Storbritannias hovedstad?",
-                options: ["Manchester", "Edinburgh", "London", "Liverpool"],
-                answer: 2
-            },
-            {
-                question: "Hvilken side av veien kjører bilene på i Storbritannia?",
-                options: ["Høyre side", "Venstre side", "I midten", "Begge sider"],
+                question: "Hva heter Ungarns hovedstad?",
+                options: ["Debrecen", "Budapest", "Szeged", "Miskolc"],
                 answer: 1
             },
             {
-                question: "Hvem skapte bokserien om trolldomsgutten Harry Potter?",
-                options: ["J.K. Rowling", "Roald Dahl", "C.S. Lewis", "J.R.R. Tolkien"],
+                question: "Hva heter den berømte 3D-kuben som ble oppfunnet i Ungarn?",
+                options: ["Lego-kuben", "Tetris-kuben", "Rubiks kube", "Magic-kuben"],
+                answer: 2
+            },
+            {
+                question: "Hva kalles Sentral-Europas største innsjø som ligger i Ungarn?",
+                options: ["Balatonsjøen", "Gardsjøen", "Genèvesjøen", "Mjøsa"],
                 answer: 0
             },
             {
-                question: "Hva heter det berømte klokketårnet som ligger ved parlamentet i London?",
-                options: ["London Eye", "Big Ben", "Tower of London", "Buckingham Palace"],
+                question: "Hva heter Ungarns velkjente nasjonalrett?",
+                options: ["Paella", "Gulasj", "Moussaka", "Tacos"],
                 answer: 1
             }
         ];
@@ -584,7 +583,7 @@
             
             if (selectedIdx === quizData[currentQuestion].answer) {
                 resultDiv.className = "text-center font-bold text-lg mt-4 text-emerald-600";
-                resultDiv.textContent = "🎉 Riktig svar! Brilliant! (Kjempebra!)";
+                resultDiv.textContent = "🎉 Riktig svar! Fantastisk bra jobba!";
             } else {
                 resultDiv.className = "text-center font-bold text-lg mt-4 text-rose-600";
                 resultDiv.textContent = "❌ Nesten! Prøv en gang til.";
@@ -597,14 +596,13 @@
             }, 1800);
         }
 
-        // Funksjon for å hente oppdatert data om Storbritannia
-        async function oppdaterStorbritanniaFakta() {
-            // 1. Hent nyeste registrerte befolkningstall fra Wikidata (Storbritannia ID = Q145)
+        async function oppdaterUngarnFakta() {
+            // Hent nyeste registrerte befolkningstall fra Wikidata for Ungarn (Q28)
             try {
-                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q145.json');
+                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q28.json');
                 const data = await response.json();
                 
-                const claims = data.entities.Q145.claims;
+                const claims = data.entities.Q28.claims;
                 if (claims.P1082) {
                     const folketallListe = claims.P1082;
                     const nyesteTelling = folketallListe[folketallListe.length - 1];
@@ -613,19 +611,18 @@
                     const formatertTall = new Intl.NumberFormat('no-NO').format(antall);
                     const mill = (antall / 1000000).toFixed(1).replace('.', ',');
                     
-                    const befolkningEl = document.getElementById('storbritannia-befolkning');
+                    const befolkningEl = document.getElementById('ungarn-befolkning');
                     if (befolkningEl) {
                         befolkningEl.textContent = `Ca. ${mill} mill. (${formatertTall})`;
                     }
                 }
             } catch (feil) {
                 console.error('Kunne ikke hente live befolkningstall:', feil);
-                document.getElementById('storbritannia-befolkning').textContent = "Ca. 67 mill.";
+                document.getElementById('ungarn-befolkning').textContent = "Ca. 9,6 mill.";
             }
 
-            // 2. Statsoverhode (Konge) og Statsminister
-            settFaktaOmLeder('storbritannia-konge', 'stat-konge-navn', 'Kong Charles 3.');
-            settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Keir Starmer');
+            settFaktaOmLeder('ungarn-president', 'stat-president-navn', 'Tamás Sulyok');
+            settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Viktor Orbán');
         }
 
         function settFaktaOmLeder(elementId1, elementId2, navn) {
@@ -634,145 +631,6 @@
             if (el1) el1.textContent = navn;
             if (el2) el2.textContent = navn;
         }
-
-// MODAL OG SENTRERT ZOOM MOT KLIKKPUNKT
-        let zoomStep = 0; // 0 = 100%, 1 = 175%, 2 = 250%, 3 = 325%
-        const MAX_STEPS = 3;
-
-        // Skaleringsfaktorer (1.0, 1.75, 2.5, 3.25)
-        const ZOOM_LEVELS = [1, 1.75, 2.5, 3.25]; 
-
-        function openSingleModal(imgSrc, titleText) {
-            const modal = document.getElementById('mapModal');
-            const img = document.getElementById('singleModalImg');
-            const title = document.getElementById('modalTitle');
-
-            if (img && title && modal) {
-                img.src = imgSrc;
-                title.textContent = titleText;
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                resetZoom();
-            }
-        }
-
-        function switchMap(imgSrc, titleText) {
-            const img = document.getElementById('singleModalImg');
-            const title = document.getElementById('modalTitle');
-            if (img && title) {
-                img.src = imgSrc;
-                title.textContent = titleText;
-                resetZoom();
-            }
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('mapModal');
-            if (modal) {
-                modal.classList.remove('flex');
-                modal.classList.add('hidden');
-                resetZoom();
-            }
-        }
-
-        function resetZoom() {
-            zoomStep = 0;
-            applyZoomStyles();
-            
-            const scrollArea = document.getElementById('modalScrollArea');
-            if (scrollArea) {
-                scrollArea.scrollLeft = 0;
-                scrollArea.scrollTop = 0;
-            }
-        }
-
-        function handleImageClick(event) {
-            event.stopPropagation(); // Unngå at modalen lukker seg
-
-            // Hvis vi er på maks zoom (Trinn 3 / 325%), nullstill tilbake til start
-            if (zoomStep >= MAX_STEPS) {
-                resetZoom();
-                return;
-            }
-
-            const img = document.getElementById('singleModalImg');
-            const scrollArea = document.getElementById('modalScrollArea');
-            if (!img || !scrollArea) return;
-
-            const imgRect = img.getBoundingClientRect();
-
-            // Klikkets posisjon som en uendret prosentandel (0.0 til 1.0) av bildet
-            const clickRatioX = (event.clientX - imgRect.left) / imgRect.width;
-            const clickRatioY = (event.clientY - imgRect.top) / imgRect.height;
-
-            executeZoomStep(zoomStep + 1, clickRatioX, clickRatioY);
-        }
-
-        function zoomMap(direction) {
-            // Brukes hvis brukeren trykker på + / - knappene
-            const targetStep = zoomStep + direction;
-            executeZoomStep(targetStep, 0.5, 0.5); // Sentrerer på midten av bildet
-        }
-
-        function executeZoomStep(nextStep, ratioX, ratioY) {
-            const scrollArea = document.getElementById('modalScrollArea');
-            const img = document.getElementById('singleModalImg');
-            const oldStep = zoomStep;
-
-            zoomStep = Math.min(Math.max(nextStep, 0), MAX_STEPS);
-
-            if (oldStep === zoomStep || !scrollArea || !img) return;
-
-            // Oppdater bildeskaleringen
-            applyZoomStyles();
-
-            // Vent til nettleseren har oppdatert bildestørrelsen i DOM
-            requestAnimationFrame(() => {
-                const imgRect = img.getBoundingClientRect();
-                const scrollRect = scrollArea.getBoundingClientRect();
-
-                // Finner hvor det valgte punktet på bildet befinner seg i forhold til scroll-innholdet
-                const targetXOnScroll = (imgRect.left - scrollRect.left + scrollArea.scrollLeft) + (imgRect.width * ratioX);
-                const targetYOnScroll = (imgRect.top - scrollRect.top + scrollArea.scrollTop) + (imgRect.height * ratioY);
-
-                // Beregn ny rulleposisjon for å plassere target-punktet midt i visningsområdet
-                const newScrollLeft = targetXOnScroll - (scrollArea.clientWidth / 2);
-                const newScrollTop = targetYOnScroll - (scrollArea.clientHeight / 2);
-
-                scrollArea.scrollTo({
-                    left: Math.max(0, newScrollLeft),
-                    top: Math.max(0, newScrollTop),
-                    behavior: 'smooth'
-                });
-            });
-        }
-
-        function applyZoomStyles() {
-            const img = document.getElementById('singleModalImg');
-            if (!img) return;
-
-            const scale = ZOOM_LEVELS[zoomStep];
-
-            // Skaler bildet fra midten
-            img.style.transform = `scale(${scale})`;
-            img.style.transformOrigin = 'center center';
-
-            // Oppdater musepekeren
-            if (zoomStep >= MAX_STEPS) {
-                img.classList.remove('cursor-zoom-in');
-                img.classList.add('cursor-zoom-out');
-            } else {
-                img.classList.remove('cursor-zoom-out');
-                img.classList.add('cursor-zoom-in');
-            }
-        }
-
-        // Lukk på Escape
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
 
 document.addEventListener("DOMContentLoaded", () => {
         // Hent landskode fra filnavnet (f.eks. "DNK.html" -> "DNK")
@@ -820,9 +678,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-
-        // Kjør når siden laster
-        window.addEventListener('DOMContentLoaded', oppdaterStorbritanniaFakta);
     </script>
 <script src="fakta.js"></script>
 </body>
