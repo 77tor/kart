@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bosnia-Hercegovina - Alt om det vakre landet på Balkan! 🇧🇦</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9ff;
+        }
+        h1, h2, h3, .font-fun {
+            font-family: 'Fredoka', cursive, sans-serif;
+        }
+        .card-bounce {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-bounce:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-blue-50/40 text-slate-800 min-h-screen pb-12">
+
+    <!-- HEADER -->
+    <header class="bg-blue-700 text-white shadow-lg sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
+            <div class="flex items-center gap-3">
+                <img src="https://flagcdn.com/w40/ba.png" alt="Bosnia-Hercegovinas flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
+                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Bosnia-Hercegovina - Alt om det vakre landet på Balkan!</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 mt-6 space-y-10">
+
+        <!-- KORTE FAKTA -->
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-yellow-400">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-6 flex items-center gap-2">
+                ⚡ Korte fakta om Bosnia-Hercegovina
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="bg-blue-100 p-4 rounded-2xl text-center border-2 border-blue-300 card-bounce">
+                    <div class="text-3xl mb-1">🕌</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Hovedstad</div>
+                    <div class="font-bold text-blue-800 text-lg">Sarajevo</div>
+                </div>
+                <div class="bg-yellow-100 p-4 rounded-2xl text-center border-2 border-yellow-300 card-bounce">
+                    <div class="text-3xl mb-1">👨‍‍👩‍👧‍👦</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Mennesker</div>
+                    <div class="font-bold text-yellow-800 text-lg" id="bosnia-befolkning">Laster...</div>
+                </div>
+                <div class="bg-green-100 p-4 rounded-2xl text-center border-2 border-green-300 card-bounce">
+                    <div class="text-3xl mb-1">🗣️️</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Språk</div>
+                    <div class="font-bold text-green-700 text-xs md:text-sm">Bosnisk, kroatisk, serbisk</div>
+                </div>
+                <div class="bg-purple-100 p-4 rounded-2xl text-center border-2 border-purple-300 card-bounce">
+                    <div class="text-3xl mb-1">🏛️</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Statsoverhode</div>
+                    <div class="font-bold text-purple-700 text-xs" id="bosnia-leder">3-manns presidentskap</div>
+                </div>
+                <div class="bg-red-100 p-4 rounded-2xl text-center border-2 border-red-300 card-bounce">
+                    <div class="text-3xl mb-1">🎉</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Uavhengighetsdag</div>
+                    <div class="font-bold text-red-700 text-lg">1. mars</div>
+                </div>
+                <div class="bg-emerald-100 p-4 rounded-2xl text-center border-2 border-emerald-300 card-bounce">
+                    <div class="text-3xl mb-1">💰</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Valuta</div>
+                    <div class="font-bold text-emerald-700 text-sm">Konvertibel mark (BAM)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAP SECTION (To kart side om side) -->
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-blue-400">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-blue-700 flex items-center gap-2">
+                        🗺️ Kart over Bosnia-Hercegovina
+                    </h2>
+                    <p class="text-gray-600 text-sm">Klikk på et av kartene for å åpne og zoome i fullskjerm!</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-50/50 rounded-2xl p-4 border-2 border-blue-200 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
+                <!-- Vanlig kart (Venstre) -->
+                <div class="text-center w-full">
+                    <img 
+                        src="Bilder/kart_bosnia.png" 
+                        alt="Illustrasjonskart over Bosnia-Hercegovina" 
+                        onclick="openSingleModal('Bilder/kart_bosnia.png', 'Illustrasjonskart over Bosnia-Hercegovina')"
+                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-blue-200"
+                    >
+                    <button 
+                        onclick="openSingleModal('Bilder/kart_bosnia.png', 'Illustrasjonskart over Bosnia-Hercegovina')"
+                        class="text-xs font-semibold text-blue-800 mt-2 hover:underline inline-flex items-center gap-1"
+                    >
+                        🔍 Åpne Illustrasjonskart
+                    </button>
+                </div>
+
+                <div class="text-center w-full">
+                    <img 
+                        src="Bilder/kart_bosnia_ekte.png" 
+                        alt="Ekte kart over Bosnia-Hercegovina" 
+                        onclick="openSingleModal('Bilder/kart_bosnia_ekte.png', 'Geografisk kart over Bosnia-Hercegovina')"
+                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-blue-200"
+                    >
+                    <button 
+                        onclick="openSingleModal('Bilder/kart_bosnia_ekte.png', 'Geografisk kart over Bosnia-Hercegovina')"
+                        class="text-xs font-semibold text-blue-800 mt-2 hover:underline inline-flex items-center gap-1"
+                    >
+                        🔍 Åpne Geografisk kart
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 1: NATUR OG KLIMA -->
+        <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-emerald-600 text-white text-2xl p-3 rounded-2xl">🏔️</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">1. Natur og klima</h2>
+            </div>
+            
+            <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
+                Bosnia-Hercegovina er et utrolig fjellrikt land med krystallklare elver, dype daler og vakre fosser. Landet ligger på Balkanhalvøya i Sørøst-Europa.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">⛰️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Høyeste punkt</div>
+                    <p class="text-sm text-gray-700"><strong>Maglić</strong> er det høyeste fjellet på grensen til Montenegro, med sine 2 386 meter over havet!</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">🌊</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Krystallklare elver</div>
+                    <p class="text-sm text-gray-700">Elvene <strong>Neretva</strong>, <strong>Una</strong> og <strong>Drina</strong> er berømte for sitt turkise vann og spektakulære fosser.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">🏖️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Liten kystlinje</div>
+                    <p class="text-sm text-gray-700">Landet har en veldig kort kystlinje ved Adriaterhavet – byen <strong>Neum</strong> gir landet ca. 20 km kyst!</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
+                <div class="text-4xl">🐻</div>
+                <p class="text-sm text-gray-700">
+                    <strong>Dyreliv:</strong> I de dype skogene og fjellene lever brunbjørn, ulv, gaupe, gemse og kongeørn. Sutjeska nasjonalpark har til og med en av Europas siste urskoger (Perućica)!
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 2: FOLK OG SAMFUNN -->
+        <section class="bg-sky-50 rounded-3xl p-6 md:p-8 border-4 border-sky-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-sky-500 text-white text-2xl p-3 rounded-2xl">👨‍👩‍👧‍👦</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-sky-800">2. Folk og samfunn</h2>
+            </div>
+
+            <p class="text-lg text-sky-950 mb-6 leading-relaxed">
+                I Bosnia-Hercegovina bor det ca. <strong>3,2 millioner mennesker</strong>. Landet er kjent for sin varme gjestfrihet, deilige mat og en spennende blanding av kultur fra øst og vest!
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
+                    <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
+                        🏢 Største byer i landet
+                    </h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">🔹 <strong>Sarajevo:</strong> Hovedstaden, omringet av fjell, rik på historie og kultur.</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Banja Luka:</strong> Landets nest største by, kjent for sine grønne parkområder.</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Mostar:</strong> Verdensberømt for sin ikoniske gamle bro (Stari Most) over elven Neretva.</li>
+                        <li class="flex items-center gap-2">🔹 Andre viktige byer: Tuzla og Zenica.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
+                    <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
+                        ☕ Kaffekultur & Gjestfrihet
+                    </h3>
+                    <p class="text-sm text-gray-700">
+                        Å sitte på kafé og drikke tradisjonell <strong>bosnisk kaffe</strong> (serveres i kobberkanner kalt <em>džezva</em>) er en viktig del av hverdagen.
+                    </p>
+                    <p class="text-sm text-gray-700">
+                        Folk tar seg god tid til å prate sammen, og besøkende blir nesten alltid tatt imot med åpne armer og god mat!
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-sky-100 p-4 rounded-2xl border-2 border-sky-300">
+                <h4 class="font-bold text-sky-900 mb-1">🗣️ Mange folkegrupper og språk</h4>
+                <p class="text-sm text-sky-800">
+                    Det bor tre hovedgrupper her: <strong>bosniakker</strong>, <strong>serbere</strong> og <strong>kroater</strong>. De tre offisielle språkene (bosnisk, serbisk og kroatisk) er så like at alle forstår hverandre uten problemer!
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 3: STAT OG POLITIKK -->
+        <section class="bg-purple-50 rounded-3xl p-6 md:p-8 border-4 border-purple-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-purple-500 text-white text-2xl p-3 rounded-2xl">🏛️</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-purple-800">3. Stat og politikk</h2>
+            </div>
+
+            <p class="text-lg text-purple-950 mb-6 leading-relaxed">
+                Bosnia-Hercegovina har et spennende og litt uvanlig politisk system med <strong>tre presidenter</strong> som deler på å styre!
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">👥</div>
+                    <h3 class="font-bold text-purple-900">Presidentskapet</h3>
+                    <p class="text-xs text-gray-600 mt-1">Består av tre personer (én bosniakisk, én kroatisk og én serbisk representant) som bytter på å være leder.</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">👔</div>
+                    <h3 class="font-bold text-purple-900" id="stat-pm-navn">Ministerrådet</h3>
+                    <p class="text-xs text-gray-600 mt-1">Regjeringen ledes av en leder for Ministerrådet (tilsvarer statsminister).</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🏛️</div>
+                    <h3 class="font-bold text-purple-900">Parlamentet</h3>
+                    <p class="text-xs text-gray-600 mt-1">Lover og regler vedtas i parlamentet i Sarajevo.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-purple-200 text-center">
+                <p class="text-sm font-semibold text-purple-900">
+                    📍 Landet er delt inn i to hoveddeler (enheter): <strong>Føderasjonen Bosnia-Hercegovina</strong> og <strong>Republika Srpska</strong>, pluss det nøytrale distriktet <strong>Brčko</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 4: HISTORIE -->
+        <section class="bg-amber-50 rounded-3xl p-6 md:p-8 border-4 border-amber-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-amber-500 text-white text-2xl p-3 rounded-2xl">📜</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Bosnia-Hercegovinas historie</h2>
+            </div>
+
+            <div class="relative border-l-4 border-amber-400 ml-4 pl-6 space-y-6">
+                <!-- Timeline item 1 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">1</span>
+                    <h3 class="font-bold text-lg text-amber-900">👑 Middelalderkongedømmet (1300-tallet)</h3>
+                    <p class="text-sm text-gray-700">Bosnia var et mektig uavhengig kongedømme under Kong Tvrtko I, som utvidet riket og skapte stor fremgang.</p>
+                </div>
+
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">2</span>
+                    <h3 class="font-bold text-lg text-amber-900">🕌 Det osmanske riket (1463–1878)</h3>
+                    <p class="text-sm text-gray-700">Tyrkerne styrte i over 400 år. De bygde fantastiske broer, moskeer og basarer som Baščaršija i Sarajevo.</p>
+                </div>
+
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">3</span>
+                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+                        🏰 Østerrike-Ungarn & Skuddet i Sarajevo (1914)
+                    </h3>
+                    <p class="text-sm text-gray-700">Erkehertug Franz Ferdinand ble skutt i Sarajevo i 1914 – en hendelse som utløste <strong>første verdenskrig</strong>.</p>
+                </div>
+
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
+                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+                        ❄️ Vinter-OL i Sarajevo (1984)
+                    </h3>
+                    <p class="text-sm text-gray-700">Sarajevo arrangerte de olympiske vinterlekene i 1984, der hele verden feiret idrett og vennskap i fjellene!</p>
+                </div>
+
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">5</span>
+                    <h3 class="font-bold text-lg text-amber-900">🕊️ Uavhengighet og ny tid (1992–I dag)</h3>
+                    <p class="text-sm text-gray-700">Landet ble uavhengig fra Jugoslavia i 1992. Etter noen krevende krigsår på 90-tallet har landet bygget seg opp igjen til å bli et fredelig og populært reisemål.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 5: ØKONOMI OG NÆRINGSLIV -->
+        <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-emerald-600 text-white text-2xl p-3 rounded-2xl">💰</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">5. Økonomi og næringsliv</h2>
+            </div>
+
+            <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
+                Hva lever de av i Bosnia-Hercegovina? Landet har rik tilgang på ren vannkraft, metaller, skogbruk og en voksende turisme!
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🏔️</div>
+                    <h3 class="font-bold text-emerald-900">Turisme</h3>
+                    <p class="text-xs text-gray-600 mt-1">Mange turister besøker Mostar, Sarajevo og de flotte skianleggene.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">⚡</div>
+                    <h3 class="font-bold text-emerald-900">Vannkraft</h3>
+                    <p class="text-xs text-gray-600 mt-1">De mange elvene brukes til å produsere ren elektrisk strøm.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🪵</div>
+                    <h3 class="font-bold text-emerald-900">Tre og møbler</h3>
+                    <p class="text-xs text-gray-600 mt-1">Eksporterer mye kvalitetstreverk og håndlagde møbler.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">⛏️</div>
+                    <h3 class="font-bold text-emerald-900">Metall & Gruver</h3>
+                    <p class="text-xs text-gray-600 mt-1">Har lange tradisjoner med utvinning av jern, aluminium og stål.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 6: KULTUR OG UTDANNING -->
+        <section class="bg-rose-50 rounded-3xl p-6 md:p-8 border-4 border-rose-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-rose-500 text-white text-2xl p-3 rounded-2xl">🎨</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-rose-800">6. Kultur, mat og underholdning</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Mat og Idrett -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
+                    <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
+                        🍢 Deilig mat & sport
+                    </h3>
+                    <p class="text-sm text-gray-700">
+                        Nasjonalretten kalles <strong>Ćevapi</strong> (små grilte kjøttruller i et mjukt brød kalt <em>somun</em>, serveres med løk og <em>kajmak</em>). De er også berømte for bakverket <strong>Burek</strong>!
+                    </p>
+                    <div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
+                        <p class="text-sm text-rose-900 font-semibold">⚽ Populære sporter:</p>
+                        <p class="text-xs text-gray-600">Fotball, basketball, håndball og ekstremsport som rafting i elvene!</p>
+                    </div>
+                </div>
+
+                <!-- Kjente personer -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
+                    <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
+                        🌟 Kjente personer
+                    </h3>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>📚 <strong>Ivo Andrić:</strong> Vant Nobelprisen i litteratur i 1961 for sin berømte bok om broen over Drina.</li>
+                        <li>⚽ <strong>Edin Džeko:</strong> En av verdens mest kjente fotballspillere og kaptein for landslaget.</li>
+                        <li>🏀 <strong>Jusuf Nurkić:</strong> Stjerne i den amerikanske basketballigaen NBA.</li>
+                        <li>🎬 <strong>Danis Tanović:</strong> Oscar-vinnende filmregissør.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ -->
+        <section class="bg-yellow-100 rounded-3xl p-6 md:p-8 border-4 border-yellow-400 shadow-md">
+            <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-4 text-center">
+                🧠 Test deg selv: Bosnia-Hercegovina Quiz!
+            </h2>
+            <div id="quiz-container" class="bg-white p-6 rounded-2xl border-2 border-yellow-300 max-w-2xl mx-auto space-y-4">
+                <p id="quiz-question" class="text-lg font-bold text-gray-800 text-center">Spørsmål laster...</p>
+                <div id="quiz-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+                <div id="quiz-result" class="text-center font-bold text-lg mt-4 hidden"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL (KARTFULLSKJERM) -->
+    <div 
+        id="mapModal" 
+        class="fixed inset-0 bg-black/90 z-50 hidden flex-col transition-opacity"
+        onclick="closeModal()"
+    >
+
+        <div class="w-full bg-slate-900/90 border-b border-white/10 px-4 py-3 flex flex-wrap items-center justify-between text-white shrink-0 z-20 gap-2" onclick="event.stopPropagation()">
+            <div class="flex items-center gap-3">
+                <span id="modalTitle" class="text-sm md:text-base font-bold text-yellow-400">
+                    Kart over Bosnia-Hercegovina
+                </span>
+                <span class="text-xs text-white/60 hidden sm:inline">
+                    | Klikk på bildet for å veksle zoom
+                </span>
+            </div>
+
+            <div class="flex items-center gap-2">
+
+                <button onclick="switchMap('Bilder/kart_bosnia.png', 'Illustrasjonskart over Bosnia-Hercegovina')" class="bg-blue-600 hover:bg-blue-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                    Illustrasjon
+                </button>
+                <button onclick="switchMap('Bilder/kart_bosnia_ekte.png', 'Geografisk kart over Bosnia-Hercegovina')" class="bg-blue-600 hover:bg-blue-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                    Ekte kart
+                </button>
+
+                <div class="h-4 w-[1px] bg-white/20 mx-1"></div>
+
+                <button onclick="zoomMap(30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom inn">
+                    ➕
+                </button>
+                <button onclick="zoomMap(-30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom ut">
+                    ➖
+                </button>
+                <button onclick="resetZoom()" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Nullstill zoom">
+                    ↺
+                </button>
+                
+                <button 
+                    onclick="closeModal()" 
+                    class="bg-red-500 hover:bg-red-600 text-white w-8 h-8 rounded-full font-bold text-sm flex items-center justify-center transition ml-2 shadow"
+                    title="Lukk fullskjerm"
+                >
+                    ✕
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full h-full overflow-auto p-4 md:p-8 flex items-center justify-center" id="modalScrollArea" onclick="closeModal()">
+            <div class="m-auto flex items-center justify-center p-8" onclick="event.stopPropagation()">
+                <img 
+                    id="singleModalImg"
+                    src="" 
+                    alt="Kart i fullskjerm" 
+                    onclick="handleImageClick(event)"
+                    class="h-auto w-auto object-contain rounded-xl shadow-2xl border-2 border-white/20 cursor-zoom-in transition-transform duration-200"
+                    style="max-height: 75vh; max-width: 85vw;"
+                >
+            </div>
+        </div>
+
+        <div class="w-full bg-slate-900/80 text-center py-2 shrink-0 border-t border-white/10">
+            <p class="text-white/60 text-xs">
+                Klikk på kartet for å zoome inn/ut • Trykk på bakgrunnen eller ✕ for å lukke
+            </p>
+        </div>
+    </div>
+
+    <footer class="bg-slate-800 text-white text-center py-6 mt-12">
+        <p class="text-sm">🇧🇦 BIH.html - Laget for læring og moro i skolen! 🇧🇦</p>
+    </footer>
+
+    <script>
+
+        function openModal() {
+            const modal = document.getElementById('mapModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('mapModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Lukk fullskjerm-visningen hvis man trykker på "Escape"
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        window.onload = function() {
+            loadQuiz();
+        };
+
+        const quizData = [
+            {
+                question: "Hva heter hovedstaden i Bosnia-Hercegovina?",
+                options: ["Mostar", "Sarajevo", "Banja Luka", "Tuzla"],
+                answer: 1
+            },
+            {
+                question: "Hva kalles den berømte folkelige matretten med grilt kjøtt i brød?",
+                options: ["Ćevapi", "Pizza", "Paella", "Gulasj"],
+                answer: 0
+            },
+            {
+                question: "Hva skjedde i Sarajevo i 1984?",
+                options: ["VM i fotball", "Vinter-OL", "Verdensutstillingen", "EM i håndball"],
+                answer: 1
+            },
+            {
+                question: "I hvilken kjendissiøs by finner du den berømte gamle broen (Stari Most)?",
+                options: ["Zenica", "Neum", "Mostar", "Bihać"],
+                answer: 2
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        function loadQuiz() {
+            const q = quizData[currentQuestion];
+            document.getElementById('quiz-question').textContent = q.question;
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+            document.getElementById('quiz-result').classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "bg-yellow-100 hover:bg-yellow-200 text-yellow-900 font-semibold py-3 px-4 rounded-xl border-2 border-yellow-300 transition text-sm";
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(idx);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIdx) {
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.classList.remove('hidden');
+            
+            if (selectedIdx === quizData[currentQuestion].answer) {
+                resultDiv.className = "text-center font-bold text-lg mt-4 text-emerald-600";
+                resultDiv.textContent = "🎉 Riktig svar! Supert jobbet!";
+            } else {
+                resultDiv.className = "text-center font-bold text-lg mt-4 text-rose-600";
+                resultDiv.textContent = "❌ Nesten! Prøv en gang til.";
+                return;
+            }
+
+            setTimeout(() => {
+                currentQuestion = (currentQuestion + 1) % quizData.length;
+                loadQuiz();
+            }, 1800);
+        }
+
+        async function oppdaterBosniaFakta() {
+            // Hent nyeste registrerte befolkningstall fra Wikidata (Bosnia-Hercegovina sin ID = Q225)
+            try {
+                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q225.json');
+                const data = await response.json();
+                
+                const claims = data.entities.Q225.claims;
+                if (claims.P1082) {
+                    const folketallListe = claims.P1082;
+                    const nyesteTelling = folketallListe[folketallListe.length - 1];
+                    const antall = parseInt(nyesteTelling.mainsnak.datavalue.value.amount, 10);
+                    
+                    const formatertTall = new Intl.NumberFormat('no-NO').format(antall);
+                    const mill = (antall / 1000000).toFixed(1).replace('.', ',');
+                    
+                    const befolkningEl = document.getElementById('bosnia-befolkning');
+                    if (befolkningEl) {
+                        befolkningEl.textContent = `Ca. ${mill} mill. (${formatertTall})`;
+                    }
+                }
+            } catch (feil) {
+                console.error('Kunne ikke hente live befolkningstall:', feil);
+                document.getElementById('bosnia-befolkning').textContent = "Ca. 3,2 mill.";
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', oppdaterBosniaFakta);
+    </script>
+</body>
+</html>

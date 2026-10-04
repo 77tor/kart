@@ -35,11 +35,12 @@
     <!-- HEADER -->
     <header class="bg-red-600 text-white shadow-lg sticky top-0 z-40">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
-            <div class="flex items-center gap-3">
-                <img src="https://flagcdn.com/w40/dk.png" alt="Danmarks flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
-                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Danmark - Alt om landet til naboene våre!</h1>
-            </div>
-        </div>
+<div class="flex items-center gap-3">
+    <button onclick="openFlagModal()" class="focus:outline-none focus:ring-2 focus:ring-white/50 rounded" aria-label="Åpne flaggbilde">
+        <img src="https://flagcdn.com/w40/dk.png" alt="Danmarks flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm" hover:scale-105 transition-transform cursor-pointer">
+    </button>
+    <h1 class="text-xl md:text-3xl font-bold tracking-wide">Danmark - Alt om landet til naboene våre!</h1>
+</div>
     </header>
 
     <main class="max-w-6xl mx-auto px-4 mt-6 space-y-10">
@@ -498,6 +499,18 @@
         </div>
     </div>
 
+<!-- Popup Modal -->
+<div id="imageFlagModal" class="fixed inset-0 bg-black/70 hidden justify-center items-center z-50 p-4 backdrop-blur-sm" onclick="closeFlagModal()">
+    <div class="relative max-w-3xl max-h-[90vh] bg-slate-900 p-2 rounded-lg shadow-2xl border border-white/20" onclick="event.stopPropagation()">
+        <!-- Lukk-knapp -->
+        <button onclick="closeFlagModal()" class="absolute -top-3 -right-3 bg-red-600 hover:bg-red-700 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg transition-colors cursor-pointer" aria-label="Lukk">
+            &times;
+        </button>
+        <!-- Bilde i modal -->
+        <img src="Flagg/DNK.png" alt="Danmarks flagg (stort)" class="max-w-full max-h-[80vh] object-contain rounded">
+    </div>
+</div>
+
     <!-- FOOTER -->
     <footer class="bg-slate-800 text-white text-center py-6 mt-12">
         <p class="text-sm">🇩🇰 DNK.html - Laget for læring og moro i skolen! 🇩🇰</p>
@@ -801,6 +814,27 @@ document.addEventListener("DOMContentLoaded", () => {
             console.warn(`Fant ingen fakta for landskode: ${landKode}`);
         }
     });
+<!-- JavaScript for å åpne og lukke -->
+    function openFlagModal() {
+        const modal = document.getElementById('imageFlagModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    function closeFlagModal() {
+        const modal = document.getElementById('imageFlagModal');
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }
+
+    // Lukk flagg-modalen dersom brukeren trykker Escape-tasten
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeFlagModal();
+        }
+    });
+
+
 
 // Kjør når siden laster
 window.addEventListener('DOMContentLoaded', oppdaterDanmarkFakta);

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andorra - Alt om det lille landet i Pyreneene! 🇦🇩</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0fdf4;
+        }
+        h1, h2, h3, .font-fun {
+            font-family: 'Fredoka', cursive, sans-serif;
+        }
+        .card-bounce {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card-bounce:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-amber-50/50 text-slate-800 min-h-screen pb-12">
+
+    <!-- HEADER -->
+    <header class="bg-blue-700 text-white shadow-lg sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
+<div class="flex items-center gap-3">
+    <button onclick="openFlagModal()" class="focus:outline-none focus:ring-2 focus:ring-white/50 rounded" aria-label="Åpne flaggbilde">
+        <img src="https://flagcdn.com/w40/ad.png" alt="Andorras flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm" hover:scale-105 transition-transform cursor-pointer">
+    </button>
+    <h1 class="text-xl md:text-3xl font-bold tracking-wide">Andorra - Alt om det lille landet i Pyreneene!</h1>
+</div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 mt-6 space-y-10">
+
+        <!-- KORTE FAKTA -->
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-blue-400">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-6 flex items-center gap-2">
+                ⚡ Korte fakta om Andorra
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="bg-red-100 p-4 rounded-2xl text-center border-2 border-red-300 card-bounce">
+                    <div class="text-3xl mb-1">🏰</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Hovedstad</div>
+                    <div class="font-bold text-red-700 text-sm md:text-base">Andorra la Vella</div>
+                </div>
+                <div class="bg-blue-100 p-4 rounded-2xl text-center border-2 border-blue-300 card-bounce">
+                    <div class="text-3xl mb-1">👨‍👩‍👧‍👦</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Mennesker</div>
+                    <div class="font-bold text-blue-700 text-lg" id="andorra-befolkning">Laster...</div>
+                </div>
+                <div class="bg-green-100 p-4 rounded-2xl text-center border-2 border-green-300 card-bounce">
+                    <div class="text-3xl mb-1">🗣️</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Språk</div>
+                    <div class="font-bold text-green-700 text-base">Katalansk</div>
+                </div>
+                <div class="bg-amber-100 p-4 rounded-2xl text-center border-2 border-amber-300 card-bounce">
+                    <div class="text-3xl mb-1">👑</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Statsoverhode</div>
+                    <div class="font-bold text-amber-800 text-xs md:text-sm" id="andorra-fyrster">2 Co-fyrster</div>
+                </div>
+                <div class="bg-purple-100 p-4 rounded-2xl text-center border-2 border-purple-300 card-bounce">
+                    <div class="text-3xl mb-1">🎉</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Nasjonaldag</div>
+                    <div class="font-bold text-purple-700 text-lg">8. september</div>
+                </div>
+                <div class="bg-emerald-100 p-4 rounded-2xl text-center border-2 border-emerald-300 card-bounce">
+                    <div class="text-3xl mb-1">💰</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Valuta</div>
+                    <div class="font-bold text-emerald-700 text-base">Euro (€)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAP SECTION (To kart side om side) -->
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-emerald-400">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-emerald-600 flex items-center gap-2">
+                        🗺️ Kart over Andorra
+                    </h2>
+                    <p class="text-gray-600 text-sm">Klikk på et av kartene for å åpne og zoome i fullskjerm!</p>
+                </div>
+            </div>
+
+            <div class="bg-emerald-50/50 rounded-2xl p-4 border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
+                <!-- Vanlig kart (Venstre) -->
+                <div class="text-center w-full">
+                    <img 
+                        src="Bilder/kart_andorra.png" 
+                        alt="Illustrasjonskart over Andorra" 
+                        onclick="openSingleModal('Bilder/kart_andorra.png', 'Illustrasjonskart over Andorra')"
+                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
+                    >
+                    <button 
+                        onclick="openSingleModal('Bilder/kart_andorra.png', 'Illustrasjonskart over Andorra')"
+                        class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
+                    >
+                        🔍 Åpne Illustrasjonskart
+                    </button>
+                </div>
+
+                <!-- Geografisk kart (Høyre) -->
+                <div class="text-center w-full">
+                    <img 
+                        src="Bilder/kart_andorra_ekte.png" 
+                        alt="Ekte kart over Andorra" 
+                        onclick="openSingleModal('Bilder/kart_andorra_ekte.png', 'Geografisk kart over Andorra')"
+                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
+                    >
+                    <button 
+                        onclick="openSingleModal('Bilder/kart_andorra_ekte.png', 'Geografisk kart over Andorra')"
+                        class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
+                    >
+                        🔍 Åpne Geografisk kart
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 1: NATUR OG KLIMA -->
+        <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🏔️</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">1. Natur og klima</h2>
+            </div>
+            
+            <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
+                Andorra er et lite dvergland gjemt høyt oppe i Pyreneene-fjellene mellom Frankrike og Spania! Landet er kjent for høye fjelltopper, dype daler og snørike vintre.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">⛰️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Høyeste punkt</div>
+                    <p class="text-sm text-gray-700"><strong>Coma Pedrosa</strong> er Andorras høyeste fjell, med hele 2 942 meter over havet!</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">❄️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Mye snø om vinteren</div>
+                    <p class="text-sm text-gray-700">Siden Andorra ligger så høyt, får det masse snø. Det gjør det til et paradis for <strong>skikjøring</strong>!</p>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
+                    <div class="text-3xl mb-2">☀️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Solrike somre</div>
+                    <p class="text-sm text-gray-700">Somrene er milde og solrike, noe som gjør fjellene perfekte for <strong>fotturer</strong> og fjellsykling.</p>
+                </div>
+            </div>
+
+<!-- Geografiske fakta som tre kolonner -->
+<div class="mt-6 bg-white p-5 rounded-2xl border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-3 gap-6">
+    
+    <!-- Høyeste fjell -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Høyeste fjell</h4>
+        <ul id="fakta-topper" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+
+    <!-- Lengste elver -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Lengste elver</h4>
+        <ul id="fakta-elver" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+
+    <!-- Største innsjøer -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Største innsjøer</h4>
+        <ul id="fakta-innsjoer" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+</div>
+
+            <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
+                <div class="text-4xl">🦅</div>
+                <p class="text-sm text-gray-700">
+                    <strong>Dyreliv:</strong> I fjellene bor det gemser (en slags fjellgeit), kongeørner, murmeldyr og den sjeldne pyreneiske gribben!
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 2: FOLK OG SAMFUNN -->
+        <section class="bg-sky-50 rounded-3xl p-6 md:p-8 border-4 border-sky-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-sky-500 text-white text-2xl p-3 rounded-2xl">👨‍👩‍👧‍‍👦</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-sky-800">2. Folk og samfunn</h2>
+            </div>
+
+            <p class="text-lg text-sky-950 mb-6 leading-relaxed">
+                Det bor ca. <strong>80 000 mennesker</strong> i Andorra. Mange av innbyggerne er spanjoler, franskmenn og portugisere som bor der i dag!
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
+                    <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
+                        🏢 Hovedstaden Andorra la Vella
+                    </h3>
+                    <ul class="space-y-2 text-sm text-gray-700">
+                        <li class="flex items-center gap-2">🔹 Europask høyest beliggende hovedstad (1 023 m.o.h.).</li>
+                        <li class="flex items-center gap-2">🔹 Kjent for sine handlegater full av butikker og spa-anlegg.</li>
+                        <li class="flex items-center gap-2">🔹 Andre kjente steder: Escaldes-Engordany og Encamp.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
+                    <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
+                        🗣️ Katalansk språk
+                    </h3>
+                    <p class="text-sm text-gray-700">
+                        Andorra er det eneste landet i verden hvor <strong>katalansk</strong> er det eneste offisielle språket!
+                    </p>
+                    <p class="text-sm text-gray-700">
+                        Likevel snakker de fleste også flytende spansk og fransk.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-sky-100 p-4 rounded-2xl border-2 border-sky-300">
+                <h4 class="font-bold text-sky-900 mb-1">❤️ Høyt levealder og god helse</h4>
+                <p class="text-sm text-sky-800">
+                    Folk i Andorra lever utrolig lenge! Frisk fjelluft, ren natur og en sunn middelhavskost gjør at de har en av verdens høyeste forventede levealdre.
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 3: STAT OG POLITIKK -->
+        <section class="bg-purple-50 rounded-3xl p-6 md:p-8 border-4 border-purple-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-purple-500 text-white text-2xl p-3 rounded-2xl">👑</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-purple-800">3. Stat og politikk</h2>
+            </div>
+
+            <p class="text-lg text-purple-950 mb-6 leading-relaxed">
+                Andorra har et veldig spesielt styresett! Det kalles et <strong>fyrstedømme</strong>, og landet har to «co-fyrster» som deler rollen som statsoverhode.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2"><img src="https://flagcdn.com/w40/fr.png" alt="Frankrikes flagg" class="w-12 h-auto inline-block" /></div>
+                    <h3 class="font-bold text-purple-900" id="stat-fyrste-1">Frankrikes President</h3>
+                    <p class="text-xs text-gray-600 mt-1">Frankrikes president er alltid den ene med-fyrsten.</p>
+                </div>
+
+<div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+    <img src="Bilder/biskop.png" alt="Biskopen av Urgell" class="w-12 h-12 mx-auto mb-2 object-contain">
+    <h3 class="font-bold text-purple-900" id="stat-fyrste-2">Biskopen av Urgell</h3>
+    <p class="text-xs text-gray-600 mt-1">Den katolske biskopen i Urgell (Spania) er den andre.</p>
+</div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🏛️</div>
+                    <h3 class="font-bold text-purple-900">Consell General</h3>
+                    <p class="text-xs text-gray-600 mt-1">Det andorranske parlamentet som styrer landet til daglig.</p>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-purple-200 text-center">
+                <p class="text-sm font-semibold text-purple-900">
+                    📍 Andorra er delt inn i <strong>7 kommuner</strong> (kalt <em>parròquies</em>).
+                </p>
+            </div>
+        </section>
+
+        <!-- SEKSJON 4: HISTORIE -->
+        <section class="bg-amber-50 rounded-3xl p-6 md:p-8 border-4 border-amber-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-amber-500 text-white text-2xl p-3 rounded-2xl">📜</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Andorras historie</h2>
+            </div>
+
+            <div class="relative border-l-4 border-amber-400 ml-4 pl-6 space-y-6">
+                <!-- Timeline item 1 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">1</span>
+                    <h3 class="font-bold text-lg text-amber-900">⚔️ Grunnlagt av Karl den store (805)</h3>
+                    <p class="text-sm text-gray-700">Ifølge legendene ga keiser Karl den store frihet til andorranerne fordi de hjalp ham å kjempe mot maurerne.</p>
+                </div>
+
+                <!-- Timeline item 2 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">2</span>
+                    <h3 class="font-bold text-lg text-amber-900">📜 Paréage-avtalen (1278)</h3>
+                    <p class="text-sm text-gray-700">En historisk avtale bestemte at Frankrike og Spania skulle dele på å beskytte Andorra. Denne ordningen gjelder fortsatt!</p>
+                </div>
+
+                <!-- Timeline item 3 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">3</span>
+                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+                        🕊️ Nøytralt i krig
+                    </h3>
+                    <p class="text-sm text-gray-700">Andorra holdt seg helt nøytralt under både første og andre verdenskrig og har ikke hatt egen hær på hundrevis av år.</p>
+                </div>
+
+                <!-- Timeline item 4 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
+                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+                        ⛷️ Turisme-boom (1950-tallet)
+                    </h3>
+                    <p class="text-sm text-gray-700">Andorra bygde ut moderne skisentre og tollfrie butikker, noe som gjorde landet superpopulært for turister fra hele Europa.</p>
+                </div>
+
+                <!-- Timeline item 5 -->
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">5</span>
+                    <h3 class="font-bold text-lg text-amber-900">📘 Moderne grunnlov (1993)</h3>
+                    <p class="text-sm text-gray-700">Andorra fikk sin første moderne grunnlov og ble et fullverdig medlem av FN.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 5: ØKONOMI OG NÆRINGSLIV -->
+        <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-emerald-600 text-white text-2xl p-3 rounded-2xl">💰</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">5. Økonomi og næringsliv</h2>
+            </div>
+
+            <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
+                Hva lever de av i Andorra? Siden landet ligger i fjellene, dreier det meste seg om turisme, handel og vintersport!
+            </p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">⛷️</div>
+                    <h3 class="font-bold text-emerald-900">Skiturisme</h3>
+                    <p class="text-xs text-gray-600 mt-1">Millioner av turister besøker de store skisentrene som Grandvalira.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🛍️</div>
+                    <h3 class="font-bold text-emerald-900">Tollfri handel</h3>
+                    <p class="text-xs text-gray-600 mt-1">Andorra har lav skatt og mange kommer for å handle billig.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🏦</div>
+                    <h3 class="font-bold text-emerald-900">Bank & Finans</h3>
+                    <p class="text-xs text-gray-600 mt-1">Banksektoren er en stor og viktig del av Andorras økonomi.</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🏨</div>
+                    <h3 class="font-bold text-emerald-900">Hotell & Spa</h3>
+                    <p class="text-xs text-gray-600 mt-1">Luksuriøse spa-anlegg, som Caldea, tiltrekker seg gjester året rundt.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKSJON 6: KULTUR OG UTDANNING -->
+        <section class="bg-rose-50 rounded-3xl p-6 md:p-8 border-4 border-rose-300 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-rose-500 text-white text-2xl p-3 rounded-2xl">🎨</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-rose-800">6. Kultur og idrett</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Skole og Idrett -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
+                    <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
+                        🏫 Tredelt skolesystem
+                    </h3>
+                    <p class="text-sm text-gray-700">
+                        Skolesystemet i Andorra er helt unikt! Foreldre kan velge om barna skal gå på andorransk, fransk eller spansk skole.
+                    </p>
+                    <div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
+                        <p class="text-sm text-rose-900 font-semibold">🏔️ Populære sporter:</p>
+                        <p class="text-xs text-gray-600">Alpint, langrenn, fjellsykling og rulleskøytehockey!</p>
+                    </div>
+                </div>
+
+                <!-- Kjente fakta -->
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
+                    <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
+                        🌟 Mennesketårn & Tradisjoner
+                    </h3>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li>🏰 <strong>Castells:</strong> I likhet med Catalonia bygger de tradisjonelle menneskelige tårn under festivaler!</li>
+                        <li>💃 <strong>Contrapàs:</strong> En tradisjonell andorransk folkedans som danses på festivaler.</li>
+                        <li>🚴 <strong>Tour de France:</strong> Sykkelrittet Tour de France går ofte innom Andorra sine bratte fjellveier!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SEKSJON -->
+        <section class="bg-yellow-100 rounded-3xl p-6 md:p-8 border-4 border-yellow-400 shadow-md">
+            <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-4 text-center">
+                🧠 Test deg selv: Andorra-Quiz!
+            </h2>
+            <div id="quiz-container" class="bg-white p-6 rounded-2xl border-2 border-yellow-300 max-w-2xl mx-auto space-y-4">
+                <p id="quiz-question" class="text-lg font-bold text-gray-800 text-center">Spørsmål laster...</p>
+                <div id="quiz-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+                <div id="quiz-result" class="text-center font-bold text-lg mt-4 hidden"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FULLSKJERM MODAL FOR KART -->
+    <div 
+        id="mapModal" 
+        class="fixed inset-0 bg-black/90 z-50 hidden flex-col transition-opacity"
+        onclick="closeModal()"
+    >
+        <div class="w-full bg-slate-900/90 border-b border-white/10 px-4 py-3 flex flex-wrap items-center justify-between text-white shrink-0 z-20 gap-2" onclick="event.stopPropagation()">
+            <div class="flex items-center gap-3">
+                <span id="modalTitle" class="text-sm md:text-base font-bold text-emerald-400">
+                    Kart over Andorra
+                </span>
+                <span class="text-xs text-white/60 hidden sm:inline">
+                    | Klikk på bildet for å veksle zoom
+                </span>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button onclick="switchMap('Bilder/kart_andorra.png', 'Illustrasjonskart over Andorra')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                    Illustrasjon
+                </button>
+                <button onclick="switchMap('Bilder/kart_andorra_ekte.png', 'Geografisk kart over Andorra')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                    Ekte kart
+                </button>
+
+                <div class="h-4 w-[1px] bg-white/20 mx-1"></div>
+
+                <button onclick="zoomMap(30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom inn">
+                    ➕
+                </button>
+                <button onclick="zoomMap(-30)" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Zoom ut">
+                    ➖
+                </button>
+                <button onclick="resetZoom()" class="bg-white/20 hover:bg-white/40 text-white px-3 py-1.5 rounded-lg font-bold text-xs md:text-sm transition" title="Nullstill zoom">
+                    ↺
+                </button>
+                
+                <button 
+                    onclick="closeModal()" 
+                    class="bg-red-500 hover:bg-red-600 text-white w-8 h-8 rounded-full font-bold text-sm flex items-center justify-center transition ml-2 shadow"
+                    title="Lukk fullskjerm"
+                >
+                    ✕
+                </button>
+            </div>
+        </div>
+
+        <div class="w-full h-full overflow-auto p-4 md:p-8 flex items-center justify-center" id="modalScrollArea" onclick="closeModal()">
+            <div class="m-auto flex items-center justify-center p-8" onclick="event.stopPropagation()">
+                <img 
+                    id="singleModalImg"
+                    src="" 
+                    alt="Kart i fullskjerm" 
+                    onclick="handleImageClick(event)"
+                    class="h-auto w-auto object-contain rounded-xl shadow-2xl border-2 border-white/20 cursor-zoom-in transition-transform duration-200"
+                    style="max-height: 75vh; max-width: 85vw;"
+                >
+            </div>
+        </div>
+
+        <div class="w-full bg-slate-900/80 text-center py-2 shrink-0 border-t border-white/10">
+            <p class="text-white/60 text-xs">
+                Klikk på kartet for å zoome inn/ut • Trykk på bakgrunnen eller ✕ for å lukke
+            </p>
+        </div>
+    </div>
+
+<!-- Popup Modal -->
+<div id="imageFlagModal" class="fixed inset-0 bg-black/70 hidden justify-center items-center z-50 p-4 backdrop-blur-sm" onclick="closeFlagModal()">
+    <div class="relative max-w-3xl max-h-[90vh] bg-slate-900 p-2 rounded-lg shadow-2xl border border-white/20" onclick="event.stopPropagation()">
+        <!-- Lukk-knapp -->
+        <button onclick="closeFlagModal()" class="absolute -top-3 -right-3 bg-red-600 hover:bg-red-700 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg transition-colors cursor-pointer" aria-label="Lukk">
+            &times;
+        </button>
+        <!-- Bilde i modal -->
+        <img src="Flagg/AND.png" alt="Andorras flagg (stort)" class="max-w-full max-h-[80vh] object-contain rounded">
+    </div>
+</div>
+
+    <footer class="bg-slate-800 text-white text-center py-6 mt-12">
+        <p class="text-sm">🇦🇩 AND.html - Laget for læring og moro i skolen! 🇦🇩</p>
+    </footer>
+
+    <script>
+        function openSingleModal(src, title) {
+            const modal = document.getElementById('mapModal');
+            const img = document.getElementById('singleModalImg');
+            const titleEl = document.getElementById('modalTitle');
+            
+            img.src = src;
+            titleEl.textContent = title;
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('mapModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        function switchMap(src, title) {
+            document.getElementById('singleModalImg').src = src;
+            document.getElementById('modalTitle').textContent = title;
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        window.onload = function() {
+            loadQuiz();
+            oppdaterAndorraFakta();
+        };
+
+        const quizData = [
+            {
+                question: "Hva heter Andorras hovedstad?",
+                options: ["Madrid", "Andorra la Vella", "Paris", "Escaldes"],
+                answer: 1
+            },
+            {
+                question: "Hvilken fjellkjede ligger Andorra i?",
+                options: ["Alpene", "Andesfjellene", "Pyreneene", "Karpatene"],
+                answer: 2
+            },
+            {
+                question: "Hva er det eneste offisielle språket i Andorra?",
+                options: ["Katalansk", "Fransk", "Spansk", "Italiensk"],
+                answer: 0
+            },
+            {
+                question: "Hvilke to naboland ligger Andorra mellom?",
+                options: ["Norge og Sverige", "Tyskland og Østerrike", "Frankrike og Spania", "Italia og Sveits"],
+                answer: 2
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        function loadQuiz() {
+            const q = quizData[currentQuestion];
+            document.getElementById('quiz-question').textContent = q.question;
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+            document.getElementById('quiz-result').classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "bg-amber-100 hover:bg-amber-200 text-amber-900 font-semibold py-3 px-4 rounded-xl border-2 border-amber-300 transition text-sm";
+                btn.textContent = opt;
+                btn.onclick = () => checkAnswer(idx);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selectedIdx) {
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.classList.remove('hidden');
+            
+            if (selectedIdx === quizData[currentQuestion].answer) {
+                resultDiv.className = "text-center font-bold text-lg mt-4 text-emerald-600";
+                resultDiv.textContent = "🎉 Riktig svar! Supert jobbet!";
+            } else {
+                resultDiv.className = "text-center font-bold text-lg mt-4 text-rose-600";
+                resultDiv.textContent = "❌ Nesten! Prøv en gang til.";
+                return;
+            }
+
+            setTimeout(() => {
+                currentQuestion = (currentQuestion + 1) % quizData.length;
+                loadQuiz();
+            }, 1800);
+        }
+
+        async function oppdaterAndorraFakta() {
+            // Hent live befolkningstall fra Wikidata (Andorras ID = Q228)
+            try {
+                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q228.json');
+                const data = await response.json();
+                
+                const claims = data.entities.Q228.claims;
+                if (claims.P1082) {
+                    const folketallListe = claims.P1082;
+                    const nyesteTelling = folketallListe[folketallListe.length - 1];
+                    const antall = parseInt(nyesteTelling.mainsnak.datavalue.value.amount, 10);
+                    
+                    const formatertTall = new Intl.NumberFormat('no-NO').format(antall);
+                    
+                    const befolkningEl = document.getElementById('andorra-befolkning');
+                    if (befolkningEl) {
+                        befolkningEl.textContent = `${formatertTall}`;
+                    }
+                }
+            } catch (feil) {
+                console.error('Kunne ikke hente live befolkningstall:', feil);
+                document.getElementById('andorra-befolkning').textContent = "Ca. 80 000";
+            }
+        }
+
+document.addEventListener("DOMContentLoaded", () => {
+        // Hent landskode fra filnavnet (f.eks. "DNK.html" -> "DNK")
+        const landKode = window.location.pathname.split('/').pop().replace('.html', '').toUpperCase();
+        const data = hentFakta(landKode);
+
+        if (data) {
+            // Hjelpefunksjon for å lage punktliste uten tomme/ugyldige verdier ('-')
+            const fyllListe = (elementId, array) => {
+                const el = document.getElementById(elementId);
+                const gyldigeVerdier = array.filter(item => item && item !== '-');
+
+                if (gyldigeVerdier.length > 0) {
+                    el.innerHTML = gyldigeVerdier.map(item => `<li>${item}</li>`).join('');
+                } else {
+                    el.innerHTML = '<li class="text-gray-400 italic">Ingen registrerte data</li>';
+                }
+            };
+
+            fyllListe('fakta-topper', data.topper);
+            fyllListe('fakta-elver', data.elver);
+            fyllListe('fakta-innsjoer', data.innsjoer);
+        } else {
+            console.warn(`Fant ingen fakta for landskode: ${landKode}`);
+        }
+    });
+
+<!-- JavaScript for å åpne og lukke -->
+    function openFlagModal() {
+        const modal = document.getElementById('imageFlagModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    function closeFlagModal() {
+        const modal = document.getElementById('imageFlagModal');
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }
+
+    // Lukk flagg-modalen dersom brukeren trykker Escape-tasten
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeFlagModal();
+        }
+    });
+
+    </script>
+<script src="fakta.js"></script>
+</body>
+</html>
