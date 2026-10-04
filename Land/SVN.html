@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portugal - Alt om det vakre landet i sør! 🇵🇹</title>
+    <title>Slovenia - Alt om det grønne hjertet i Europa! 🇸🇮</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,14 +29,13 @@
 <body class="bg-amber-50/50 text-slate-800 min-h-screen pb-12">
 
     <!-- HEADER -->
-    <header class="bg-emerald-600 text-white shadow-lg sticky top-0 z-40">
+    <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-40">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
-<div class="flex items-center gap-3">
-    <button onclick="openFlagModal()" class="focus:outline-none focus:ring-2 focus:ring-white/50 rounded" aria-label="Åpne flaggbilde">
-        <img src="https://flagcdn.com/w40/pt.png" alt="Portugals flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm" hover:scale-105 transition-transform cursor-pointer">
-    </button>
-    <h1 class="text-xl md:text-3xl font-bold tracking-wide">Portugal - Alt om det vakre landet i sør!</h1>
-</div>
+            <div class="flex items-center gap-3">
+                <img src="https://flagcdn.com/w40/si.png" alt="Slovenias flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
+                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Slovenia - Alt om det grønne hjertet i Europa!</h1>
+            </div>
+        </div>
     </header>
 
     <main class="max-w-6xl mx-auto px-4 mt-6 space-y-10">
@@ -44,38 +43,38 @@
         <!-- KORTE FAKTA -->
         <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-blue-400">
             <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-6 flex items-center gap-2">
-                ⚡ Korte fakta om Portugal
+                ⚡ Korte fakta om Slovenia
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                <div class="bg-red-100 p-4 rounded-2xl text-center border-2 border-red-300 card-bounce">
+                <div class="bg-blue-100 p-4 rounded-2xl text-center border-2 border-blue-300 card-bounce">
                     <div class="text-3xl mb-1">🏰</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Hovedstad</div>
-                    <div class="font-bold text-red-700 text-lg">Lissabon</div>
+                    <div class="font-bold text-blue-700 text-lg">Ljubljana</div>
                 </div>
-                <div class="bg-blue-100 p-4 rounded-2xl text-center border-2 border-blue-300 card-bounce">
+                <div class="bg-red-100 p-4 rounded-2xl text-center border-2 border-red-300 card-bounce">
                     <div class="text-3xl mb-1">👨‍👩‍👧‍👦</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Mennesker</div>
-                    <div class="font-bold text-blue-700 text-lg" id="portugal-befolkning">Laster...</div>
+                    <div class="font-bold text-red-700 text-lg" id="slovenia-befolkning">Laster...</div>
                 </div>
                 <div class="bg-green-100 p-4 rounded-2xl text-center border-2 border-green-300 card-bounce">
                     <div class="text-3xl mb-1">🗣️</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Språk</div>
-                    <div class="font-bold text-green-700 text-base">Portugisisk</div>
+                    <div class="font-bold text-green-700 text-base">Slovensk</div>
                 </div>
                 <div class="bg-amber-100 p-4 rounded-2xl text-center border-2 border-amber-300 card-bounce">
                     <div class="text-3xl mb-1">🏛️</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Statsoverhode</div>
-                    <div class="font-bold text-amber-800 text-base" id="portugal-president">Laster...</div>
+                    <div class="font-bold text-amber-800 text-base" id="slovenia-president">Laster...</div>
                 </div>
                 <div class="bg-purple-100 p-4 rounded-2xl text-center border-2 border-purple-300 card-bounce">
                     <div class="text-3xl mb-1">🎉</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Nasjonaldag</div>
-                    <div class="font-bold text-purple-700 text-lg">10. juni</div>
+                    <div class="font-bold text-purple-700 text-lg">25. juni</div>
                 </div>
                 <div class="bg-emerald-100 p-4 rounded-2xl text-center border-2 border-emerald-300 card-bounce">
                     <div class="text-3xl mb-1">💶</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Valuta</div>
-                    <div class="font-bold text-emerald-700 text-base">Euro (€)</div>
+                    <div class="font-bold text-emerald-700 text-base">Euro (EUR)</div>
                 </div>
             </div>
         </section>
@@ -85,7 +84,7 @@
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
                 <div>
                     <h2 class="text-2xl md:text-3xl font-bold text-emerald-600 flex items-center gap-2">
-                        🗺️ Kart over Portugal
+                        🗺️ Kart over Slovenia
                     </h2>
                     <p class="text-gray-600 text-sm">Klikk på et av kartene for å åpne og zoome i fullskjerm!</p>
                 </div>
@@ -95,28 +94,29 @@
                 <!-- Vanlig kart (Venstre) -->
                 <div class="text-center w-full">
                     <img 
-                        src="Bilder/kart_portugal.png" 
-                        alt="Illustrasjonskart over Portugal" 
-                        onclick="openSingleModal('Bilder/kart_portugal.png', 'Illustrasjonskart over Portugal')"
+                        src="Bilder/kart_slovenia.png" 
+                        alt="Illustrasjonskart over Slovenia" 
+                        onclick="openSingleModal('Bilder/kart_slovenia.png', 'Illustrasjonskart over Slovenia')"
                         class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
                     >
                     <button 
-                        onclick="openSingleModal('Bilder/kart_portugal.png', 'Illustrasjonskart over Portugal')"
+                        onclick="openSingleModal('Bilder/kart_slovenia.png', 'Illustrasjonskart over Slovenia')"
                         class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
                     >
                         🔍 Åpne Illustrasjonskart
                     </button>
                 </div>
 
+                <!-- Ekte kart (Høyre) -->
                 <div class="text-center w-full">
                     <img 
-                        src="Bilder/kart_portugal_ekte.png" 
-                        alt="Ekte kart over Portugal" 
-                        onclick="openSingleModal('Bilder/kart_portugal_ekte.png', 'Geografisk kart over Portugal')"
+                        src="Bilder/kart_slovenia_ekte.png" 
+                        alt="Ekte kart over Slovenia" 
+                        onclick="openSingleModal('Bilder/kart_slovenia_ekte.png', 'Geografisk kart over Slovenia')"
                         class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
                     >
                     <button 
-                        onclick="openSingleModal('Bilder/kart_portugal_ekte.png', 'Geografisk kart over Portugal')"
+                        onclick="openSingleModal('Bilder/kart_slovenia_ekte.png', 'Geografisk kart over Slovenia')"
                         class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
                     >
                         🔍 Åpne Geografisk kart
@@ -128,68 +128,38 @@
         <!-- SEKSJON 1: NATUR OG KLIMA -->
         <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
-                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🌊</span>
+                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🌲</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">1. Natur og klima</h2>
             </div>
             
             <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
-                Portugal ligger helt sørvest i Europa, med Atlanterhavet som nærmeste nabo! Landet byr på solfylte kyster, dramatiske klipper, fjellkjeder og grønne daler.
+                Slovenia er et fantastisk grønt land med høye fjell, dype grotter og vakre innsjøer! Over halvparten av landet er dekket av skog.
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">⛰️</div>
+                    <div class="text-3xl mb-2">🏔️</div>
                     <div class="font-bold text-lg text-emerald-800 mb-1">Høyeste punkt</div>
-                    <p class="text-sm text-gray-700"><strong>Pico</strong> på Azorene er høyest (2 351 m.o.h.). På fastlandet er <strong>Torre</strong> i Serra da Estrela høyest (1 993 m.o.h.).</p>
+                    <p class="text-sm text-gray-700"><strong>Triglav</strong> er Slovenias høyeste fjell på 2 864 meter, og står stolt på det slovenke flagget!</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">🏖️</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Algarvekysten</div>
-                    <p class="text-sm text-gray-700">I sør ligger <strong>Algarve</strong> med berømte gylne sandstrender, mektige grotter og varme badevann!</p>
+                    <div class="text-3xl mb-2">🏞️️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Innsjøen Bled</div>
+                    <p class="text-sm text-gray-700">Verdensberømt for sin lille øy midt ute i sjøen med en eventyrlig kirke og et slott på klippen.</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">☀️</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Sol og surf</div>
-                    <p class="text-sm text-gray-700">Med over 300 soldager i året og enormt høye bølger er Portugal et mekka for <strong>surfere</strong> fra hele verden.</p>
+                    <div class="text-3xl mb-2">🦇</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Enorme grotter</div>
+                    <p class="text-sm text-gray-700">Slovenia har over 10 000 grotter. Den mest kjente er <strong>Postojnagrotta</strong> med eget undertog!</p>
                 </div>
             </div>
 
-
-<!-- Geografiske fakta som tre kolonner -->
-<div class="mt-6 bg-white p-5 rounded-2xl border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-3 gap-6">
-    
-    <!-- Høyeste fjell -->
-    <div>
-        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Høyeste fjell</h4>
-        <ul id="fakta-topper" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
-            <li class="text-gray-400">Laster...</li>
-        </ul>
-    </div>
-
-    <!-- Lengste elver -->
-    <div>
-        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Lengste elver</h4>
-        <ul id="fakta-elver" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
-            <li class="text-gray-400">Laster...</li>
-        </ul>
-    </div>
-
-    <!-- Største innsjøer -->
-    <div>
-        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Største innsjøer</h4>
-        <ul id="fakta-innsjoer" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
-            <li class="text-gray-400">Laster...</li>
-        </ul>
-    </div>
-</div>
-
-
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
-                <div class="text-4xl">🐬</div>
+                <div class="text-4xl">🐻</div>
                 <p class="text-sm text-gray-700">
-                    <strong>Dyreliv:</strong> Langs kysten og ved øygruppene Azorene og Madeira kan du se delfiner og hvaler. På land finnes iberisk gaupe, ulv og gribber!
+                    <strong>Dyreliv:</strong> De dype skogene i Slovenia har en av Europas største bestander av <strong>brunbjørn</strong>! I Postojnagrotta bor også den mystiske hulepadda («dragebabyen»).
                 </p>
             </div>
         </section>
@@ -202,38 +172,38 @@
             </div>
 
             <p class="text-lg text-sky-950 mb-6 leading-relaxed">
-                I Portugal bor det ca. <strong>10,3 millioner mennesker</strong>. Portugiserne er kjent for sin gjestfrihet, kjærlighet til god mat og stolte kystkultur!
+                I Slovenia bor det ca. <strong>2,1 millioner mennesker</strong>. Slovenerne er glad i friluftsliv, sport og å ta vare på naturen sin!
             </p>
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
                     <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
-                        🏢 Største byer i Portugal
+                        🏢 Største byer i Slovenia
                     </h3>
                     <ul class="space-y-2 text-sm text-gray-700">
-                        <li class="flex items-center gap-2">🔹 <strong>Lissabon:</strong> Hovedstaden, kjent for sine sju høyder, trikker og historiske bygg!</li>
-                        <li class="flex items-center gap-2">🔹 <strong>Porto:</strong> Den nest største byen i nord, berømt for sine spektakulære broer.</li>
-                        <li class="flex items-center gap-2">🔹 Andre viktige byer: Braga, Coimbra og Funchal (på øya Madeira).</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Ljubljana:</strong> En grønn og koselig hovedstad med drager som symbol!</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Maribor:</strong> Den nest største byen, kjent for sin gamle vin- og skikultur.</li>
+                        <li class="flex items-center gap-2">🔹 Andre kjente steder: Celje, Kranj og kystbyen Piran.</li>
                     </ul>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
                     <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
-                        🎵 Fado & Saudade
+                        🐉 Drager og Bikultur
                     </h3>
                     <p class="text-sm text-gray-700">
-                        <strong>Fado</strong> er den tradisjonelle portugisiske musikken – melankolske og vakre sanger akkompagnert av gitar.
+                        Symbolet til hovedstaden er en <strong>drage</strong> som vokter byen fra dragebroen!
                     </p>
                     <p class="text-sm text-gray-700">
-                        Det portugisiske ordet <strong>«saudade»</strong> beskriver en spesiell lengsel eller savn etter noen eller noe man elsker.
+                        Slovenerne elsker også kranjske bier – birøkt er en nasjonal lidenskap, og Slovenia foreslo at FN skulle innføre Verdens biedag!
                     </p>
                 </div>
             </div>
 
             <div class="mt-6 bg-sky-100 p-4 rounded-2xl border-2 border-sky-300">
-                <h4 class="font-bold text-sky-900 mb-1">🗣️ Portugisisk i verden</h4>
+                <h4 class="font-bold text-sky-900 mb-1">🗣️ Språk</h4>
                 <p class="text-sm text-sky-800">
-                    Siden portugisiske oppdagelsesreisende seilte over hele kloden, snakkes det <strong>portugisisk</strong> i dag av over 250 millioner mennesker i land som Brasil, Angola og Mosambik!
+                    Offisielt språk er <strong>slovensk</strong>. Det er et slavisk språk som bruker det latinske alfabetet (med spesialbokstaver som č, š og ž).
                 </p>
             </div>
         </section>
@@ -246,14 +216,14 @@
             </div>
 
             <p class="text-lg text-purple-950 mb-6 leading-relaxed">
-                Portugal er en <strong>republikk</strong> med et demokratisk styresett der folket velger sin president og sin regjering.
+                Slovenia er en <strong>republikk</strong> og et parlamentarisk demokrati. Landet ble med i Den europeiske union (EU) i 2004.
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
-                    <div class="text-4xl mb-2"><img src="https://flagcdn.com/w40/pt.png" alt="Portugals flagg" class="w-12 h-auto inline-block" /></div>
+                    <div class="text-4xl mb-2">👩‍💼</div>
                     <h3 class="font-bold text-purple-900" id="stat-president-navn">Laster...</h3>
-                    <p class="text-xs text-gray-600 mt-1">Portugals president og statsoverhode.</p>
+                    <p class="text-xs text-gray-600 mt-1">Slovenias president og statsoverhode.</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
@@ -264,14 +234,14 @@
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
                     <div class="text-4xl mb-2">🏛️</div>
-                    <h3 class="font-bold text-purple-900">Assembleia da República</h3>
-                    <p class="text-xs text-gray-600 mt-1">Det portugisiske parlamentet i Lissabon.</p>
+                    <h3 class="font-bold text-purple-900">Državni Zbor</h3>
+                    <p class="text-xs text-gray-600 mt-1">Det slovenske parlamentet i Ljubljana.</p>
                 </div>
             </div>
 
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-purple-200 text-center">
                 <p class="text-sm font-semibold text-purple-900">
-                    📍 Portugal består av <strong>18 distrikter</strong> på fastlandet, pluss de to autonome øygruppene <strong>Azorene</strong> og <strong>Madeira</strong>.
+                    📍 Slovenia har <strong>212 kommuner</strong> (hvorav 12 har bystatus).
                 </p>
             </div>
         </section>
@@ -280,44 +250,48 @@
         <section class="bg-amber-50 rounded-3xl p-6 md:p-8 border-4 border-amber-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
                 <span class="bg-amber-500 text-white text-2xl p-3 rounded-2xl">📜</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Portugals historie</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Slovenias historie</h2>
             </div>
 
             <div class="relative border-l-4 border-amber-400 ml-4 pl-6 space-y-6">
                 <!-- Timeline item 1 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">1</span>
-                    <h3 class="font-bold text-lg text-amber-900">👑 Grunnleggelsen av kongedømmet (1139)</h3>
-                    <p class="text-sm text-gray-700">Afonso Henriques erklærte seg som Portugals første konge, og Portugal ble stående som en av Europas eldste nasjonalstater!</p>
+                    <h3 class="font-bold text-lg text-amber-900">⚔️ Romerriket og Slavene (500–800)</h3>
+                    <p class="text-sm text-gray-700">Slaviske stammer slo seg ned i området på 500-tallet og dannet senere riket Karantania.</p>
                 </div>
 
+                <!-- Timeline item 2 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">2</span>
-                    <h3 class="font-bold text-lg text-amber-900">⛵ Oppdagelsestiden (1400–1500-tallet)</h3>
-                    <p class="text-sm text-gray-700">Sjøfarere som Vasco da Gama seilte ut i verden og fant sjøveien til India. Portugal bygde et enormt imperium.</p>
+                    <h3 class="font-bold text-lg text-amber-900">👑 Huset Habsburg (1278–1918)</h3>
+                    <p class="text-sm text-gray-700">Slovenia var en del av det mektige østerrikske imperiet i mange hundre år helt frem til første verdenskrig.</p>
                 </div>
 
+                <!-- Timeline item 3 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">3</span>
                     <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
-                        <img src="https://flagcdn.com/w40/pt.png" alt="Portugals flagg" class="w-6 h-auto rounded border border-gray-200 shadow-sm inline-block">
-                        Det store jordskjelvet i Lissabon (1755)
+                        🤝 Del av Jugoslavia (1918–1991)
                     </h3>
-                    <p class="text-sm text-gray-700">Et kraftig jordskjelv og en tsunami ødela storparten av Lissabon. Byen ble deretter bygd opp igjen slik vi kjenner den i dag.</p>
+                    <p class="text-sm text-gray-700">Etter første verdenskrig ble Slovenia en del av kongeriket, og senere den sosialistiske republikken Jugoslavia.</p>
                 </div>
 
+                <!-- Timeline item 4 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
                     <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
-                        🏛️ Republikken og Nellikrevolusjonen (1974)
+                        <img src="https://flagcdn.com/w40/si.png" alt="Slovenias flagg" class="w-6 h-auto rounded border border-gray-200 shadow-sm inline-block">
+                        Uavhengighet (1991)
                     </h3>
-                    <p class="text-sm text-gray-700">Etter mange år med diktatur brakte en fredelig revolusjon demokratiet tilbake til Portugal. Soldatene puttet nelliker i geværløpene sine!</p>
+                    <p class="text-sm text-gray-700">Slovenia erklærte seg uavhengig i 1991. Etter den korte ti-dagers krigen ble landet en selvstendig stat.</p>
                 </div>
 
+                <!-- Timeline item 5 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">5</span>
-                    <h3 class="font-bold text-lg text-amber-900"><img src="https://flagcdn.com/eu.svg" alt="EU-flagg" class="w-6 h-auto inline-block" /> Medlem av EU (1986)</h3>
-                    <p class="text-sm text-gray-700">Portugal ble medlem av Den europeiske union og tok senere i bruk valutaen Euro.</p>
+                    <h3 class="font-bold text-lg text-amber-900">🇪🇺 Medlem av EU (2004)</h3>
+                    <p class="text-sm text-gray-700">Slovenia ble med i EU og NATO i 2004, og innførte Euro som valuta i 2007.</p>
                 </div>
             </div>
         </section>
@@ -330,32 +304,32 @@
             </div>
 
             <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
-                Hva lever de av i Portugal? Landet er kjent for fornybar energi, kork, vin, olivenolje og sin blomstrende turisme!
+                Hva lever de av i Slovenia? Slovenia har en sterk økonomi med avansert industri, turisme og grønn teknologi!
             </p>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🌳</div>
-                    <h3 class="font-bold text-emerald-900">Kork</h3>
-                    <p class="text-xs text-gray-600 mt-1">Portugal produserer over halvparten av all kork i hele verden!</p>
+                    <div class="text-4xl mb-2">🚗</div>
+                    <h3 class="font-bold text-emerald-900">Bilindustri</h3>
+                    <p class="text-xs text-gray-600 mt-1">Lager deler til kjente europeiske bilmerker.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🧳</div>
-                    <h3 class="font-bold text-emerald-900">Turisme</h3>
-                    <p class="text-xs text-gray-600 mt-1">Millioner av besøkende kommer hvert år for å oppleve kulturen og naturen.</p>
+                    <div class="text-4xl mb-2">💊</div>
+                    <h3 class="font-bold text-emerald-900">Medisin</h3>
+                    <p class="text-xs text-gray-600 mt-1">Stor eksport av medisiner og helseprodukter (Krka, Lek).</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">☀️</div>
-                    <h3 class="font-bold text-emerald-900">Grønn energi</h3>
-                    <p class="text-xs text-gray-600 mt-1">Mye av strømmen kommer fra solenergi og vindmøller.</p>
+                    <div class="text-4xl mb-2">⛷️</div>
+                    <h3 class="font-bold text-emerald-900">Sport & Elan</h3>
+                    <p class="text-xs text-gray-600 mt-1">Lager verdensberømte ski og sportsutstyr.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🐟</div>
-                    <h3 class="font-bold text-emerald-900">Fiskeri</h3>
-                    <p class="text-xs text-gray-600 mt-1">Sardiner og klippfisk (bacalhau) er viktige eksportvarer.</p>
+                    <div class="text-4xl mb-2">🏕️</div>
+                    <h3 class="font-bold text-emerald-900">Grønn turisme</h3>
+                    <p class="text-xs text-gray-600 mt-1">Folk reiser hit for fjellturer, grotting og kurbad.</p>
                 </div>
             </div>
         </section>
@@ -371,35 +345,36 @@
                 <!-- Skole og Idrett -->
                 <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
                     <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
-                        🏫 Skole, mat og sport
+                        🏫 Skole og sport
                     </h3>
                     <p class="text-sm text-gray-700">
-                        Barn i Portugal begynner på skolen når de er 6 år. Den berømte kaken <strong>Pastel de Nata</strong> er en storfavoritt blant både barn og voksne!
+                        Barn begynner på barneskolen (Osnovna šola) når de er 6 år.
                     </p>
                     <div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
-                        <p class="text-sm text-rose-900 font-semibold">⚽ Portugals mest populære sporter:</p>
-                        <p class="text-xs text-gray-600">Fotball (en enorm nasjonalsport!), surfing og rulleskøyteinnebandy!</p>
+                        <p class="text-sm text-rose-900 font-semibold">🚴 Slovenias mest populære sporter:</p>
+                        <p class="text-xs text-gray-600">Sykling, basketball, skihopp og alpine skirenn!</p>
                     </div>
                 </div>
 
                 <!-- Kjente personer -->
                 <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
                     <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
-                        🌟 Kjente portugisere
+                        🌟 Kjente slovener
                     </h3>
                     <ul class="text-sm text-gray-700 space-y-2">
-                        <li>⚽ <strong>Cristiano Ronaldo:</strong> En av verdens beste og mest berømte fotballspillere.</li>
-                        <li>⛵ <strong>Vasco da Gama:</strong> Historisk oppdagelsesreisende som fant sjøveien til India.</li>
-                        <li>📖 <strong>Fernando Pessoa:</strong> En av Portugals mest kjente poeter og forfattere.</li>
-                        <li>🎤 <strong>Amália Rodrigues:</strong> Legendens "Dronning av Fado".</li>
+                        <li>🚴 <strong>Tadej Pogačar & Primož Roglič:</strong> Verdens beste sykkelryttere!</li>
+                        <li>🏀 <strong>Luka Dončić:</strong> En av de største stjernene i NBA-basket.</li>
+                        <li>✍️ <strong>France Prešeren:</strong> Slovenias mest berømte dikter.</li>
+                        <li>⛷️ <strong>Tina Maze:</strong> Legendarisk alpinist med flere OL-gull.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!-- QUIZ -->
         <section class="bg-yellow-100 rounded-3xl p-6 md:p-8 border-4 border-yellow-400 shadow-md">
             <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-4 text-center">
-                🧠 Test deg selv: Portugal-Quiz!
+                🧠 Test deg selv: Slovenia-Quiz!
             </h2>
             <div id="quiz-container" class="bg-white p-6 rounded-2xl border-2 border-yellow-300 max-w-2xl mx-auto space-y-4">
                 <p id="quiz-question" class="text-lg font-bold text-gray-800 text-center">Spørsmål laster...</p>
@@ -410,6 +385,7 @@
 
     </main>
 
+    <!-- MODAL FOR KART -->
     <div 
         id="mapModal" 
         class="fixed inset-0 bg-black/90 z-50 hidden flex-col transition-opacity"
@@ -419,7 +395,7 @@
         <div class="w-full bg-slate-900/90 border-b border-white/10 px-4 py-3 flex flex-wrap items-center justify-between text-white shrink-0 z-20 gap-2" onclick="event.stopPropagation()">
             <div class="flex items-center gap-3">
                 <span id="modalTitle" class="text-sm md:text-base font-bold text-emerald-400">
-                    Kart over Portugal
+                    Kart over Slovenia
                 </span>
                 <span class="text-xs text-white/60 hidden sm:inline">
                     | Klikk på bildet for å veksle zoom
@@ -428,10 +404,10 @@
 
             <div class="flex items-center gap-2">
 
-                <button onclick="switchMap('Bilder/kart_portugal.png', 'Illustrasjonskart over Portugal')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                <button onclick="switchMap('Bilder/kart_slovenia.png', 'Illustrasjonskart over Slovenia')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
                     Illustrasjon
                 </button>
-                <button onclick="switchMap('Bilder/kart_portugal_ekte.png', 'Geografisk kart over Portugal')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                <button onclick="switchMap('Bilder/kart_slovenia_ekte.png', 'Geografisk kart over Slovenia')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
                     Ekte kart
                 </button>
 
@@ -477,20 +453,8 @@
         </div>
     </div>
 
-<!-- Popup Modal -->
-<div id="imageFlagModal" class="fixed inset-0 bg-black/70 hidden justify-center items-center z-50 p-4 backdrop-blur-sm" onclick="closeFlagModal()">
-    <div class="relative max-w-3xl max-h-[90vh] bg-slate-900 p-2 rounded-lg shadow-2xl border border-white/20" onclick="event.stopPropagation()">
-        <!-- Lukk-knapp -->
-        <button onclick="closeFlagModal()" class="absolute -top-3 -right-3 bg-red-600 hover:bg-red-700 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg transition-colors cursor-pointer" aria-label="Lukk">
-            &times;
-        </button>
-        <!-- Bilde i modal -->
-        <img src="Flagg/PRT.png" alt="Portugals flagg (stort)" class="max-w-full max-h-[80vh] object-contain rounded">
-    </div>
-</div>
-
     <footer class="bg-slate-800 text-white text-center py-6 mt-12">
-        <p class="text-sm">🇵🇹 PRT.html - Laget for læring og moro i skolen! 🇵🇹</p>
+        <p class="text-sm">🇸🇮 SVN.html - Laget for læring og moro i skolen! 🇸🇮</p>
     </footer>
 
     <script>
@@ -519,24 +483,24 @@
 
         const quizData = [
             {
-                question: "Hva heter Portugals hovedstad?",
-                options: ["Porto", "Lissabon", "Faro", "Braga"],
+                question: "Hva heter Slovenias hovedstad?",
+                options: ["Maribor", "Ljubljana", "Bled", "Celje"],
                 answer: 1
             },
             {
-                question: "Hvilken berømt fotballspiller kommer fra Portugal?",
-                options: ["Lionel Messi", "Kylian Mbappé", "Cristiano Ronaldo", "Neymar"],
+                question: "Hvilket fabeldyr er symbolet på hovedstaden Ljubljana?",
+                options: ["Enhjørning", "Drage", "Føniks", "Gryff"],
+                answer: 1
+            },
+            {
+                question: "Hva heter det høyeste fjellet i Slovenia?",
+                options: ["Mount Blanc", "Triglav", "Galdhøpiggen", "Matterhorn"],
+                answer: 1
+            },
+            {
+                question: "Hvilket kattedyr/rovdyr finnes det mye av i Slovenias skoger?",
+                options: ["Gaupe", "Isbjørn", "Brunbjørn", "Ulv"],
                 answer: 2
-            },
-            {
-                question: "Hva er Portugal verdens største produsent av?",
-                options: ["Kork", "Biler", "Sjokolade", "Papir"],
-                answer: 0
-            },
-            {
-                question: "Hva kalles den tradisjonelle portugisiske musikken?",
-                options: ["Samba", "Fado", "Flamenco", "Jazz"],
-                answer: 1
             }
         ];
 
@@ -564,7 +528,7 @@
             
             if (selectedIdx === quizData[currentQuestion].answer) {
                 resultDiv.className = "text-center font-bold text-lg mt-4 text-emerald-600";
-                resultDiv.textContent = "🎉 Riktig svar! Fantastisk jobbet!";
+                resultDiv.textContent = "🎉 Riktig svar! Super bra jobba!";
             } else {
                 resultDiv.className = "text-center font-bold text-lg mt-4 text-rose-600";
                 resultDiv.textContent = "❌ Nesten! Prøv en gang til.";
@@ -577,13 +541,13 @@
             }, 1800);
         }
 
-async function oppdaterPortugalFakta() {
-    // Wikidata ID for Portugal er Q45
+async function oppdaterSloveniaFakta() {
+    // Wikidata ID for Slovenia = Q214
     try {
-        const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q45.json');
+        const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q214.json');
         const data = await response.json();
         
-        const claims = data.entities.Q45.claims;
+        const claims = data.entities.Q214.claims;
         if (claims.P1082) {
             const folketallListe = claims.P1082;
             const nyesteTelling = folketallListe[folketallListe.length - 1];
@@ -592,18 +556,18 @@ async function oppdaterPortugalFakta() {
             const formatertTall = new Intl.NumberFormat('no-NO').format(antall);
             const mill = (antall / 1000000).toFixed(1).replace('.', ',');
             
-            const befolkningEl = document.getElementById('portugal-befolkning');
+            const befolkningEl = document.getElementById('slovenia-befolkning');
             if (befolkningEl) {
                 befolkningEl.textContent = `Ca. ${mill} mill. (${formatertTall})`;
             }
         }
     } catch (feil) {
         console.error('Kunne ikke hente live befolkningstall:', feil);
-        document.getElementById('portugal-befolkning').textContent = "Ca. 10,3 mill.";
+        document.getElementById('slovenia-befolkning').textContent = "Ca. 2,1 mill.";
     }
 
-    settFaktaOmLeder('portugal-president', 'stat-president-navn', 'Marcelo Rebelo de Sousa');
-    settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Luís Montenegro');
+    settFaktaOmLeder('slovenia-president', 'stat-president-navn', 'Nataša Pirc Musar');
+    settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Robert Golob');
 }
 
 function settFaktaOmLeder(elementId1, elementId2, navn) {
@@ -613,196 +577,7 @@ function settFaktaOmLeder(elementId1, elementId2, navn) {
     if (el2) el2.textContent = navn;
 }
 
-// MODAL OG SENTRERT ZOOM MOT KLIKKPUNKT
-        let zoomStep = 0; // 0 = 100%, 1 = 175%, 2 = 250%, 3 = 325%
-        const MAX_STEPS = 3;
-
-        // Skaleringsfaktorer (1.0, 1.75, 2.5, 3.25)
-        const ZOOM_LEVELS = [1, 1.75, 2.5, 3.25]; 
-
-        function openSingleModal(imgSrc, titleText) {
-            const modal = document.getElementById('mapModal');
-            const img = document.getElementById('singleModalImg');
-            const title = document.getElementById('modalTitle');
-
-            if (img && title && modal) {
-                img.src = imgSrc;
-                title.textContent = titleText;
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                resetZoom();
-            }
-        }
-
-        function switchMap(imgSrc, titleText) {
-            const img = document.getElementById('singleModalImg');
-            const title = document.getElementById('modalTitle');
-            if (img && title) {
-                img.src = imgSrc;
-                title.textContent = titleText;
-                resetZoom();
-            }
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('mapModal');
-            if (modal) {
-                modal.classList.remove('flex');
-                modal.classList.add('hidden');
-                resetZoom();
-            }
-        }
-
-        function resetZoom() {
-            zoomStep = 0;
-            applyZoomStyles();
-            
-            const scrollArea = document.getElementById('modalScrollArea');
-            if (scrollArea) {
-                scrollArea.scrollLeft = 0;
-                scrollArea.scrollTop = 0;
-            }
-        }
-
-        function handleImageClick(event) {
-            event.stopPropagation(); // Unngå at modalen lukker seg
-
-            // Hvis vi er på maks zoom (Trinn 3 / 325%), nullstill tilbake til start
-            if (zoomStep >= MAX_STEPS) {
-                resetZoom();
-                return;
-            }
-
-            const img = document.getElementById('singleModalImg');
-            const scrollArea = document.getElementById('modalScrollArea');
-            if (!img || !scrollArea) return;
-
-            const imgRect = img.getBoundingClientRect();
-
-            // Klikkets posisjon som en uendret prosentandel (0.0 til 1.0) av bildet
-            const clickRatioX = (event.clientX - imgRect.left) / imgRect.width;
-            const clickRatioY = (event.clientY - imgRect.top) / imgRect.height;
-
-            executeZoomStep(zoomStep + 1, clickRatioX, clickRatioY);
-        }
-
-        function zoomMap(direction) {
-            // Brukes hvis brukeren trykker på + / - knappene
-            const targetStep = zoomStep + direction;
-            executeZoomStep(targetStep, 0.5, 0.5); // Sentrerer på midten av bildet
-        }
-
-        function executeZoomStep(nextStep, ratioX, ratioY) {
-            const scrollArea = document.getElementById('modalScrollArea');
-            const img = document.getElementById('singleModalImg');
-            const oldStep = zoomStep;
-
-            zoomStep = Math.min(Math.max(nextStep, 0), MAX_STEPS);
-
-            if (oldStep === zoomStep || !scrollArea || !img) return;
-
-            // Oppdater bildeskaleringen
-            applyZoomStyles();
-
-            // Vent til nettleseren har oppdatert bildestørrelsen i DOM
-            requestAnimationFrame(() => {
-                const imgRect = img.getBoundingClientRect();
-                const scrollRect = scrollArea.getBoundingClientRect();
-
-                // Finner hvor det valgte punktet på bildet befinner seg i forhold til scroll-innholdet
-                const targetXOnScroll = (imgRect.left - scrollRect.left + scrollArea.scrollLeft) + (imgRect.width * ratioX);
-                const targetYOnScroll = (imgRect.top - scrollRect.top + scrollArea.scrollTop) + (imgRect.height * ratioY);
-
-                // Beregn ny rulleposisjon for å plassere target-punktet midt i visningsområdet
-                const newScrollLeft = targetXOnScroll - (scrollArea.clientWidth / 2);
-                const newScrollTop = targetYOnScroll - (scrollArea.clientHeight / 2);
-
-                scrollArea.scrollTo({
-                    left: Math.max(0, newScrollLeft),
-                    top: Math.max(0, newScrollTop),
-                    behavior: 'smooth'
-                });
-            });
-        }
-
-        function applyZoomStyles() {
-            const img = document.getElementById('singleModalImg');
-            if (!img) return;
-
-            const scale = ZOOM_LEVELS[zoomStep];
-
-            // Skaler bildet fra midten
-            img.style.transform = `scale(${scale})`;
-            img.style.transformOrigin = 'center center';
-
-            // Oppdater musepekeren
-            if (zoomStep >= MAX_STEPS) {
-                img.classList.remove('cursor-zoom-in');
-                img.classList.add('cursor-zoom-out');
-            } else {
-                img.classList.remove('cursor-zoom-out');
-                img.classList.add('cursor-zoom-in');
-            }
-        }
-
-        // Lukk på Escape
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-<!-- JavaScript for å åpne og lukke -->
-    function openFlagModal() {
-        const modal = document.getElementById('imageFlagModal');
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-    }
-
-    function closeFlagModal() {
-        const modal = document.getElementById('imageFlagModal');
-        modal.classList.remove('flex');
-        modal.classList.add('hidden');
-    }
-
-    // Lukk flagg-modalen dersom brukeren trykker Escape-tasten
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeFlagModal();
-        }
-    });
-
-document.addEventListener("DOMContentLoaded", () => {
-        // Hent landskode fra filnavnet (f.eks. "DNK.html" -> "DNK")
-        const landKode = window.location.pathname.split('/').pop().replace('.html', '').toUpperCase();
-        const data = hentFakta(landKode);
-
-        if (data) {
-            // Hjelpefunksjon for å lage punktliste uten tomme/ugyldige verdier ('-')
-            const fyllListe = (elementId, array) => {
-                const el = document.getElementById(elementId);
-                const gyldigeVerdier = array.filter(item => item && item !== '-');
-
-                if (gyldigeVerdier.length > 0) {
-                    el.innerHTML = gyldigeVerdier.map(item => `<li>${item}</li>`).join('');
-                } else {
-                    el.innerHTML = '<li class="text-gray-400 italic">Ingen registrerte data</li>';
-                }
-            };
-
-            fyllListe('fakta-topper', data.topper);
-            fyllListe('fakta-elver', data.elver);
-            fyllListe('fakta-innsjoer', data.innsjoer);
-        } else {
-            console.warn(`Fant ingen fakta for landskode: ${landKode}`);
-        }
-    });
-
-
-
-
-window.addEventListener('DOMContentLoaded', oppdaterPortugalFakta);
+window.addEventListener('DOMContentLoaded', oppdaterSloveniaFakta);
     </script>
-<script src="fakta.js"></script>
 </body>
 </html>
