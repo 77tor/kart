@@ -1,5 +1,5 @@
 /**
- * fakta.js - Geografiske data for europeiske land
+ * fakta.js - Geografiske data for land i og utenfor Europa
  * Inneholder de 3 høyeste toppene, 3 lengste elvene og 3 største innsjøene per land.
  */
 
@@ -56,7 +56,26 @@ const landAliasMap = {
   'ARM': 'ARM', 'armenia': 'ARM',
   'AZE': 'AZE', 'azerbaijan': 'AZE', 'aserbajdsjan': 'AZE',
   'KAZ': 'KAZ', 'kazakhstan': 'KAZ', 'kasakhstan': 'KAZ',
-  'TUR': 'TUR', 'turkey': 'TUR', 'tyrkia': 'TUR'
+  'TUR': 'TUR', 'turkey': 'TUR', 'tyrkia': 'TUR',
+
+  // Nye land som er lagt til
+  'USA': 'USA', 'united states': 'USA', 'united states of america': 'USA', 'usa': 'USA',
+  'CAN': 'CAN', 'canada': 'CAN',
+  'BRA': 'BRA', 'brazil': 'BRA', 'brasil': 'BRA',
+  'ARG': 'ARG', 'argentina': 'ARG',
+  'CHN': 'CHN', 'china': 'CHN', 'kina': 'CHN',
+  'IND': 'IND', 'india': 'IND',
+  'IRN': 'IRN', 'iran': 'IRN',
+  'IRQ': 'IRQ', 'iraq': 'IRQ', 'irak': 'IRQ',
+  'JPN': 'JPN', 'japan': 'JPN',
+  'BGD': 'BGD', 'bangladesh': 'BGD',
+  'AUS': 'AUS', 'australia': 'AUS',
+  'NZL': 'NZL', 'new zealand': 'NZL',
+  'THA': 'THA', 'thailand': 'THA',
+  'PAK': 'PAK', 'pakistan': 'PAK',
+  'EGY': 'EGY', 'egypt': 'EGY',
+  'MAR': 'MAR', 'morocco': 'MAR', 'marokko': 'MAR',
+  'ZAF': 'ZAF', 'south africa': 'ZAF', 'sør-afrika': 'ZAF', 'sor-afrika': 'ZAF'
 };
 
 // Hoveddatabank med geografiske fakta for hvert land
@@ -372,12 +391,116 @@ const faktaData = {
     topper: ['Vatikanhøyden (75 m)', 'Gardens Hill (60 m)', 'St. Petersplassen (19 m)'],
     elver: ['Tiberen (går like ved grensen)', '-', '-'],
     innsjoer: ['Ingen innsjøer', '-', '-']
+  },
+
+  // Nye land som er lagt til
+  'USA': {
+    land: 'USA',
+    topper: ['Denali (6190 m)', 'Mount Saint Elias (5489 m)', 'Mount Foraker (5304 m)'],
+    elver: ['Missouri (3767 km)', 'Mississippi (3730 km)', 'Yukon (3185 km tot.)'],
+    innsjoer: ['Ovresjøen (Lake Superior)', 'Huronsjøen', 'Michigan-sjøen']
+  },
+  'CAN': {
+    land: 'Canada',
+    topper: ['Mount Logan (5959 m)', 'Mount Saint Elias (5489 m)', 'Mount Lucania (5226 m)'],
+    elver: ['Mackenzie (1738 km)', 'Yukon (3185 km tot.)', 'Saint Lawrence (1197 km)'],
+    innsjoer: ['Store Bjørnesjø', 'Store Slavesjø', 'Huronsjøen']
+  },
+  'BRA': {
+    land: 'Brasil',
+    topper: ['Pico da Neblina (2995 m)', 'Pico 3 de Março (2973 m)', 'Pico da Bandeira (2891 m)'],
+    elver: ['Amasonas (6992 km tot.)', 'Paraná (4880 km tot.)', 'São Francisco (2914 m)'],
+    innsjoer: ['Lagoa dos Patos', 'Lagoa Mirim', 'Sobradinho-reservoaret']
+  },
+  'ARG': {
+    land: 'Argentina',
+    topper: ['Aconcagua (6961 m)', 'Ojos del Salado (6893 m)', 'Monte Pissis (6795 m)'],
+    elver: ['Paraná (4880 km tot.)', 'Uruguay (1838 km tot.)', 'Río Negro (635 km)'],
+    innsjoer: ['Mar Chiquita', 'Lago Argentino', 'Lago Viedma']
+  },
+  'CHN': {
+    land: 'Kina',
+    topper: ['Mount Everest / Qomolangma (8848 m)', 'K2 (8611 m)', 'Lhotse (8516 m)'],
+    elver: ['Yangtze / Chang Jiang (6300 km)', 'Guleelv / Huang He (5464 km)', 'Mekong (4350 km tot.)'],
+    innsjoer: ['Qinghaisjøen', 'Poyang-sjøen', 'Dongting-sjøen']
+  },
+  'IND': {
+    land: 'India',
+    topper: ['Kangchenjunga (8586 m)', 'Nanda Devi (7816 m)', 'Kamet (7756 m)'],
+    elver: ['Ganges (2525 km)', 'Godavari (1465 km)', 'Krishna (1400 km)'],
+    innsjoer: ['Vembanad', 'Chilika-sjøen', 'Shivajisagar-reservoaret']
+  },
+  'IRN': {
+    land: 'Iran',
+    topper: ['Damavand (5610 m)', 'Alam-Kuh (4848 m)', 'Sabalan (4811 m)'],
+    elver: ['Karun (950 km)', 'Karkheh (900 km)', 'Sefid-Rud (670 km)'],
+    innsjoer: ['Urmiasjøen', 'Namak-sjøen', 'Bakhtegan']
+  },
+  'IRQ': {
+    land: 'Irak',
+    topper: ['Cheekha Dar (3611 m)', 'Hasar-i-Rost (3607 m)', 'Helgurd (3607 m)'],
+    elver: ['Tigris (1850 km tot.)', 'Eufrat (2800 km tot.)', 'Shatt al-Arab (200 km)'],
+    innsjoer: ['Tharthar-reservoaret', 'Razzaza-reservoaret', 'Habbaniyah-sjøen']
+  },
+  'JPN': {
+    land: 'Japan',
+    topper: ['Mount Fuji (3776 m)', 'Mount Kita (3193 m)', 'Mount Okuhotaka (3190 m)'],
+    elver: ['Shinano (367 km)', 'Tone (322 km)', 'Ishikari (268 km)'],
+    innsjoer: ['Biwa-sjøen', 'Kasumigaura', 'Saroma-sjøen']
+  },
+  'BGD': {
+    land: 'Bangladesh',
+    topper: ['Saka Haphong (1052 m)', 'Zow Tlang (1017 m)', 'Keokradong (986 m)'],
+    elver: ['Padma / Ganges (1200 km tot.)', 'Meghna', 'Jamuna / Brahmaputra'],
+    innsjoer: ['Kaptai-innsjøen (Reservoar)', 'Tanguar Haor', 'Bogakain Lake (Boga Lake)']
+  },
+  'AUS': {
+    land: 'Australia',
+    topper: ['Mawson Peak (2745 m - Heard-øya)', 'Mount Kosciuszko (2228 m - Fastlandet)', 'Mount Townsend (2209 m)'],
+    elver: ['Murray (2508 km)', 'Murrumbidgee (1485 km)', 'Darling (1472 km)'],
+    innsjoer: ['Kati Thanda / Lake Eyre', 'Lake Torrens', 'Lake Gairdner']
+  },
+  'NZL': {
+    land: 'New Zealand',
+    topper: ['Aoraki / Mount Cook (3724 m)', 'Mount Tasman (3497 m)', 'Mount Dampier (3440 m)'],
+    elver: ['Waikato (425 km)', 'Clutha (338 km)', 'Whanganui (290 km)'],
+    innsjoer: ['Lake Taupo', 'Lake Wakatipu', 'Lake Wanaka']
+  },
+  'THA': {
+    land: 'Thailand',
+    topper: ['Doi Inthanon (2565 m)', 'Doi Pha Hom Pok (2285 m)', 'Doi Luang Chiang Dao (2175 m)'],
+    elver: ['Chao Phraya (372 km)', 'Mekong (4350 km tot.)', 'Mun (750 km)'],
+    innsjoer: ['Songkhla-sjøen', 'Cheow Lan-sjøen (Ratchaprapha)', 'Kwan Phayao']
+  },
+  'PAK': {
+    land: 'Pakistan',
+    topper: ['K2 (8611 m)', 'Nanga Parbat (8126 m)', 'Gasherbrum I (8080 m)'],
+    elver: ['Indus (3180 km tot.)', 'Sutlej (1450 km tot.)', 'Chenab (1087 km tot.)'],
+    innsjoer: ['Manchar-sjøen', 'Keenjhar-sjøen', 'Attabad-sjøen']
+  },
+  'EGY': {
+    land: 'Egypt',
+    topper: ['Katarinafjellet / Mount Catherine (2629 m)', 'Mount Sinaai (2285 m)', 'Mount Um Shomer (2586 m)'],
+    elver: ['Nilen (6650 km tot.)', '-', '-'],
+    innsjoer: ['Nassersjøen', 'Qarun-sjøen', 'Manzala-sjøen']
+  },
+  'MAR': {
+    land: 'Marokko',
+    topper: ['Jbel Toubkal (4167 m)', 'Ouanoukrim (4089 m)', 'Jbel M\'Goun (4071 m)'],
+    elver: ['Draa (1100 km)', 'Oum Er-Rbia (555 km)', 'Sebou (450 km)'],
+    innsjoer: ['Bin el Ouidane-reservoaret', 'Aguelmame Azigza', 'Lake Sidi Ali']
+  },
+  'ZAF': {
+    land: 'Sør-Afrika',
+    topper: ['Mafadi (3450 m)', 'Njesuthi (3408 m)', 'Champagne Castle (3377 m)'],
+    elver: ['Orange / Gariep (2200 km)', 'Limpopo (1750 km tot.)', 'Vaal (1210 km)'],
+    innsjoer: ['Lake St Lucia', 'Gariep-dammen (Reservoar)', 'Chrissie-sjøen']
   }
 };
 
 /**
  * Hjelpefunksjon for å hente ut fakta basert på enten landskode eller landskode/navn.
- * @param {string} sok - f.eks. 'NOR', 'norge', 'Norway', 'ESP'
+ * @param {string} sok - f.eks. 'NOR', 'norge', 'Norway', 'ESP', 'USA', 'kina'
  * @returns {object|null} Landets faktaobjekt, eller null hvis ikke funnet.
  */
 function hentFakta(sok) {
