@@ -31,11 +31,12 @@
     <!-- HEADER -->
     <header class="bg-blue-600 text-white shadow-lg sticky top-0 z-40">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
-            <div class="flex items-center gap-3">
-                <img src="https://flagcdn.com/w40/ua.png" alt="Ukrainas flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm">
-                <h1 class="text-xl md:text-3xl font-bold tracking-wide">Ukraina - Alt om det store landet i Øst-Europa!</h1>
-            </div>
-        </div>
+<div class="flex items-center gap-3">
+    <button onclick="openFlagModal()" class="focus:outline-none focus:ring-2 focus:ring-white/50 rounded" aria-label="Åpne flaggbilde">
+        <img src="https://flagcdn.com/w40/ua.png" alt="Ukrainas flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm" hover:scale-105 transition-transform cursor-pointer">
+    </button>
+    <h1 class="text-xl md:text-3xl font-bold tracking-wide">Ukraina - Alt om det store landet i Øst-Europa!</h1>
+</div>
     </header>
 
     <main class="max-w-6xl mx-auto px-4 mt-6 space-y-10">
@@ -126,10 +127,10 @@
         </section>
 
         <!-- SEKSJON 1: NATUR OG KLIMA -->
-        <section class="bg-amber-50 rounded-3xl p-6 md:p-8 border-4 border-amber-300 shadow-sm">
+        <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
-                <span class="bg-amber-500 text-white text-2xl p-3 rounded-2xl">🌻</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">1. Natur og klima</h2>
+                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🌍</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">1. Natur og klima</h2>
             </div>
             
             <p class="text-lg text-amber-950 mb-6 leading-relaxed">
@@ -137,26 +138,54 @@
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
-                <div class="bg-white p-5 rounded-2xl border-2 border-amber-200 card-bounce">
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
                     <div class="text-3xl mb-2">⛰️</div>
                     <div class="font-bold text-lg text-amber-800 mb-1">Høyeste punkt</div>
                     <p class="text-sm text-gray-700"><strong>Hoverla</strong> i Karpatene er Ukrainas høyeste fjell, og strekker seg 2 061 meter over havet.</p>
                 </div>
 
-                <div class="bg-white p-5 rounded-2xl border-2 border-amber-200 card-bounce">
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
                     <div class="text-3xl mb-2">🌊</div>
                     <div class="font-bold text-lg text-amber-800 mb-1">Store elver & Svartehavet</div>
                     <p class="text-sm text-gray-700">Den mektige elva <strong>Dnipro</strong> deler landet i to før den renner ut i Svartehavet i sør.</p>
                 </div>
 
-                <div class="bg-white p-5 rounded-2xl border-2 border-amber-200 card-bounce">
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
                     <div class="text-3xl mb-2">🌾</div>
                     <div class="font-bold text-lg text-amber-800 mb-1">Det sorte gullet</div>
                     <p class="text-sm text-gray-700">Ukraina har verdens mest fruktbare matjord, kalt <strong>tsjernoziom</strong> (svartjord), ideelt for hvete og solsikker!</p>
                 </div>
             </div>
 
-            <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-amber-200 flex items-center gap-4">
+<!-- Geografiske fakta som tre kolonner -->
+<div class="mt-6 bg-white p-5 rounded-2xl border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-3 gap-6">
+    
+    <!-- Høyeste fjell -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Høyeste fjell</h4>
+        <ul id="fakta-topper" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+
+    <!-- Lengste elver -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Lengste elver</h4>
+        <ul id="fakta-elver" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+
+    <!-- Største innsjøer -->
+    <div>
+        <h4 class="font-bold text-gray-800 text-sm mb-2 border-b border-emerald-100 pb-1">Største innsjøer</h4>
+        <ul id="fakta-innsjoer" class="text-sm text-gray-700 space-y-1 list-disc list-inside">
+            <li class="text-gray-400">Laster...</li>
+        </ul>
+    </div>
+</div>
+
+            <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
                 <div class="text-4xl">🐻</div>
                 <p class="text-sm text-gray-700">
                     <strong>Dyreliv:</strong> I skogene og fjellene bor det brunbjørn, ulv, gaupe, hjort og visent (européisk bison)!
@@ -220,15 +249,17 @@
                 Ukraina er en <strong>republikk</strong> og et <strong>demokrati</strong> med en valgt president som statsoverhode.
             </p>
 
-            <div class="grid md:grid-cols-3 gap-4">
-                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">👔</div>
-                    <h3 class="font-bold text-purple-900" id="stat-president-navn">Laster...</h3>
-                    <p class="text-xs text-gray-600 mt-1">Ukrainas president og statsoverhode.</p>
-                </div>
+<div class="grid md:grid-cols-3 gap-4">
+    <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+        <div class="mb-2">
+            <img src="https://flagcdn.com/w160/ua.png" alt="Ukrainas flagg" class="inline-block h-10 w-auto object-contain border border-gray-300 rounded-sm shadow-xs">
+        </div>
+        <h3 class="font-bold text-purple-900" id="stat-president-navn">Laster...</h3>
+        <p class="text-xs text-gray-600 mt-1">Ukrainas president og statsoverhode.</p>
+    </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">💼</div>
+                    <div class="text-4xl mb-2">👔</div>
                     <h3 class="font-bold text-purple-900" id="stat-pm-navn">Denys Sjmyhal</h3>
                     <p class="text-xs text-gray-600 mt-1">Statsministeren som leder regjeringen.</p>
                 </div>
@@ -450,11 +481,144 @@
         </div>
     </div>
 
+<!-- Popup Modal -->
+<div id="imageFlagModal" class="fixed inset-0 bg-black/70 hidden justify-center items-center z-50 p-4 backdrop-blur-sm" onclick="closeFlagModal()">
+    <div class="relative max-w-3xl max-h-[90vh] bg-slate-900 p-2 rounded-lg shadow-2xl border border-white/20" onclick="event.stopPropagation()">
+        <!-- Lukk-knapp -->
+        <button onclick="closeFlagModal()" class="absolute -top-3 -right-3 bg-red-600 hover:bg-red-700 text-white font-bold w-8 h-8 rounded-full flex items-center justify-center shadow-lg transition-colors cursor-pointer" aria-label="Lukk">
+            &times;
+        </button>
+        <!-- Bilde i modal -->
+        <img src="Flagg/UKR.png" alt="Ukrainas flagg (stort)" class="max-w-full max-h-[80vh] object-contain rounded">
+    </div>
+</div>
+
     <footer class="bg-slate-800 text-white text-center py-6 mt-12">
         <p class="text-sm">🇺🇦 UKR.html - Laget for læring og moro i skolen! 🇺🇦</p>
     </footer>
 
     <script>
+// MODAL OG SENTRERT ZOOM MOT KLIKKPUNKT
+let zoomStep = 0; // 0 = 100%, 1 = 175%, 2 = 250%, 3 = 325%
+const MAX_STEPS = 3;
+const ZOOM_LEVELS = [1, 1.75, 2.5, 3.25];
+
+function openSingleModal(imgSrc, titleText) {
+    const modal = document.getElementById('mapModal');
+    const img = document.getElementById('singleModalImg');
+    const title = document.getElementById('modalTitle');
+
+    if (img && title && modal) {
+        img.src = imgSrc;
+        title.textContent = titleText;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        resetZoom();
+    }
+}
+
+function switchMap(imgSrc, titleText) {
+    const img = document.getElementById('singleModalImg');
+    const title = document.getElementById('modalTitle');
+    if (img && title) {
+        img.src = imgSrc;
+        title.textContent = titleText;
+        resetZoom();
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('mapModal');
+    if (modal) {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+        resetZoom();
+    }
+}
+
+function resetZoom() {
+    zoomStep = 0;
+    applyZoomStyles();
+    
+    const scrollArea = document.getElementById('modalScrollArea');
+    if (scrollArea) {
+        scrollArea.scrollLeft = 0;
+        scrollArea.scrollTop = 0;
+    }
+}
+
+function handleImageClick(event) {
+    event.stopPropagation(); // Unngå at modalen lukker seg
+
+    if (zoomStep >= MAX_STEPS) {
+        resetZoom();
+        return;
+    }
+
+    const img = document.getElementById('singleModalImg');
+    const scrollArea = document.getElementById('modalScrollArea');
+    if (!img || !scrollArea) return;
+
+    const imgRect = img.getBoundingClientRect();
+    const clickRatioX = (event.clientX - imgRect.left) / imgRect.width;
+    const clickRatioY = (event.clientY - imgRect.top) / imgRect.height;
+
+    executeZoomStep(zoomStep + 1, clickRatioX, clickRatioY);
+}
+
+function zoomMap(direction) {
+    // Om direction er f.eks. +30 eller -30 fra HTML, konverteres det til +1 / -1
+    const stepChange = direction > 0 ? 1 : -1;
+    const targetStep = zoomStep + stepChange;
+    executeZoomStep(targetStep, 0.5, 0.5); // Sentrerer på midten
+}
+
+function executeZoomStep(nextStep, ratioX, ratioY) {
+    const scrollArea = document.getElementById('modalScrollArea');
+    const img = document.getElementById('singleModalImg');
+    const oldStep = zoomStep;
+
+    zoomStep = Math.min(Math.max(nextStep, 0), MAX_STEPS);
+
+    if (oldStep === zoomStep || !scrollArea || !img) return;
+
+    applyZoomStyles();
+
+    requestAnimationFrame(() => {
+        const imgRect = img.getBoundingClientRect();
+        const scrollRect = scrollArea.getBoundingClientRect();
+
+        const targetXOnScroll = (imgRect.left - scrollRect.left + scrollArea.scrollLeft) + (imgRect.width * ratioX);
+        const targetYOnScroll = (imgRect.top - scrollRect.top + scrollArea.scrollTop) + (imgRect.height * ratioY);
+
+        const newScrollLeft = targetXOnScroll - (scrollArea.clientWidth / 2);
+        const newScrollTop = targetYOnScroll - (scrollArea.clientHeight / 2);
+
+        scrollArea.scrollTo({
+            left: Math.max(0, newScrollLeft),
+            top: Math.max(0, newScrollTop),
+            behavior: 'smooth'
+        });
+    });
+}
+
+function applyZoomStyles() {
+    const img = document.getElementById('singleModalImg');
+    if (!img) return;
+
+    const scale = ZOOM_LEVELS[zoomStep];
+
+    img.style.transform = `scale(${scale})`;
+    img.style.transformOrigin = 'center center';
+
+    if (zoomStep >= MAX_STEPS) {
+        img.classList.remove('cursor-zoom-in');
+        img.classList.add('cursor-zoom-out');
+    } else {
+        img.classList.remove('cursor-zoom-out');
+        img.classList.add('cursor-zoom-in');
+    }
+}
         function openSingleModal(src, title) {
             const modal = document.getElementById('mapModal');
             const img = document.getElementById('singleModalImg');
@@ -582,6 +746,55 @@
             if (el1) el1.textContent = navn;
             if (el2) el2.textContent = navn;
         }
+
+document.addEventListener("DOMContentLoaded", () => {
+        // Hent landskode fra filnavnet (f.eks. "DNK.html" -> "DNK")
+        const landKode = window.location.pathname.split('/').pop().replace('.html', '').toUpperCase();
+        const data = hentFakta(landKode);
+
+        if (data) {
+            // Hjelpefunksjon for å lage punktliste uten tomme/ugyldige verdier ('-')
+            const fyllListe = (elementId, array) => {
+                const el = document.getElementById(elementId);
+                const gyldigeVerdier = array.filter(item => item && item !== '-');
+
+                if (gyldigeVerdier.length > 0) {
+                    el.innerHTML = gyldigeVerdier.map(item => `<li>${item}</li>`).join('');
+                } else {
+                    el.innerHTML = '<li class="text-gray-400 italic">Ingen registrerte data</li>';
+                }
+            };
+
+            fyllListe('fakta-topper', data.topper);
+            fyllListe('fakta-elver', data.elver);
+            fyllListe('fakta-innsjoer', data.innsjoer);
+        } else {
+            console.warn(`Fant ingen fakta for landskode: ${landKode}`);
+        }
+    });
+
+<!-- JavaScript for å åpne og lukke -->
+    function openFlagModal() {
+        const modal = document.getElementById('imageFlagModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    function closeFlagModal() {
+        const modal = document.getElementById('imageFlagModal');
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }
+
+    // Lukk flagg-modalen dersom brukeren trykker Escape-tasten
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeFlagModal();
+        }
+    });
+
+
     </script>
+<script src="fakta.js"></script>
 </body>
 </html>

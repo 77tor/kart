@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Italia - Alt om støvellandet! 🇮🇹</title>
+    <title>USA - Alt om Amerikas forente stater! 🇺🇸</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0fdf4;
+            background-color: #f8fafc;
         }
         h1, h2, h3, .font-fun {
             font-family: 'Fredoka', cursive, sans-serif;
@@ -26,99 +26,100 @@
         }
     </style>
 </head>
-<body class="bg-amber-50/50 text-slate-800 min-h-screen pb-12">
+<body class="bg-slate-50 text-slate-800 min-h-screen pb-12">
 
     <!-- HEADER -->
-    <header class="bg-emerald-600 text-white shadow-lg sticky top-0 z-40">
+    <header class="bg-blue-900 text-white shadow-lg sticky top-0 z-40">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-center">
 <div class="flex items-center gap-3">
     <button onclick="openFlagModal()" class="focus:outline-none focus:ring-2 focus:ring-white/50 rounded" aria-label="Åpne flaggbilde">
-        <img src="https://flagcdn.com/w40/it.png" alt="Italias flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm" hover:scale-105 transition-transform cursor-pointer">
+        <img src="https://flagcdn.com/w40/us.png" alt="USAs flagg" class="w-8 h-auto rounded border border-white/30 shadow-sm" hover:scale-105 transition-transform cursor-pointer">
     </button>
-    <h1 class="text-xl md:text-3xl font-bold tracking-wide">Italia - Alt om det berømte støvellandet!</h1>
+    <h1 class="text-xl md:text-3xl font-bold tracking-wide">USA - Alt om Amerikas forente stater!</h1>
 </div>
+
     </header>
 
     <main class="max-w-6xl mx-auto px-4 mt-6 space-y-10">
 
         <!-- KORTE FAKTA -->
-        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-red-500">
-            <h2 class="text-2xl md:text-3xl font-bold text-red-600 mb-6 flex items-center gap-2">
-                ⚡ Korte fakta om Italia
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-blue-500">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-700 mb-6 flex items-center gap-2">
+                ⚡ Korte fakta om USA
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 <div class="bg-red-100 p-4 rounded-2xl text-center border-2 border-red-300 card-bounce">
                     <div class="text-3xl mb-1">🏛️</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Hovedstad</div>
-                    <div class="font-bold text-red-700 text-lg">Rom (Roma)</div>
+                    <div class="font-bold text-red-700 text-base">Washington, D.C.</div>
                 </div>
-                <div class="bg-emerald-100 p-4 rounded-2xl text-center border-2 border-emerald-300 card-bounce">
+                <div class="bg-blue-100 p-4 rounded-2xl text-center border-2 border-blue-300 card-bounce">
                     <div class="text-3xl mb-1">👨‍👩‍👧‍👦</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Mennesker</div>
-                    <div class="font-bold text-emerald-700 text-lg" id="italia-befolkning">Laster...</div>
+                    <div class="font-bold text-blue-700 text-lg" id="usa-befolkning">Laster...</div>
                 </div>
                 <div class="bg-green-100 p-4 rounded-2xl text-center border-2 border-green-300 card-bounce">
                     <div class="text-3xl mb-1">🗣️</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Språk</div>
-                    <div class="font-bold text-green-700 text-base">Italiensk</div>
+                    <div class="font-bold text-green-700 text-base">Engelsk</div>
                 </div>
                 <div class="bg-amber-100 p-4 rounded-2xl text-center border-2 border-amber-300 card-bounce">
-                    <div class="text-3xl mb-1">🏛️</div>
+                    <div class="text-3xl mb-1">🦅</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Statsoverhode</div>
-                    <div class="font-bold text-amber-800 text-base" id="italia-president">Laster...</div>
+                    <div class="font-bold text-amber-800 text-base" id="usa-president">Laster...</div>
                 </div>
                 <div class="bg-purple-100 p-4 rounded-2xl text-center border-2 border-purple-300 card-bounce">
-                    <div class="text-3xl mb-1">🎉</div>
-                    <div class="text-xs text-gray-500 font-semibold uppercase">Nasjonaldag</div>
-                    <div class="font-bold text-purple-700 text-lg">2. juni</div>
+                    <div class="text-3xl mb-1">🎆</div>
+                    <div class="text-xs text-gray-500 font-semibold uppercase">Uavhengighetsdag</div>
+                    <div class="font-bold text-purple-700 text-lg">4. juli</div>
                 </div>
                 <div class="bg-emerald-100 p-4 rounded-2xl text-center border-2 border-emerald-300 card-bounce">
-                    <div class="text-3xl mb-1">💶</div>
+                    <div class="text-3xl mb-1">💵</div>
                     <div class="text-xs text-gray-500 font-semibold uppercase">Valuta</div>
-                    <div class="font-bold text-emerald-700 text-base">Euro (€)</div>
+                    <div class="font-bold text-emerald-700 text-base">Amerikansk dollar ($)</div>
                 </div>
             </div>
         </section>
 
         <!-- MAP SECTION (To kart side om side) -->
-        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-emerald-500">
+        <section class="bg-white rounded-3xl p-6 shadow-md border-4 border-blue-400">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
                 <div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-emerald-600 flex items-center gap-2">
-                        🗺️️ Kart over Italia
+                    <h2 class="text-2xl md:text-3xl font-bold text-blue-700 flex items-center gap-2">
+                        🗺️ Kart over USA
                     </h2>
                     <p class="text-gray-600 text-sm">Klikk på et av kartene for å åpne og zoome i fullskjerm!</p>
                 </div>
             </div>
 
-            <div class="bg-emerald-50/50 rounded-2xl p-4 border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
-                <!-- Vanlig kart (Venstre) -->
+            <div class="bg-blue-50/50 rounded-2xl p-4 border-2 border-blue-200 grid grid-cols-1 md:grid-cols-2 gap-4 items-center justify-items-center">
+                <!-- Illustrasjonskart (Venstre) -->
                 <div class="text-center w-full">
                     <img 
-                        src="Bilder/kart_italia.png" 
-                        alt="Illustrasjonskart over Italia" 
-                        onclick="openSingleModal('Bilder/kart_italia.png', 'Illustrasjonskart over Italia')"
-                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
+                        src="Bilder/kart_usa.png" 
+                        alt="Illustrasjonskart over USA" 
+                        onclick="openSingleModal('Bilder/kart_usa.png', 'Illustrasjonskart over USA')"
+                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-blue-200"
                     >
                     <button 
-                        onclick="openSingleModal('Bilder/kart_italia.png', 'Illustrasjonskart over Italia')"
-                        class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
+                        onclick="openSingleModal('Bilder/kart_usa.png', 'Illustrasjonskart over USA')"
+                        class="text-xs font-semibold text-blue-800 mt-2 hover:underline inline-flex items-center gap-1"
                     >
                         🔍 Åpne Illustrasjonskart
                     </button>
                 </div>
 
-                <!-- Geografisk kart (Høyre) -->
+                <!-- Ekte kart (Høyre) -->
                 <div class="text-center w-full">
                     <img 
-                        src="Bilder/kart_italia_ekte.png" 
-                        alt="Ekte kart over Italia" 
-                        onclick="openSingleModal('Bilder/kart_italia_ekte.png', 'Geografisk kart over Italia')"
-                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-emerald-200"
+                        src="Bilder/kart_usa_ekte.png" 
+                        alt="Ekte kart over USA" 
+                        onclick="openSingleModal('Bilder/kart_usa_ekte.png', 'Geografisk kart over USA')"
+                        class="max-h-[450px] w-auto mx-auto object-contain rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:scale-[1.01] transition border border-blue-200"
                     >
                     <button 
-                        onclick="openSingleModal('Bilder/kart_italia_ekte.png', 'Geografisk kart over Italia')"
-                        class="text-xs font-semibold text-emerald-800 mt-2 hover:underline inline-flex items-center gap-1"
+                        onclick="openSingleModal('Bilder/kart_usa_ekte.png', 'Geografisk kart over USA')"
+                        class="text-xs font-semibold text-blue-800 mt-2 hover:underline inline-flex items-center gap-1"
                     >
                         🔍 Åpne Geografisk kart
                     </button>
@@ -129,34 +130,33 @@
         <!-- SEKSJON 1: NATUR OG KLIMA -->
         <section class="bg-emerald-50 rounded-3xl p-6 md:p-8 border-4 border-emerald-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
-                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🏔️</span>
+                <span class="bg-emerald-500 text-white text-2xl p-3 rounded-2xl">🏜️</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-emerald-800">1. Natur og klima</h2>
             </div>
             
             <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
-                Italia har en helt spesiell form – det ser ut som en stilig støvel som sparker til en ball (øya Sicilia)! Landet strekker seg ut i Middelhavet.
+                USA er verdens tredje største land! Siden det er så enormt stort, finner du alt fra brennhete ørkener og høye fjell til tropiske strender og enorme skoger.
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
                     <div class="text-3xl mb-2">🏔️</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Høye fjell</div>
-                    <p class="text-sm text-gray-700">I nord ligger Alpene. Europakontinentets høyeste fjell, <strong>Monte Bianco</strong> (Mont Blanc), rager 4 808 meter over havet!</p>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Høyeste punkt</div>
+                    <p class="text-sm text-gray-700"><strong>Denali</strong> i Alaska er USAs (og Nord-Amerikas) høyeste fjell, med sine 6 190 meter over havet!</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">🌋</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Vulkaner</div>
-                    <p class="text-sm text-gray-700">Italia har aktive vulkaner! Den mest kjente er <strong>Vesuv</strong> ved Napoli og kjempevulkanen <strong>Etna</strong> på Sicilia.</p>
+                    <div class="text-3xl mb-2">🏜️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Grand Canyon</div>
+                    <p class="text-sm text-gray-700">En gigantisk, berømt kløft gravd ut av Colorado-elva gjennom millioner av år.</p>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 card-bounce">
-                    <div class="text-3xl mb-2">☀️</div>
-                    <div class="font-bold text-lg text-emerald-800 mb-1">Varmt klima</div>
-                    <p class="text-sm text-gray-700">Somrene er varme og solrike, mens vintrene er milde ved kysten og snørike oppe i fjellene.</p>
+                    <div class="text-3xl mb-2">🌪️</div>
+                    <div class="font-bold text-lg text-emerald-800 mb-1">Variert klima</div>
+                    <p class="text-sm text-gray-700">Alt fra arktisk kulde i Alaska til tropisk varme på Hawaii og skikkelig varme ørkener i California.</p>
                 </div>
             </div>
-
 
 <!-- Geografiske fakta som tre kolonner -->
 <div class="mt-6 bg-white p-5 rounded-2xl border-2 border-emerald-200 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -187,9 +187,9 @@
 </div>
 
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-emerald-200 flex items-center gap-4">
-                <div class="text-4xl">🐬</div>
+                <div class="text-4xl">🐻</div>
                 <p class="text-sm text-gray-700">
-                    <strong>Dyreliv:</strong> Oppe i Alpene og Apenninene lever det brunbjørn, alpesteinbukk og ulv. Langs kysten og rundt øyene kan man ofte se delfiner!
+                    <strong>Dyreliv:</strong> I USA bor det grizzlybjørner, bisonokser, alligatorer, ulver og den berømte hvithodehavørnen (USAs nasjonalfugl)!
                 </p>
             </div>
         </section>
@@ -197,44 +197,43 @@
         <!-- SEKSJON 2: FOLK OG SAMFUNN -->
         <section class="bg-sky-50 rounded-3xl p-6 md:p-8 border-4 border-sky-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
-                <span class="bg-sky-500 text-white text-2xl p-3 rounded-2xl">👨‍👩‍👧‍👦</span>
+                <span class="bg-sky-500 text-white text-2xl p-3 rounded-2xl">🏙️</span>
                 <h2 class="text-2xl md:text-3xl font-bold text-sky-800">2. Folk og samfunn</h2>
             </div>
 
             <p class="text-lg text-sky-950 mb-6 leading-relaxed">
-                I Italia bor det nesten <strong>59 millioner mennesker</strong>. Italienerne er kjente for sin lidenskap for mat, fotball, mote og familiesammenkomster.
+                I USA bor det over <strong>330 millioner mennesker</strong>. Landet kalles ofte en «smeltedigel» fordi folk har flyttet hit fra alle verdenshjørner!
             </p>
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
                     <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
-                        🏢 Største byer i Italia
+                        🏢 Største byer i USA
                     </h3>
                     <ul class="space-y-2 text-sm text-gray-700">
-                        <li class="flex items-center gap-2">🔹 <strong>Rom (Roma):</strong> Hovedstaden, omtalt som «Den evige stad» full av antikk historie.</li>
-                        <li class="flex items-center gap-2">🔹 <strong>Milano:</strong> Verdenshovedstad for mote og finans.</li>
-                        <li class="flex items-center gap-2">🔹 <strong>Napoli:</strong> Kjent for sin fantastiske mat og vakre kyst.</li>
-                        <li class="flex items-center gap-2">🔹 <strong>Venezia:</strong> Byen som er bygget på vann med gondoler i stedet for biler!</li>
+                        <li class="flex items-center gap-2">🔹 <strong>New York City:</strong> Den største byen, kjent for Frihetsgudinnen og Times Square!</li>
+                        <li class="flex items-center gap-2">🔹 <strong>Los Angeles:</strong> Kjendisenes by og hjertet av filmindustrien i Hollywood.</li>
+                        <li class="flex items-center gap-2">🔹 Andre kjente byer: Chicago, Houston, Phoenix og hovedstaden Washington, D.C.</li>
                     </ul>
                 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-sky-200 space-y-3">
                     <h3 class="font-bold text-lg text-sky-800 flex items-center gap-2">
-                        🍕 Matkultur & «La Dolce Vita»
+                        🏈 Sport & Kultur
                     </h3>
                     <p class="text-sm text-gray-700">
-                        Italiensk mat kjennetegnes av fantastiske råvarer: pasta, pizza, olivenolje, parmesanost og gelato (italiensk iskrem)!
+                        Amerikanere elsker sport! De største idrettene er <strong>amerikansk fotball (NFL)</strong>, <strong>basketball (NBA)</strong> og <strong>baseball (MLB)</strong>.
                     </p>
                     <p class="text-sm text-gray-700">
-                        Begrepet <strong>«La Dolce Vita»</strong> betyr «det søte liv» og handler om å nyte hverdagen, god mat og hyggelig selskap.
+                        Maten er også berømt: Hamburgere, hotdogs, pancakes og BBQ er skikkelige amerikanske favoritter!
                     </p>
                 </div>
             </div>
 
             <div class="mt-6 bg-sky-100 p-4 rounded-2xl border-2 border-sky-300">
-                <h4 class="font-bold text-sky-900 mb-1">🇻🇦 Mikrostatene i Italia</h4>
+                <h4 class="font-bold text-sky-900 mb-1">🗣️ Språk og delstater</h4>
                 <p class="text-sm text-sky-800">
-                    Innenfor Italias grenser ligger det to helt egne land! <strong>Vatikanstaten</strong> (verdens minste land, mitt inne i Roma) og den gamle fjellrepublikken <strong>San Marino</strong>.
+                    Det mest brukte språket er <strong>engelsk</strong>, men mange snakker også <strong>spansk</strong>. USA består av <strong>50 delstater</strong> som har sine egne lover og regler!
                 </p>
             </div>
         </section>
@@ -247,34 +246,32 @@
             </div>
 
             <p class="text-lg text-purple-950 mb-6 leading-relaxed">
-                Italia er en <strong>demokratisk republikk</strong>. Landet avskaffet monarkiet og ble republikk etter en folkeavstemning i 1946.
+                USA er en <strong>forbundsrepublikk</strong> og et <strong>demokrati</strong> der lederen kalles for president.
             </p>
 
             <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
+                    <div class="text-4xl mb-2">🦅</div>
+                    <h3 class="font-bold text-purple-900" id="stat-president-navn">Laster...</h3>
+                    <p class="text-xs text-gray-600 mt-1">USAs president og statsoverhode.</p>
+                </div>
+
 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
-    <div class="mb-2">
-        <img src="https://flagcdn.com/w160/it.png" alt="Italias flagg" class="inline-block h-10 w-auto object-contain">
-    </div>
-    <h3 class="font-bold text-purple-900" id="stat-president-navn">Laster...</h3>
-    <p class="text-xs text-gray-600 mt-1">Italias president og statsoverhode.</p>
+    <img src="Bilder/hus.png" alt="Det hvite hus" class="w-12 h-12 mx-auto mb-2 object-contain">
+    <h3 class="font-bold text-purple-900">Det hvite hus</h3>
+    <p class="text-xs text-gray-600 mt-1">Kontoret og hjemmet til presidenten i Washington, D.C.</p>
 </div>
 
                 <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">👔</div>
-                    <h3 class="font-bold text-purple-900" id="stat-pm-navn">Laster...</h3>
-                    <p class="text-xs text-gray-600 mt-1">Statsministeren (Presidente del Consiglio) som leder regjeringen.</p>
-                </div>
-
-                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🏛️</div>
-                    <h3 class="font-bold text-purple-900">Parlamentet</h3>
-                    <p class="text-xs text-gray-600 mt-1">Består av Deputertkammeret og Senatet i Roma.</p>
+                    <div class="text-4xl mb-2">📜</div>
+                    <h3 class="font-bold text-purple-900">Kongressen</h3>
+                    <p class="text-xs text-gray-600 mt-1">USAs parlament, delt inn i Senatet og Representantenes hus.</p>
                 </div>
             </div>
 
             <div class="mt-6 bg-white p-4 rounded-2xl border-2 border-purple-200 text-center">
                 <p class="text-sm font-semibold text-purple-900">
-                    📍 Italia er delt inn i <strong>20 regioner</strong> (som Sicilia, Toscana og Lombardia) og over 100 provinser.
+                    📍 USA består av <strong>50 delstater</strong> (som California, Texas og Florida) + 1 føderalt distrikt (Washington, D.C.).
                 </p>
             </div>
         </section>
@@ -283,50 +280,47 @@
         <section class="bg-amber-50 rounded-3xl p-6 md:p-8 border-4 border-amber-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
                 <span class="bg-amber-500 text-white text-2xl p-3 rounded-2xl">📜</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. Italias historie</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-amber-800">4. USAs historie</h2>
             </div>
 
             <div class="relative border-l-4 border-amber-400 ml-4 pl-6 space-y-6">
                 <!-- Timeline item 1 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">1</span>
-                    <h3 class="font-bold text-lg text-amber-900">🏛️ Romerriket (753 f.Kr. – 476 e.Kr.)</h3>
-                    <p class="text-sm text-gray-700">Rom voks fra en liten landsby til et enormt rike som styrte nesten hele Europa og Middelhavsområdet.</p>
+                    <h3 class="font-bold text-lg text-amber-900">🏹 Urfolket i Amerika</h3>
+                    <p class="text-sm text-gray-700">I tusenvis av år før europeerne kom, bodde det mange ulike urfolksstammer (indianere) over hele kontinentet.</p>
                 </div>
 
                 <!-- Timeline item 2 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">2</span>
-                    <h3 class="font-bold text-lg text-amber-900">🎨 Renessansen (1300–1600)</h3>
-                    <p class="text-sm text-gray-700">En blomstringstid for kunst, vitenskap og arkitektur. Genier som Leonardo da Vinci og Michelangelo skapte sine største verker.</p>
+                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
+                        <img src="https://flagcdn.com/w40/us.png" alt="USAs flagg" class="w-6 h-auto rounded border border-gray-200 shadow-sm inline-block">
+                        Uavhengighetserklæringen (1776)
+                    </h3>
+                    <p class="text-sm text-gray-700">De 13 første koloniene løsrev seg fra Storbritannia den 4. juli 1776, og George Washington ble den første presidenten!</p>
                 </div>
 
                 <!-- Timeline item 3 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">3</span>
-                    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
-                        <img src="https://flagcdn.com/w40/it.png" alt="Italias flagg" class="w-6 h-auto rounded border border-gray-200 shadow-sm inline-block">
-                        Samlingen av Italia - Il Risorgimento (1861)
-                    </h3>
-                    <p class="text-sm text-gray-700">Mange små stater og kongedømmer ble slått sammen til ett samlet kongerike Italia under kong Victor Emmanuel II.</p>
+                    <h3 class="font-bold text-lg text-amber-900">⚔️ Den amerikanske borgerkrigen (1861–1865)</h3>
+                    <p class="text-sm text-gray-700">Nordstatene og Sørstatene kjempet mot hverandre. President Abraham Lincoln hjalp til med å avskaffe slaveriet.</p>
                 </div>
 
                 <!-- Timeline item 4 -->
                 <div class="relative">
                     <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">4</span>
-                    <h3 class="font-bold text-lg text-amber-900">🗳️ Italia blir republikk (1946)</h3>
-                    <p class="text-sm text-gray-700">Etter andre verdenskrig stemte det italienske folket for å avskaffe monarkiet og gjøre landet om til en moderne republikk.</p>
+                    <h3 class="font-bold text-lg text-amber-900">🚀 Månelandingen (1969)</h3>
+                    <p class="text-sm text-gray-700">NASA sendte de første menneskene til månen! Neil Armstrong var det første mennesket som gikk på måneoverflaten.</p>
                 </div>
 
                 <!-- Timeline item 5 -->
-<div class="relative">
-    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">5</span>
-    <h3 class="font-bold text-lg text-amber-900 flex items-center gap-2">
-        <img src="Bilder/eu.png" alt="EU" class="w-6 h-6 object-contain shrink-0">
-        <span>Med på å starte EU (1957)</span>
-    </h3>
-    <p class="text-sm text-gray-700">Italia var et av de seks opprinnelige medlemslandene som signerte Rom-traktaten og grunnla det som i dag er Den europeiske union (EU).</p>
-</div>
+                <div class="relative">
+                    <span class="absolute -left-10 top-0 bg-amber-400 text-white rounded-full w-7 h-7 flex items-center justify-center font-bold text-xs">5</span>
+                    <h3 class="font-bold text-lg text-amber-900">💻 Den digitale revolusjonen</h3>
+                    <p class="text-sm text-gray-700">Amerikanske selskaper i «Silicon Valley» fant opp datamaskiner, smarttelefoner og internettplattformer som hele verden bruker i dag.</p>
+                </div>
             </div>
         </section>
 
@@ -338,37 +332,37 @@
             </div>
 
             <p class="text-lg text-emerald-950 mb-6 leading-relaxed">
-                Hva lever de av i Italia? Landet er verdenskjent for stilig design, raske biler, fantastisk mat og turisme!
+                USA har verdens største økonomi! De er kjent for teknologi, film, romfart og store, globale selskaper.
             </p>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🏎️</div>
-                    <h3 class="font-bold text-emerald-900">Raske biler</h3>
-                    <p class="text-xs text-gray-600 mt-1">Lager legendariske merker som Ferrari, Lamborghini og Fiat.</p>
+                    <div class="text-4xl mb-2">💻</div>
+                    <h3 class="font-bold text-emerald-900">Teknologi</h3>
+                    <p class="text-xs text-gray-600 mt-1">Apple, Google, Microsoft og Tesla kommer herfra.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">👗</div>
-                    <h3 class="font-bold text-emerald-900">Mote & Design</h3>
-                    <p class="text-xs text-gray-600 mt-1">Kjent for luksusmerker som Gucci, Prada og Armani.</p>
+                    <div class="text-4xl mb-2">🎬</div>
+                    <h3 class="font-bold text-emerald-900">Hollywood & Film</h3>
+                    <p class="text-xs text-gray-600 mt-1">Lager de mest kjente filmene og seriene i verden.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🍇</div>
-                    <h3 class="font-bold text-emerald-900">Mat & Jordbruk</h3>
-                    <p class="text-xs text-gray-600 mt-1">Eksporterer parmesanost, parmaskinke, olivenolje og druer.</p>
+                    <div class="text-4xl mb-2">🚀</div>
+                    <h3 class="font-bold text-emerald-900">Romfart</h3>
+                    <p class="text-xs text-gray-600 mt-1">NASA og SpaceX utforsker verdensrommet.</p>
                 </div>
 
                 <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 text-center card-bounce">
-                    <div class="text-4xl mb-2">🧳</div>
-                    <h3 class="font-bold text-emerald-900">Turisme</h3>
-                    <p class="text-xs text-gray-600 mt-1">Et av verdens mest besøkte ferieland hvert eneste år.</p>
+                    <div class="text-4xl mb-2">🌾</div>
+                    <h3 class="font-bold text-emerald-900">Landbruk</h3>
+                    <p class="text-xs text-gray-600 mt-1">Produserer enormt mye hvete, mais og soyabønner.</p>
                 </div>
             </div>
         </section>
 
-        <!-- SEKSJON 6: KULTUR OG UTDANNING -->
+        <!-- SEKSJON 6: KULTUR OG UNDERHOLDNING -->
         <section class="bg-rose-50 rounded-3xl p-6 md:p-8 border-4 border-rose-300 shadow-sm">
             <div class="flex items-center gap-3 mb-4">
                 <span class="bg-rose-500 text-white text-2xl p-3 rounded-2xl">🎨</span>
@@ -379,27 +373,27 @@
                 <!-- Skole og Idrett -->
                 <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
                     <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
-                        🏫 Skole og sport
+                        🏫 Skole og High School
                     </h3>
                     <p class="text-sm text-gray-700">
-                        Skolen kalles «Scuola». Barn begynner på barneskolen (Scuola Primaria) når de er 6 år gamle.
+                        Skolesystemet er kjent fra film: «High School» med skoleskrevne gule busser, heiarop (cheerleading) og skoleball (Prom)!
                     </p>
                     <div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
-                        <p class="text-sm text-rose-900 font-semibold">⚽ Italias mest populære sporter:</p>
-                        <p class="text-xs text-gray-600">Fotball (Serie A), sykling (Giro d'Italia) og motorsport!</p>
+                        <p class="text-sm text-rose-900 font-semibold">🏈 USAs mest populære sporter:</p>
+                        <p class="text-xs text-gray-600">Amerikansk fotball, basketball og baseball!</p>
                     </div>
                 </div>
 
                 <!-- Kjente personer -->
                 <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 space-y-3">
                     <h3 class="font-bold text-lg text-rose-800 flex items-center gap-2">
-                        🌟 Kjente italienere
+                        🌟 Kjente amerikanere
                     </h3>
                     <ul class="text-sm text-gray-700 space-y-2">
-                        <li>🎨 <strong>Leonardo da Vinci:</strong> Malte Mona Lisa og var et geni innen vitenskap.</li>
-                        <li>🔭 <strong>Galileo Galilei:</strong> Berømt astronom som beviste at jorden kretser rundt solen.</li>
-                        <li>🍕 <strong>Raffaele Esposito:</strong> Bakeren fra Napoli som fant opp Pizza Margherita!</li>
-                        <li>⚽ <strong>Gianluigi Buffon:</strong> En av verdens beste fotballkeepere gjennom tidene.</li>
+                        <li>📚 <strong>Martin Luther King Jr.:</strong> Kjempet for mørkhudedes rettigheter i USA.</li>
+                        <li>🚀 <strong>Neil Armstrong:</strong> Første menneske på månen.</li>
+                        <li>⚡ <strong>Thomas Edison:</strong> Oppfinneren av lyspæren og filmkameraet.</li>
+                        <li>🏀 <strong>Michael Jordan:</strong> En av verdens mest berømte basketballspillere.</li>
                     </ul>
                 </div>
             </div>
@@ -408,7 +402,7 @@
         <!-- QUIZ SEKSJON -->
         <section class="bg-yellow-100 rounded-3xl p-6 md:p-8 border-4 border-yellow-400 shadow-md">
             <h2 class="text-2xl md:text-3xl font-bold text-yellow-900 mb-4 text-center">
-                🧠 Test deg selv: Italia-Quiz!
+                🧠 Test deg selv: USA-Quiz!
             </h2>
             <div id="quiz-container" class="bg-white p-6 rounded-2xl border-2 border-yellow-300 max-w-2xl mx-auto space-y-4">
                 <p id="quiz-question" class="text-lg font-bold text-gray-800 text-center">Spørsmål laster...</p>
@@ -419,16 +413,17 @@
 
     </main>
 
-    <!-- MODAL FOR KART VISNING -->
+    <!-- MAP MODAL -->
     <div 
         id="mapModal" 
         class="fixed inset-0 bg-black/90 z-50 hidden flex-col transition-opacity"
         onclick="closeModal()"
     >
+
         <div class="w-full bg-slate-900/90 border-b border-white/10 px-4 py-3 flex flex-wrap items-center justify-between text-white shrink-0 z-20 gap-2" onclick="event.stopPropagation()">
             <div class="flex items-center gap-3">
-                <span id="modalTitle" class="text-sm md:text-base font-bold text-emerald-400">
-                    Kart over Italia
+                <span id="modalTitle" class="text-sm md:text-base font-bold text-blue-400">
+                    Kart over USA
                 </span>
                 <span class="text-xs text-white/60 hidden sm:inline">
                     | Klikk på bildet for å veksle zoom
@@ -436,10 +431,11 @@
             </div>
 
             <div class="flex items-center gap-2">
-                <button onclick="switchMap('Bilder/kart_italia.png', 'Illustrasjonskart over Italia')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+
+                <button onclick="switchMap('Bilder/kart_usa.png', 'Illustrasjonskart over USA')" class="bg-blue-600 hover:bg-blue-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
                     Illustrasjon
                 </button>
-                <button onclick="switchMap('Bilder/kart_italia_ekte.png', 'Geografisk kart over Italia')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
+                <button onclick="switchMap('Bilder/kart_usa_ekte.png', 'Geografisk kart over USA')" class="bg-blue-600 hover:bg-blue-700 text-white px-2.5 py-1.5 rounded-lg text-xs font-medium transition">
                     Ekte kart
                 </button>
 
@@ -493,12 +489,12 @@
             &times;
         </button>
         <!-- Bilde i modal -->
-        <img src="Flagg/ITA.png" alt="Italias flagg (stort)" class="max-w-full max-h-[80vh] object-contain rounded">
+        <img src="Flagg/USA.png" alt="USAs flagg (stort)" class="max-w-full max-h-[80vh] object-contain rounded">
     </div>
 </div>
 
     <footer class="bg-slate-800 text-white text-center py-6 mt-12">
-        <p class="text-sm">🇮🇹 ITA.html - Laget for læring og moro i skolen! 🇮🇹</p>
+        <p class="text-sm">🇺🇸 USA.html - Laget for læring og moro i skolen! 🇺🇸</p>
     </footer>
 
     <script>
@@ -625,23 +621,20 @@ function applyZoomStyles() {
 }
         function openSingleModal(src, title) {
             const modal = document.getElementById('mapModal');
-            const img = document.getElementById('singleModalImg');
-            const titleEl = document.getElementById('modalTitle');
+            const modalImg = document.getElementById('singleModalImg');
+            const modalTitle = document.getElementById('modalTitle');
             
-            img.src = src;
-            img.alt = title;
-            titleEl.textContent = title;
-            
+            modalImg.src = src;
+            modalTitle.textContent = title;
             modal.classList.remove('hidden');
             modal.classList.add('flex');
         }
 
         function switchMap(src, title) {
-            const img = document.getElementById('singleModalImg');
-            const titleEl = document.getElementById('modalTitle');
-            img.src = src;
-            img.alt = title;
-            titleEl.textContent = title;
+            const modalImg = document.getElementById('singleModalImg');
+            const modalTitle = document.getElementById('modalTitle');
+            modalImg.src = src;
+            modalTitle.textContent = title;
         }
 
         function closeModal() {
@@ -658,29 +651,28 @@ function applyZoomStyles() {
 
         window.onload = function() {
             loadQuiz();
-            oppdaterItaliaFakta();
         };
 
         const quizData = [
             {
-                question: "Hva heter hovedstaden i Italia?",
-                options: ["Milano", "Venezia", "Rom (Roma)", "Napoli"],
+                question: "Hva heter USAs hovedstad?",
+                options: ["New York City", "Los Angeles", "Washington, D.C.", "Chicago"],
                 answer: 2
             },
             {
-                question: "Hvilken berømt matrett oppstod opprinnelig i Napoli?",
-                options: ["Sushi", "Pizza", "Tacos", "Kjøttkaker"],
+                question: "Hvor mange delstater har USA?",
+                options: ["13", "50", "52", "100"],
                 answer: 1
             },
             {
-                question: "Hva kalles det kjente fjellet/vulkanen ved Napoli?",
-                options: ["Monte Bianco", "Galdhøpiggen", "Vesuv", "Everest"],
-                answer: 2
+                question: "Hvilket år ble Uavhengighetserklæringen undertegnet?",
+                options: ["1776", "1814", "1945", "1492"],
+                answer: 0
             },
             {
-                question: "Hvem malte det berømte maleriet Mona Lisa?",
-                options: ["Leonardo da Vinci", "Michelangelo", "Galileo Galilei", "Marco Polo"],
-                answer: 0
+                question: "Hva kalles USAs nasjonalfugl?",
+                options: ["Kongeørn", "Hvithodehavørn", "Vandrefalk", "Papegøye"],
+                answer: 1
             }
         ];
 
@@ -708,7 +700,7 @@ function applyZoomStyles() {
             
             if (selectedIdx === quizData[currentQuestion].answer) {
                 resultDiv.className = "text-center font-bold text-lg mt-4 text-emerald-600";
-                resultDiv.textContent = "🎉 Riktig svar! Bravissimo!";
+                resultDiv.textContent = "🎉 Riktig svar! Du er en ekte USA-ekspert!";
             } else {
                 resultDiv.className = "text-center font-bold text-lg mt-4 text-rose-600";
                 resultDiv.textContent = "❌ Nesten! Prøv en gang til.";
@@ -721,34 +713,51 @@ function applyZoomStyles() {
             }, 1800);
         }
 
-        async function oppdaterItaliaFakta() {
-            // Hent nyeste befolkningstall fra Wikidata for Italia (Q38)
-            try {
-                const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q38.json');
-                const data = await response.json();
-                
-                const claims = data.entities.Q38.claims;
-                if (claims.P1082) {
-                    const folketallListe = claims.P1082;
-                    const nyesteTelling = folketallListe[folketallListe.length - 1];
-                    const antall = parseInt(nyesteTelling.mainsnak.datavalue.value.amount, 10);
-                    
-                    const formatertTall = new Intl.NumberFormat('no-NO').format(antall);
-                    const mill = (antall / 1000000).toFixed(1).replace('.', ',');
-                    
-                    const befolkningEl = document.getElementById('italia-befolkning');
-                    if (befolkningEl) {
-                        befolkningEl.textContent = `Ca. ${mill} mill. (${formatertTall})`;
-                    }
-                }
-            } catch (feil) {
-                console.error('Kunne ikke hente live befolkningstall:', feil);
-                document.getElementById('italia-befolkning').textContent = "Ca. 58,8 mill.";
-            }
+async function oppdaterUsaFakta() {
+    try {
+        const response = await fetch('https://www.wikidata.org/wiki/Special:EntityData/Q30.json');
+        const data = await response.json();
+        const claims = data.entities.Q30.claims;
 
-            settFaktaOmLeder('italia-president', 'stat-president-navn', 'Sergio Mattarella');
-            settFaktaOmLeder('stat-pm-navn', 'stat-pm-navn', 'Giorgia Meloni');
+        // 1. Hent befolkningstall (P1082)
+        if (claims.P1082) {
+            const folketallListe = claims.P1082;
+            const nyesteTelling = folketallListe[folketallListe.length - 1];
+            const antall = parseInt(nyesteTelling.mainsnak.datavalue.value.amount, 10);
+            
+            const mill = (antall / 1000000).toFixed(1).replace('.', ',');
+            const befolkningEl = document.getElementById('usa-befolkning');
+            if (befolkningEl) {
+                befolkningEl.textContent = `Ca. ${mill} mill.`;
+            }
         }
+
+        // 2. Hent nåværende president (P35 - Head of State)
+        if (claims.P35) {
+            // Finn påstand som IKKE har en "end time" (P582), altså den som gjelder nå
+            const naavaerendeLederClaim = claims.P35.find(c => !c.qualifiers || !c.qualifiers.P582);
+            
+            if (naavaerendeLederClaim) {
+                const presidentQId = naavaerendeLederClaim.mainsnak.datavalue.value.id;
+                
+                // Hent navnet på presidenten fra Wikidata
+                const presResponse = await fetch(`https://www.wikidata.org/wiki/Special:EntityData/${presidentQId}.json`);
+                const presData = await presResponse.json();
+                const presEntity = presData.entities[presidentQId];
+
+                // Velg norsk etikett (nb/no) dersom tilgjengelig, ellers engelsk (en)
+                const navn = presEntity.labels.nb?.value || presEntity.labels.no?.value || presEntity.labels.en?.value || 'Donald Trump';
+                
+                settFaktaOmLeder('usa-president', 'stat-president-navn', navn);
+            }
+        }
+    } catch (feil) {
+        console.error('Kunne ikke hente live data fra Wikidata:', feil);
+        // Fallback-verdier hvis API-et eller nettverket feiler
+        document.getElementById('usa-befolkning').textContent = "Ca. 335 mill.";
+        settFaktaOmLeder('usa-president', 'stat-president-navn', 'Donald Trump');
+    }
+}
 
         function settFaktaOmLeder(elementId1, elementId2, navn) {
             const el1 = document.getElementById(elementId1);
@@ -756,6 +765,26 @@ function applyZoomStyles() {
             if (el1) el1.textContent = navn;
             if (el2) el2.textContent = navn;
         }
+
+<!-- JavaScript for å åpne og lukke -->
+    function openFlagModal() {
+        const modal = document.getElementById('imageFlagModal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    function closeFlagModal() {
+        const modal = document.getElementById('imageFlagModal');
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }
+
+    // Lukk flagg-modalen dersom brukeren trykker Escape-tasten
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeFlagModal();
+        }
+    });
 
 document.addEventListener("DOMContentLoaded", () => {
         // Hent landskode fra filnavnet (f.eks. "DNK.html" -> "DNK")
@@ -783,27 +812,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-<!-- JavaScript for å åpne og lukke -->
-    function openFlagModal() {
-        const modal = document.getElementById('imageFlagModal');
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-    }
-
-    function closeFlagModal() {
-        const modal = document.getElementById('imageFlagModal');
-        modal.classList.remove('flex');
-        modal.classList.add('hidden');
-    }
-
-    // Lukk flagg-modalen dersom brukeren trykker Escape-tasten
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeFlagModal();
-        }
-    });
 
 
+        window.addEventListener('DOMContentLoaded', oppdaterUsaFakta);
     </script>
 <script src="fakta.js"></script>
 </body>
